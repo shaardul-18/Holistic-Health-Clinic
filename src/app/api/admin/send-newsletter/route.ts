@@ -4,6 +4,8 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
 import { Resend } from 'resend';
 
+export const dynamic = "force-dynamic";
+
 // Provide a fallback dummy instance if env var is missing during development
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
