@@ -1,6 +1,6 @@
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Activity, Brain, Apple, Zap, CheckCircle2 } from "lucide-react";
-import Particles from "@/components/reactbits/Particles";
+import Plasma from "@/components/reactbits/Plasma";
 
 export const metadata = {
   title: "Our Services | Holistic Health Clinic",
@@ -15,11 +15,13 @@ export default function ServicesPage() {
         {/* Header */}
         <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-primary/5">
           <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-            <Particles
-              particleCount={25}
-              particleColor="#1FA44B"
-              particleSize={2.5}
-              speed={0.3}
+            <Plasma 
+              color="#1FA44B"
+              speed={1}
+              direction="forward"
+              scale={1}
+              opacity={1}
+              mouseInteractive={false}
             />
           </div>
           <div className="relative z-10 space-y-4">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ReviewsMarquee } from "@/components/ReviewsMarquee";
 import LineWaves from "@/components/reactbits/LineWaves";
 import Threads from "@/components/reactbits/Threads";
-import Particles from "@/components/reactbits/Particles";
+import Plasma from "@/components/reactbits/Plasma";
 
 export default function Home() {
   return (
@@ -131,13 +131,15 @@ export default function Home() {
       </section>
 
       <section className="relative py-24 px-6 bg-card border-t border-border/50 overflow-hidden">
-        {/* Particles Background */}
+        {/* Plasma Background */}
         <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-          <Particles
-            particleCount={40}
-            particleColor="#4ade80"
-            particleSize={3}
-            speed={0.4}
+          <Plasma 
+            color="#1FA44B"
+            speed={1}
+            direction="forward"
+            scale={1}
+            opacity={1}
+            mouseInteractive={false}
           />
         </div>
 

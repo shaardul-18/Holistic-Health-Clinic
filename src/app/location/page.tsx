@@ -24,16 +24,17 @@ export default function LocationPage() {
               rotation={-30}
               edgeFadeWidth={0.1}
               colorCycleSpeed={0.5}
-              brightness={0.2}
-              color1="#ffffff"
-              color2="#3b82f6"
-              color3="#22c55e"
+              brightness={0.25}
+              color1="#22c55e"
+              color2="#1886C6"
+              color3="#0ea5e9"
               enableMouseInteraction={false}
             />
           </div>
-          <div className="relative z-10 space-y-4">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 pointer-events-none" style={{ zIndex: 2 }}></div>
+          <div className="relative z-10 space-y-4 max-w-2xl mx-auto drop-shadow-xl">
             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Visit Our Clinic</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-foreground/90 font-medium leading-relaxed">
               Conveniently located in Vikhroli, Mumbai. We look forward to welcoming you to our modern, state-of-the-art healing space.
             </p>
           </div>
@@ -62,7 +63,7 @@ export default function LocationPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground">Address</h3>
-                  <p className="text-muted-foreground mt-1 text-sm">Near Trillium Dental Care, Behind Agarwal Eye Hospital, Beside Pillai Dental Clinic, Sai Shraddha CHSL, Vikhroli, Mumbai - 83.</p>
+                  <p className="text-muted-foreground mt-1 text-sm">Ground floor, besides Pillai dental care, A WING, Sai Shraddha Rd, behind Trillium dental care, Ashok Nagar, Vikhroli East, Mumbai, Maharashtra 400083</p>
                 </div>
               </div>
 
@@ -82,7 +83,7 @@ export default function LocationPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground">Phone</h3>
-                  <p className="text-muted-foreground mt-1 text-sm">+91 9223380090<br/>+91 8591180090</p>
+                  <p className="text-muted-foreground mt-1 text-sm">+91 8591180090</p>
                 </div>
               </div>
 
@@ -92,7 +93,7 @@ export default function LocationPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground">Email</h3>
-                  <p className="text-muted-foreground mt-1 text-sm">dr.shreya.ghag@gmail.com</p>
+                  <p className="text-muted-foreground mt-1 text-sm">-</p>
                 </div>
               </div>
             </div>

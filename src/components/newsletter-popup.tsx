@@ -16,10 +16,14 @@ export function NewsletterPopup() {
 
   useEffect(() => {
     if (!pathname?.startsWith("/admin")) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 10000); // 10 seconds delay
-      return () => clearTimeout(timer);
+      const hasSeenPopup = sessionStorage.getItem("newsletter_seen");
+      if (!hasSeenPopup) {
+        const timer = setTimeout(() => {
+          setIsOpen(true);
+          sessionStorage.setItem("newsletter_seen", "true");
+        }, 10000); // 10 seconds delay
+        return () => clearTimeout(timer);
+      }
     }
   }, [pathname]);
 
@@ -58,14 +62,6 @@ export function NewsletterPopup() {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
       <DialogContent className="sm:max-w-md p-0 overflow-hidden border-none shadow-2xl bg-gradient-to-br from-background to-secondary/30">
-        <button 
-          onClick={handleClose} 
-          className="absolute right-4 top-4 rounded-full p-1 bg-background/50 hover:bg-background transition-colors z-10"
-        >
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </button>
-        
         <div className="flex flex-col">
           <div className="bg-primary/10 p-8 flex items-center justify-center">
             <div className="bg-primary/20 p-4 rounded-full">
@@ -77,7 +73,7 @@ export function NewsletterPopup() {
             <div className="space-y-2 text-center">
               <DialogTitle className="text-2xl font-bold tracking-tight">Stay Healthy & Informed</DialogTitle>
               <DialogDescription className="text-base text-muted-foreground">
-                Get practical mental wellness tips, ergonomic desk guides, and clinic updates directly from Dr. Shreya Ghag.
+                Get practical mental wellness tips, ergonomic desk guides, and clinic updates directly from Holistic Health Clinic.
               </DialogDescription>
             </div>
             

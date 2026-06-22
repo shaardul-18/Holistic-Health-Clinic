@@ -7,6 +7,9 @@ import { Navbar } from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { AnalyticsTracker } from "@/components/analytics-tracker";
 import { NewsletterPopup } from "@/components/newsletter-popup";
+import { Chatbot } from "@/components/chatbot";
+import { CookieBanner } from "@/components/cookie-banner";
+import { Footer } from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -46,8 +49,13 @@ export default function RootLayout({
           >
             <AnalyticsTracker />
             <Navbar />
-            {children}
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
             <NewsletterPopup />
+            <Chatbot />
+            <CookieBanner />
             <Toaster />
           </ThemeProvider>
         </AuthProvider>
