@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/components/auth-provider";
 import { Navbar } from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
+import { AnalyticsTracker } from "@/components/analytics-tracker";
+import { NewsletterPopup } from "@/components/newsletter-popup";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -42,8 +44,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <AnalyticsTracker />
             <Navbar />
             {children}
+            <NewsletterPopup />
             <Toaster />
           </ThemeProvider>
         </AuthProvider>

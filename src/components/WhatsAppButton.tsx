@@ -11,6 +11,17 @@ interface WhatsAppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
 export const WhatsAppButton = React.forwardRef<HTMLButtonElement, WhatsAppButtonProps>(
   ({ children = <><span className="hidden sm:inline">Chat on WhatsApp</span><span className="sm:hidden">Chat</span></>, className, ...props }, ref) => {
     const handleClick = () => {
+      // Log event
+      fetch("/api/analytics", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          eventType: "WHATSAPP_CLICK",
+          path: window.location.pathname,
+          sessionId: localStorage.getItem("analytics_session_id") || "unknown",
+        }),
+      }).catch(err => console.error(err));
+
       const message = "Hello, I would like to inquire about an appointment.";
       const whatsappUrl = `https://wa.me/918591180090?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank");

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LayoutDashboard, CalendarDays, LogOut, Settings } from "lucide-react";
+import { LayoutDashboard, Mail, LogOut, Settings } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LogoutButton } from "@/components/logout-button";
 
@@ -19,9 +19,9 @@ export default function AdminLayout({
             <LayoutDashboard size={20} />
             Dashboard
           </Link>
-          <Link href="/admin/bookings" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-secondary transition-colors font-medium">
-            <CalendarDays size={20} />
-            Bookings
+          <Link href="/admin/newsletter" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-secondary transition-colors font-medium">
+            <Mail size={20} />
+            Newsletter
           </Link>
         </nav>
         <div className="p-4 border-t space-y-4">

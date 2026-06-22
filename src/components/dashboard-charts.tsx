@@ -9,25 +9,21 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-  Legend
+  BarChart,
+  Bar,
 } from "recharts";
-
-const COLORS = ["hsl(var(--chart-1))", "hsl(var(--chart-2))", "hsl(var(--chart-3))", "hsl(var(--chart-4))"];
 
 export function DashboardCharts({
   lineData,
-  pieData
+  barData
 }: {
-  lineData: { date: string; bookings: number }[];
-  pieData: { name: string; value: number }[];
+  lineData: { date: string; views: number }[];
+  barData: { path: string; views: number }[];
 }) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <AnimatedCard className="col-span-1">
-        <h3 className="text-lg font-medium mb-6">Recent Bookings (Last 7 Days)</h3>
+        <h3 className="text-lg font-medium mb-6">Page Views (Last 7 Days)</h3>
         <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={lineData}>
@@ -39,7 +35,7 @@ export function DashboardCharts({
               />
               <Line 
                 type="monotone" 
-                dataKey="bookings" 
+                dataKey="views" 
                 stroke="hsl(var(--primary))" 
                 strokeWidth={3} 
                 dot={{ r: 4, fill: "hsl(var(--primary))" }}
@@ -51,28 +47,19 @@ export function DashboardCharts({
       </AnimatedCard>
 
       <AnimatedCard className="col-span-1">
-        <h3 className="text-lg font-medium mb-6">Service Distribution</h3>
+        <h3 className="text-lg font-medium mb-6">Top Visited Pages</h3>
         <div className="h-[300px] w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={pieData}
-                cx="50%"
-                cy="50%"
-                innerRadius={60}
-                outerRadius={100}
-                paddingAngle={5}
-                dataKey="value"
-              >
-                {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
+            <BarChart data={barData} layout="vertical" margin={{ left: 50 }}>
+              <CartesianGrid strokeDasharray="3 3" opacity={0.2} horizontal={false} />
+              <XAxis type="number" fontSize={12} tickLine={false} axisLine={false} allowDecimals={false} />
+              <YAxis dataKey="path" type="category" fontSize={12} tickLine={false} axisLine={false} width={100} />
               <Tooltip 
+                cursor={{ fill: 'var(--secondary)', opacity: 0.2 }}
                 contentStyle={{ borderRadius: '8px', border: '1px solid hsl(var(--border))', backgroundColor: 'hsl(var(--background))' }}
               />
-              <Legend verticalAlign="bottom" height={36} iconType="circle" />
-            </PieChart>
+              <Bar dataKey="views" fill="hsl(var(--primary))" radius={[0, 4, 4, 0]} />
+            </BarChart>
           </ResponsiveContainer>
         </div>
       </AnimatedCard>
