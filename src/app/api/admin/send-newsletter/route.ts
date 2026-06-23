@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     // In a production scenario, you would use batching for large lists.
     // Here we send a single bcc to avoid exposing emails to each other.
     const data = await resend.emails.send({
-      from: 'Dr. Shreya Ghag <newsletter@holistichealth.com>', // You must verify this domain in Resend
+      from: 'Holistic Health Clinic <newsletter@holistichealth.com>', // You must verify this domain in Resend
       to: ['newsletter@holistichealth.com'], // Send to yourself
       bcc: emailList,
       subject: subject,

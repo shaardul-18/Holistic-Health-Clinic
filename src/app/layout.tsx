@@ -10,6 +10,7 @@ import { NewsletterPopup } from "@/components/newsletter-popup";
 import { Chatbot } from "@/components/chatbot";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/Footer";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -22,8 +23,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Holistic Health Clinic | Vikhroli, Mumbai",
-  description: "Expert healthcare for your body and mind. Physiotherapy and counselling services in Vikhroli, Mumbai by Dr. Shreya Ghag.",
+  title: "Holistic Health Clinic",
+  description: "Holistic Health Clinic provides expert physiotherapy, clinical nutrition, and counselling in Vikhroli East, Mumbai. Over 20+ years of practicing experience. Recover from back pain, sports injuries, and stress naturally.",
+  keywords: [
+    "Holistic Health Clinic",
+    "physiotherapy in Vikhroli East",
+    "best physiotherapist in Vikhroli East",
+    "physiotherapy clinic in Mumbai",
+    "clinical nutrition Vikhroli East",
+    "counselling Vikhroli East",
+    "back pain treatment Mumbai",
+    "physical therapist near me"
+  ],
+  authors: [{ name: "Holistic Health Clinic" }],
+  openGraph: {
+    title: "Holistic Health Clinic",
+    description: "Expert physiotherapy, diet planning, and counselling services in Vikhroli East, Mumbai by Holistic Health Clinic. Over 20+ years of practicing experience.",
+    type: "website",
+    locale: "en_IN",
+  }
 };
 
 export default function RootLayout({
@@ -31,6 +49,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -40,6 +60,22 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         suppressHydrationWarning
       >
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
         <AuthProvider>
           <ThemeProvider
             attribute="class"

@@ -5,7 +5,7 @@ import LineWaves from "@/components/reactbits/LineWaves";
 
 export const metadata = {
   title: "Location | Holistic Health Clinic",
-  description: "Visit Dr. Shreya Ghag's Holistic Health Clinic in Vikhroli, Mumbai.",
+  description: "Visit Holistic Health Clinic in Vikhroli East, Mumbai.",
 };
 
 export default function LocationPage() {
@@ -14,7 +14,7 @@ export default function LocationPage() {
       <div className="container mx-auto px-6 max-w-6xl space-y-16">
         
         {/* Header */}
-        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-primary/5">
+        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
           <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             <LineWaves
               speed={0.15}
@@ -35,7 +35,7 @@ export default function LocationPage() {
           <div className="relative z-10 space-y-4 max-w-2xl mx-auto drop-shadow-xl">
             <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Visit Our Clinic</h1>
             <p className="text-xl text-foreground/90 font-medium leading-relaxed">
-              Conveniently located in Vikhroli, Mumbai. We look forward to welcoming you to our modern, state-of-the-art healing space.
+              Conveniently located in Vikhroli East, Mumbai. We look forward to welcoming you to our modern, state-of-the-art healing space.
             </p>
           </div>
         </div>

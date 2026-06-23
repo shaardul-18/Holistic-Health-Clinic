@@ -23,7 +23,7 @@ export function Navbar() {
           </div>
         </Link>
         
-        <nav className="hidden md:flex items-center gap-8 font-medium text-sm text-foreground/80">
+        <nav className="hidden md:flex items-center gap-8 font-bold text-lg text-foreground/90">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
           <Link href="/events" className="hover:text-primary transition-colors">Events</Link>

@@ -4,8 +4,8 @@ import Image from "next/image";
 import Threads from "@/components/reactbits/Threads";
 
 export const metadata = {
-  title: "Meet The Doctor | Holistic Health Clinic",
-  description: "Learn about Dr. Shreya Ghag, her experience, qualifications, and holistic approach.",
+  title: "About | Holistic Health Clinic",
+  description: "Learn about Holistic Health Clinic, our 20+ years of practicing experience, qualifications, and holistic approach in Vikhroli East, Mumbai.",
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <div className="container mx-auto px-6 max-w-5xl space-y-16">
         
         {/* Header */}
-        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-primary/5">
+        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
           <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             <Threads
               amplitude={0.8}
@@ -24,7 +24,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="relative z-10 space-y-4">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Meet The Doctor</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">About Holistic Health Clinic</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Dedicated to empowering patients through integrated physical rehabilitation, proper nutrition, and mental wellness.
             </p>
@@ -38,7 +38,7 @@ export default function AboutPage() {
             <div className="aspect-[4/5] relative rounded-3xl overflow-hidden shadow-2xl border border-border bg-slate-100 dark:bg-slate-800">
                <Image 
                  src="/dr-shreya-ghag.png" 
-                 alt="Dr. Shreya Ghag (P.T.)" 
+                 alt="Holistic Health Clinic" 
                  fill
                  sizes="(max-width: 768px) 100vw, 40vw"
                  priority
@@ -61,19 +61,19 @@ export default function AboutPage() {
           {/* Doctor Info */}
           <div className="md:col-span-3 space-y-8">
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-2">Dr. Shreya Ghag (P.T.)</h2>
-              <p className="text-xl text-primary font-medium">Founder, Head Physiotherapist & Holistic Health Expert</p>
+              <h2 className="text-4xl font-bold text-foreground mb-2">Holistic Health Clinic</h2>
+              <p className="text-xl text-primary font-medium">Founder & Head Physiotherapist: Dr. Shreya Ghag (P.T.)</p>
             </div>
             
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>
-                Dr. Shreya Ghag (P.T.) is a highly accomplished and compassionate physiotherapist in Mumbai, widely recognized for her patient-centric, integrative approach to recovery. With over a decade of hands-on clinical experience, she specializes in bridging structural rehabilitation, clinical nutrition, and cognitive-behavioral counseling to deliver complete, long-lasting wellness.
+                Holistic Health Clinic is a premier healthcare facility in Vikhroli East, Mumbai, widely recognized for its patient-centric, integrative approach to recovery. Backed by over 20+ years of practicing experience, our team specializes in bridging structural physical therapy, clinical nutrition, and cognitive-behavioral counseling to deliver complete, long-lasting wellness.
               </p>
               <p>
-                In the Vikhroli community, Dr. Shreya operates across dual prominent practices. She serves as a consultant clinical physiotherapist at <strong>Ruby Medical Centre</strong> (Vikhroli East) and leads <strong>Dr. Shreya Ghag's Holistic Health Clinic</strong> (Vikhroli West). Under her leadership, both clinics have become trusted sanctuaries for pain relief, post-surgical recovery, and emotional support, backed by over 150+ five-star patient reviews on major healthcare platforms.
+                Serving the Vikhroli East community, Holistic Health Clinic has become a trusted sanctuary for pain relief, post-surgical recovery, and emotional support, backed by over 150+ five-star patient reviews on major healthcare platforms. Our clinic provides cutting-edge physical therapy and wellness programs tailored to each individual's needs.
               </p>
               <p>
-                Whether helping athletes return to peak performance, guiding elderly patients through joint rehab, or counseling individuals facing severe chronic pain and lifestyle stress, Dr. Shreya's methodology prioritizes diagnostic precision and gentle, personalized rehabilitation.
+                Whether helping athletes return to peak performance, guiding elderly patients through joint rehab, or counseling individuals facing chronic pain and lifestyle stress, our methodology prioritizes diagnostic precision, gentle care, and personalized rehabilitation.
               </p>
             </div>
 
@@ -134,7 +134,7 @@ export default function AboutPage() {
         </div>
 
         {/* Philosophy Section */}
-        <div className="mt-24 bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10">
+        <div className="mt-24 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl p-8 md:p-12 border border-primary/10">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/3 flex justify-center">
               <HeartHandshake className="h-32 w-32 text-primary opacity-80" strokeWidth={1} />

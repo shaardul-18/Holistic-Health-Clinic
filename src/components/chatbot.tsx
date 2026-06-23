@@ -28,22 +28,23 @@ export function Chatbot() {
     }
   }, [messages, isOpen, isLoading]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
+  const sendMessage = async (text: string) => {
+    if (!text.trim() || isLoading) return;
 
-    const userMessage = { role: "user", content: input };
+    const userMessage = { role: "user", content: text };
     const updatedMessages = [...messages, userMessage];
     
     setMessages(updatedMessages);
-    setInput("");
     setIsLoading(true);
 
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: updatedMessages }),
+        body: JSON.stringify({ 
+          messages: updatedMessages,
+          sessionId: typeof window !== "undefined" ? localStorage.getItem("analytics_session_id") || "unknown" : "unknown"
+        }),
       });
 
       const data = await res.json();
@@ -56,11 +57,17 @@ export function Chatbot() {
     } catch (error: any) {
       console.error("Chat error:", error);
       toast.error(error.message || "Failed to connect to the assistant.");
-      // Remove the user message if it failed
       setMessages((prev) => prev.slice(0, -1));
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+    sendMessage(input);
+    setInput("");
   };
 
   return (
@@ -97,10 +104,32 @@ export function Chatbot() {
           <CardContent className="p-0 flex-1 flex flex-col overflow-hidden bg-background">
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.length === 0 && (
-                <div className="text-center text-muted-foreground text-sm mt-4">
-                  <Bot className="h-8 w-8 mx-auto mb-2 opacity-50" />
-                  <p>Hi! I'm the digital assistant for Holistic Health Clinic.</p>
-                  <p className="mt-1">How can I help you today?</p>
+                <div className="space-y-4">
+                  <div className="text-center text-muted-foreground text-sm mt-4">
+                    <Bot className="h-8 w-8 mx-auto mb-2 opacity-50" />
+                    <p>Hi! I'm the digital assistant for Holistic Health Clinic.</p>
+                    <p className="mt-1">How can I help you today?</p>
+                  </div>
+                  
+                  <div className="flex flex-col gap-2 pt-2">
+                    {[
+                      { text: "🩹 Exercises for back pain", prompt: "What are some recommended exercises for lower back pain relief?" },
+                      { text: "🥗 Anti-inflammatory diet advice", prompt: "What foods should I eat or avoid for an anti-inflammatory joint diet?" },
+                      { text: "🧠 Managing anxiety and stress", prompt: "What coping strategies or Counselling methods do you recommend for stress & anxiety?" },
+                      { text: "📍 Clinic timings & address", prompt: "What are the clinic timings, working days, and location address?" }
+                    ].map((item, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => sendMessage(item.prompt)}
+                        disabled={isLoading}
+                        className="w-full text-left px-4 py-2.5 rounded-xl border border-border bg-slate-50 dark:bg-slate-900/50 hover:bg-primary/5 hover:border-primary/30 transition-all text-xs font-medium text-foreground/80 flex items-center justify-between group disabled:opacity-50"
+                      >
+                        <span>{item.text}</span>
+                        <Send className="h-3 w-3 text-muted-foreground group-hover:text-primary transition-colors shrink-0 ml-2" />
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
               

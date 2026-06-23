@@ -3,7 +3,7 @@ import { Calendar, Users, MapPin } from "lucide-react";
 import LineWaves from "@/components/reactbits/LineWaves";
 
 export const metadata = {
-  title: "Events & Camps | Holistic Health Clinic",
+  title: "Events | Holistic Health Clinic",
   description: "Join us for our upcoming medical camps and community events.",
 };
 
@@ -13,7 +13,7 @@ export default function EventsPage() {
       <div className="container mx-auto px-6 max-w-6xl space-y-16">
         
         {/* Header */}
-        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-primary/5">
+        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
           <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             <LineWaves
               speed={0.15}

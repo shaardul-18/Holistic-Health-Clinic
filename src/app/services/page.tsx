@@ -3,8 +3,8 @@ import { Activity, Brain, Apple, Zap, CheckCircle2 } from "lucide-react";
 import Plasma from "@/components/reactbits/Plasma";
 
 export const metadata = {
-  title: "Our Services | Holistic Health Clinic",
-  description: "Comprehensive Physiotherapy, Nutrition, and Counselling services in Vikhroli, Mumbai.",
+  title: "Services | Holistic Health Clinic",
+  description: "Comprehensive Physiotherapy, Nutrition, and Counselling services in Vikhroli East, Mumbai.",
 };
 
 export default function ServicesPage() {
@@ -13,14 +13,14 @@ export default function ServicesPage() {
       <div className="container mx-auto px-6 max-w-6xl space-y-16">
         
         {/* Header */}
-        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-primary/5">
+        <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
           <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
             <Plasma 
               color="#1FA44B"
               speed={1}
               direction="forward"
               scale={1}
-              opacity={1}
+              opacity={0.15}
               mouseInteractive={false}
             />
           </div>
@@ -74,7 +74,7 @@ export default function ServicesPage() {
               </div>
             </div>
             
-            <div className="flex-1 w-full bg-slate-100 dark:bg-slate-800/50 rounded-3xl p-8 border border-border">
+            <div className="flex-1 w-full bg-gradient-to-br from-primary/5 to-transparent dark:from-primary/10 dark:to-transparent border border-primary/10 p-8 rounded-3xl shadow-sm">
                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                  <Zap className="h-6 w-6 text-primary" /> Advanced Modalities
                </h3>
@@ -93,16 +93,12 @@ export default function ServicesPage() {
                    <span className="font-medium">TENS & IFT</span>
                    <span className="text-muted-foreground">Pain Relief Therapy</span>
                  </li>
-                 <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
+                 <li className="flex justify-between items-center pb-2 text-sm">
                    <span className="font-medium">Ultrasound</span>
                    <span className="text-muted-foreground">Deep Tissue Healing</span>
                  </li>
-                 <li className="flex justify-between items-center pb-2 text-sm">
-                   <span className="font-medium">Wax Bath</span>
-                   <span className="text-muted-foreground">Heat Therapy</span>
-                 </li>
                </ul>
- 
+
                <WhatsAppButton className="w-full text-center justify-center">Inquire about Physiotherapy</WhatsAppButton>
             </div>
           </section>
@@ -137,7 +133,7 @@ export default function ServicesPage() {
               </div>
             </div>
             
-            <div className="flex-1 w-full bg-slate-100 dark:bg-slate-800/50 rounded-3xl p-8 border border-border">
+            <div className="flex-1 w-full bg-gradient-to-br from-secondary/5 to-transparent dark:from-secondary/10 dark:to-transparent border border-secondary/10 p-8 rounded-3xl shadow-sm">
                <h3 className="text-xl font-semibold mb-4">Therapeutic Techniques Used</h3>
                <p className="text-muted-foreground mb-6 text-sm">Our sessions utilize evidence-based psychological frameworks tailored to your specific emotional needs.</p>
                
@@ -191,7 +187,7 @@ export default function ServicesPage() {
               </ul>
             </div>
             
-            <div className="flex-1 w-full bg-slate-100 dark:bg-slate-800/50 rounded-3xl p-8 border border-border">
+            <div className="flex-1 w-full bg-gradient-to-br from-amber-500/5 to-transparent dark:from-amber-500/10 dark:to-transparent border border-amber-500/10 p-8 rounded-3xl shadow-sm">
                <h3 className="text-xl font-semibold mb-4">Food as Medicine</h3>
                <p className="text-muted-foreground mb-6">We don't believe in crash diets. We build sustainable, enjoyable eating habits that fuel your body and mind for the long term.</p>
                <WhatsAppButton className="w-full text-center justify-center bg-amber-600 hover:bg-amber-700 focus:ring-amber-600">Consult for Diet Plan</WhatsAppButton>

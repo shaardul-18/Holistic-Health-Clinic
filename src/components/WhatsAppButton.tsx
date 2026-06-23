@@ -6,10 +6,11 @@ import { MessageCircle } from "lucide-react";
 
 interface WhatsAppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
+  message?: string;
 }
 
 export const WhatsAppButton = React.forwardRef<HTMLButtonElement, WhatsAppButtonProps>(
-  ({ children = <><span className="hidden sm:inline">Chat on WhatsApp</span><span className="sm:hidden">Chat</span></>, className, ...props }, ref) => {
+  ({ children = <><span className="hidden sm:inline">Chat on WhatsApp</span><span className="sm:hidden">Chat</span></>, className, message = "Hello, I would like to inquire about an appointment.", ...props }, ref) => {
     const handleClick = () => {
       // Log event
       fetch("/api/analytics", {
@@ -22,7 +23,6 @@ export const WhatsAppButton = React.forwardRef<HTMLButtonElement, WhatsAppButton
         }),
       }).catch(err => console.error(err));
 
-      const message = "Hello, I would like to inquire about an appointment.";
       const whatsappUrl = `https://wa.me/918591180090?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank");
     };
