@@ -81,7 +81,7 @@ IMPORTANT RULES:
 5. You don't have access to real-time booking schedules.`;
 
     const { text } = await generateText({
-      model: google('gemini-2.5-flash'),
+      model: google('gemini-1.5-flash'),
       system: systemPrompt,
       messages,
     });

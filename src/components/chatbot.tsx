@@ -72,15 +72,27 @@ export function Chatbot() {
 
   return (
     <>
-      {/* Floating Action Button */}
+      {/* Floating Action Button with Interaction Cue */}
       {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 p-4 bg-primary text-primary-foreground rounded-full shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-          aria-label="Open chat"
-        >
-          <MessageCircle className="h-6 w-6" />
-        </button>
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+          {/* Tooltip Cue */}
+          <div className="hidden sm:flex bg-background border shadow-lg rounded-full py-2 px-4 text-xs font-bold text-foreground/80 animate-bounce pointer-events-none">
+            Need help? Chat with us!
+          </div>
+          {/* Button */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative p-4 bg-primary text-primary-foreground rounded-full shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Open chat"
+          >
+            {/* Pulsing indicator */}
+            <span className="absolute top-0 right-0 -mt-1 -mr-1 flex h-4 w-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-secondary border-2 border-background"></span>
+            </span>
+            <MessageCircle className="h-6 w-6" />
+          </button>
+        </div>
       )}
 
       {/* Chat Window */}

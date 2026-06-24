@@ -2,65 +2,127 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { ThemeToggle } from "./theme-toggle";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "About", href: "/about" },
+    { name: "Location", href: "/location" }
+  ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
-        <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-105" onClick={() => setIsOpen(false)}>
+    <header className="fixed top-4 left-0 right-0 z-50 w-full flex flex-col items-center px-4 pointer-events-none">
+      <div className="w-full max-w-6xl bg-background/85 dark:bg-zinc-950/85 backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/[0.03] flex h-16 items-center justify-between px-4 sm:px-6 pointer-events-auto transition-all duration-300">
+        
+        {/* Logo and title */}
+        <Link href="/" className="flex items-center gap-2.5 transition-transform hover:scale-102" onClick={() => setIsOpen(false)}>
           <Image 
             src="/logo-new.png" 
             alt="Holistic Health Clinic Logo" 
-            width={60} 
-            height={60}
+            width={40} 
+            height={40}
             className="object-contain"
           />
           <div className="hidden sm:flex flex-col">
-            <span className="text-xl font-bold text-primary leading-none tracking-tight">HOLISTIC HEALTH</span>
-            <span className="text-sm font-medium text-secondary">Physiotherapy & Counselling</span>
+            <span className="text-sm font-extrabold tracking-wider text-foreground leading-none">HOLISTIC HEALTH</span>
+            <span className="text-[9px] font-bold text-secondary uppercase tracking-widest mt-0.5">Physiotherapy & Counselling</span>
           </div>
         </Link>
-        
+
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 font-bold text-lg text-foreground/90">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
-          <Link href="/events" className="hover:text-primary transition-colors">Events</Link>
-          <Link href="/about" className="hover:text-primary transition-colors">About</Link>
-          <Link href="/location" className="hover:text-primary transition-colors">Location</Link>
+        <nav className="hidden xl:flex items-center gap-1">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 ${
+                  isActive 
+                    ? "text-primary bg-primary/10 dark:bg-primary/20" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                }`}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </nav>
 
+        {/* Action Controls */}
         <div className="flex items-center gap-2">
+          {/* Fallback Nav for medium screens (between md and xl) where we have less space */}
+          <nav className="hidden md:flex xl:hidden items-center gap-1 mr-2">
+            {navItems.slice(0, 4).map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`relative px-3 py-1.5 rounded-full text-[10px] font-bold tracking-wider uppercase transition-all duration-300 ${
+                    isActive 
+                      ? "text-primary bg-primary/10 dark:bg-primary/20" 
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </nav>
+
           <ThemeToggle />
-          <WhatsAppButton />
+          <WhatsAppButton 
+            className="bg-[#1886C6] hover:bg-[#1886C6]/90 text-white shadow-md shadow-[#1886C6]/15 text-xs font-bold tracking-wider uppercase px-4 py-2 sm:px-5 sm:py-2.5 rounded-full flex items-center gap-1.5 shrink-0"
+            message="Hello, I would like to request a callback regarding a consultation/appointment at your clinic. Please call me back when free. Thank you!"
+          >
+            <span className="hidden lg:inline">Request a Callback</span>
+            <span className="lg:hidden">Callback</span>
+          </WhatsAppButton>
           
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 md:hidden text-foreground hover:text-primary transition-colors focus:outline-none"
+            className="p-2 md:hidden text-foreground hover:text-primary transition-colors focus:outline-none pointer-events-auto"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Dropdown */}
       {isOpen && (
-        <div className="md:hidden border-t bg-background/98 backdrop-blur shadow-lg animate-in slide-in-from-top-5 duration-200">
-          <nav className="flex flex-col p-4 space-y-2 font-bold text-lg text-foreground/90">
-            <Link href="/" className="hover:text-primary transition-colors py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link href="/services" className="hover:text-primary transition-colors py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>Services</Link>
-            <Link href="/events" className="hover:text-primary transition-colors py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>Events</Link>
-            <Link href="/about" className="hover:text-primary transition-colors py-2 border-b border-border/50" onClick={() => setIsOpen(false)}>About</Link>
-            <Link href="/location" className="hover:text-primary transition-colors py-2" onClick={() => setIsOpen(false)}>Location</Link>
+        <div className="w-full max-w-[calc(100%-1rem)] sm:max-w-md mt-2 md:hidden bg-background/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-border/60 rounded-3xl shadow-xl p-4 flex flex-col space-y-2 animate-in slide-in-from-top-4 duration-300 pointer-events-auto">
+          <nav className="flex flex-col space-y-1 text-foreground/90">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link 
+                  key={item.name}
+                  href={item.href} 
+                  className={`flex items-center justify-between py-2.5 px-4 rounded-2xl text-xs font-extrabold tracking-widest uppercase transition-all duration-200 ${
+                    isActive 
+                      ? "bg-primary/10 text-primary" 
+                      : "hover:bg-muted/50 text-foreground/80 hover:text-foreground"
+                  }`} 
+                  onClick={() => setIsOpen(false)}
+                >
+                  <span>{item.name}</span>
+                  <span className="text-muted-foreground/30 font-light">&rarr;</span>
+                </Link>
+              );
+            })}
           </nav>
         </div>
       )}
