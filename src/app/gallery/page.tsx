@@ -25,6 +25,23 @@ export default function GalleryPage() {
         "/clinic-1.png",
         "/clinic-2.png"
       ]
+    },
+    {
+      title: "Physiotherapy Equipment",
+      description: "State-of-the-art tools and equipment for physical rehabilitation.",
+      images: [
+        "/equip-1.jpg",
+        "/equip-2.jpg",
+        "/equip-3.jpg"
+      ]
+    },
+    {
+      title: "Patient Treatments",
+      description: "Hands-on physiotherapy, ultrasound therapy, and active manipulation.",
+      images: [
+        "/treat-1.jpg",
+        "/treat-2.jpg"
+      ]
     }
   ];
 
