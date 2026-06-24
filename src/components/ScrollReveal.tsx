@@ -15,7 +15,7 @@ export function ScrollReveal({
   children,
   className = "",
   animation = "slide-up",
-  duration = 800,
+  duration = 1500,
   delay = 0,
   threshold = 0.1,
 }: ScrollRevealProps) {

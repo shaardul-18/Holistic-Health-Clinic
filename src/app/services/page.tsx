@@ -1,6 +1,6 @@
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Activity, Brain, Apple, Zap, CheckCircle2 } from "lucide-react";
-import Plasma from "@/components/reactbits/Plasma";
+import Threads from "@/components/reactbits/Threads";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata = {
@@ -17,13 +17,11 @@ export default function ServicesPage() {
         <ScrollReveal animation="slide-up">
           <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
             <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-              <Plasma 
-                color="#1FA44B"
-                speed={1}
-                direction="forward"
-                scale={1}
-                opacity={0.15}
-                mouseInteractive={false}
+              <Threads
+                amplitude={0.8}
+                distance={0.2}
+                enableMouseInteraction={false}
+                color={[0.1, 0.6, 0.95]}
               />
             </div>
             <div className="relative z-10 space-y-4">

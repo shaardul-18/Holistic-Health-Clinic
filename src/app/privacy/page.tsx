@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import LineWaves from "@/components/reactbits/LineWaves";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Holistic Health Clinic",
@@ -7,11 +9,37 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="container mx-auto px-4 pt-28 pb-16 max-w-4xl">
-      <h1 className="text-4xl font-bold tracking-tight mb-8">Privacy Policy</h1>
-      
-      <div className="prose prose-slate dark:prose-invert max-w-none space-y-6 text-muted-foreground">
-        <p><strong>Last Updated:</strong> June 2026</p>
+    <main className="flex-1 flex flex-col bg-background pt-28 pb-24">
+      <div className="container mx-auto px-6 max-w-4xl space-y-16">
+        
+        {/* Header */}
+        <ScrollReveal animation="slide-up">
+          <div className="relative py-12 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
+            <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+              <LineWaves
+                speed={0.1}
+                innerLineCount={10}
+                outerLineCount={15}
+                warpIntensity={0.2}
+                rotation={0}
+                edgeFadeWidth={0.2}
+                colorCycleSpeed={0.5}
+                brightness={0.15}
+                color1="#1886C6"
+                color2="#22c55e"
+                color3="#1886C6"
+                enableMouseInteraction={false}
+              />
+            </div>
+            <div className="relative z-10 space-y-2">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Privacy Policy</h1>
+              <p className="text-muted-foreground font-medium">Last Updated: June 2026</p>
+            </div>
+          </div>
+        </ScrollReveal>
+        
+        <div className="prose prose-slate dark:prose-invert max-w-none space-y-10 text-muted-foreground">
+          <ScrollReveal animation="fade-in" delay={150}>
 
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-foreground">1. Introduction</h2>
@@ -63,7 +91,9 @@ export default function PrivacyPolicyPage() {
             If you have questions or comments about this notice, you may contact us using the WhatsApp button provided on our website.
           </p>
         </section>
+          </ScrollReveal>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }

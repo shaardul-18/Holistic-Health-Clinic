@@ -1,7 +1,7 @@
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
 import Image from "next/image";
-import LineWaves from "@/components/reactbits/LineWaves";
+import Plasma from "@/components/reactbits/Plasma";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata = {
@@ -18,19 +18,13 @@ export default function LocationPage() {
         <ScrollReveal animation="slide-up">
           <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
             <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-              <LineWaves
-                speed={0.15}
-                innerLineCount={20}
-                outerLineCount={24}
-                warpIntensity={0.5}
-                rotation={-30}
-                edgeFadeWidth={0.1}
-                colorCycleSpeed={0.5}
-                brightness={0.25}
-                color1="#22c55e"
-                color2="#1886C6"
-                color3="#0ea5e9"
-                enableMouseInteraction={false}
+              <Plasma 
+                color="#1FA44B"
+                speed={0.5}
+                direction="forward"
+                scale={1}
+                opacity={0.15}
+                mouseInteractive={false}
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 pointer-events-none" style={{ zIndex: 2 }}></div>
@@ -43,8 +37,8 @@ export default function LocationPage() {
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mt-8">
-          {/* Map and Info (Left Column) */}
+        <div className="max-w-3xl mx-auto mt-8">
+          {/* Map and Info */}
           <ScrollReveal animation="slide-right" delay={150}>
             <div className="space-y-8">
               <div className="bg-card rounded-3xl overflow-hidden shadow-lg border border-border">
@@ -108,35 +102,6 @@ export default function LocationPage() {
             </div>
           </ScrollReveal>
 
-          {/* Clinic Images Gallery (Right Column) */}
-          <ScrollReveal animation="slide-left" delay={300}>
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Inside Our Clinic</h2>
-              <div className="grid grid-cols-1 gap-6">
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-md border border-border group">
-                  <Image 
-                    src="/clinic-1.png" 
-                    alt="Clinic Interior View 1" 
-                    fill 
-                    unoptimized
-                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                  />
-                </div>
-                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-md border border-border group">
-                  <Image 
-                    src="/clinic-2.png" 
-                    alt="Clinic Interior View 2" 
-                    fill 
-                    unoptimized
-                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                  />
-                </div>
-              </div>
-              <p className="text-sm text-center text-muted-foreground italic mt-4">
-                Our clinic is designed to provide a calm, welcoming, and sterile environment for your complete comfort during treatments.
-              </p>
-            </div>
-          </ScrollReveal>
         </div>
 
       </div>

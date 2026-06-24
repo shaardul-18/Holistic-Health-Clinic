@@ -59,7 +59,7 @@ function HolisticRing({
 
   return (
     <div 
-      className="relative flex items-center justify-center w-[280px] h-[280px] transition-all duration-[2000ms] cubic-bezier(0.25, 1, 0.5, 1) select-none"
+      className="relative flex items-center justify-center w-[280px] h-[280px] transition-all duration-[4000ms] cubic-bezier(0.25, 1, 0.5, 1) select-none"
       style={{
         transform: currentTransform,
       }}
@@ -75,7 +75,7 @@ function HolisticRing({
 
       {/* Rotating SVG Ticks Ring */}
       <div
-        className={`absolute inset-0 flex items-center justify-center ${colorClass} transition-colors duration-[2000ms]`}
+        className={`absolute inset-0 flex items-center justify-center ${colorClass} transition-colors duration-[4000ms]`}
         style={{
           animation: `spin ${speed}s linear infinite ${rotationDirection === "reverse" ? "reverse" : ""}`,
         }}
@@ -84,7 +84,7 @@ function HolisticRing({
           width={size} 
           height={size} 
           viewBox={`0 0 ${size} ${size}`} 
-          className={`w-full h-full transition-opacity duration-[2000ms] ${
+          className={`w-full h-full transition-opacity duration-[4000ms] ${
             isMerged ? "opacity-95" : "opacity-60"
           }`}
         >
@@ -94,13 +94,13 @@ function HolisticRing({
 
       {/* Center Label Text */}
       <div 
-        className="absolute flex flex-col items-center justify-center text-center px-6 pointer-events-none transition-all duration-[2000ms]"
+        className="absolute flex flex-col items-center justify-center text-center px-6 pointer-events-none transition-all duration-[4000ms]"
       >
         {isCenter ? (
           <div className="relative w-full flex items-center justify-center min-h-[60px]">
             {/* Original "Physical Health" Label */}
             <span 
-              className={`font-serif text-lg md:text-xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[1500ms] ${
+              className={`font-serif text-lg md:text-xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[3000ms] ${
                 isMerged ? "opacity-0 scale-75 blur-xs" : "opacity-100 scale-100"
               }`}
             >
@@ -109,7 +109,7 @@ function HolisticRing({
             
             {/* Merged "Complete Wellness" Label */}
             <span 
-              className={`absolute font-serif text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-amber-500 bg-clip-text text-transparent leading-tight transition-all duration-[2000ms] filter drop-shadow-[0_0_12px_rgba(31,164,75,0.4)] ${
+              className={`absolute font-serif text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-amber-500 bg-clip-text text-transparent leading-tight transition-all duration-[4000ms] filter drop-shadow-[0_0_12px_rgba(31,164,75,0.4)] ${
                 isMerged ? "opacity-100 scale-110 translate-y-0" : "opacity-0 scale-90 translate-y-2 pointer-events-none blur-xs"
               }`}
             >
@@ -118,7 +118,7 @@ function HolisticRing({
           </div>
         ) : (
           <span 
-            className={`font-serif text-lg md:text-xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[1500ms] ${
+            className={`font-serif text-lg md:text-xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[3000ms] ${
               isMerged ? "opacity-0 scale-75 blur-xs" : "opacity-100 scale-100"
             }`}
           >
@@ -202,7 +202,7 @@ export function HolisticApproach() {
       {/* Glow Aura behind the center ring when merged */}
       <div className="relative flex flex-col items-center justify-center w-full max-w-4xl">
         <div 
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[340px] h-[340px] bg-gradient-to-r from-primary/20 via-secondary/25 to-amber-500/20 blur-3xl pointer-events-none transition-all duration-[2000ms] ease-out ${
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[340px] h-[340px] bg-gradient-to-r from-primary/20 via-secondary/25 to-amber-500/20 blur-3xl pointer-events-none transition-all duration-[4000ms] ease-out ${
             isMerged ? "opacity-100 scale-110" : "opacity-0 scale-90"
           }`}
         />
