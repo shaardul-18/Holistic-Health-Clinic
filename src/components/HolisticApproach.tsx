@@ -217,7 +217,7 @@ export function HolisticApproach() {
             rotationDirection="normal"
             colorClass="text-primary/70"
             tiltAngle={-12}
-            speed={35}
+            speed={70}
             isMerged={isMerged}
             transformOffset={leftOffset}
           />
@@ -227,7 +227,7 @@ export function HolisticApproach() {
             rotationDirection="reverse"
             colorClass={isMerged ? "text-secondary" : "text-secondary/70"}
             tiltAngle={0}
-            speed={30}
+            speed={60}
             isMerged={isMerged}
             transformOffset="translate(0px, 0px)"
             isCenter={true}
@@ -238,7 +238,7 @@ export function HolisticApproach() {
             rotationDirection="normal"
             colorClass="text-amber-500/70"
             tiltAngle={12}
-            speed={40}
+            speed={80}
             isMerged={isMerged}
             transformOffset={rightOffset}
           />

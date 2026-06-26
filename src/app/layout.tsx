@@ -6,7 +6,6 @@ import { AuthProvider } from "@/components/auth-provider";
 import { Navbar } from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { AnalyticsTracker } from "@/components/analytics-tracker";
-import { NewsletterPopup } from "@/components/newsletter-popup";
 import { Chatbot } from "@/components/chatbot";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/Footer";
@@ -51,10 +50,53 @@ export default function RootLayout({
 }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Holistic Health Clinic",
+    "image": "https://holistichealthclinic.in/clinic-logo.png",
+    "@id": "https://holistichealthclinic.in",
+    "url": "https://holistichealthclinic.in",
+    "telephone": "+91-9987258931", 
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Raj Legacy, Shop No. 1, Ground Floor",
+      "addressLocality": "Vikhroli East, Mumbai",
+      "postalCode": "400083",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 19.1118,
+      "longitude": 72.9272
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "21:00"
+    },
+    "medicalSpecialty": [
+      "Physiotherapy",
+      "Dietetics"
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -89,7 +131,6 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
-            <NewsletterPopup />
             <Chatbot />
             <CookieBanner />
             <Toaster />

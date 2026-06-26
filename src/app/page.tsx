@@ -19,10 +19,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { ReviewsMarquee } from "@/components/ReviewsMarquee";
 import { FAQ } from "@/components/FAQ";
-import LineWaves from "@/components/reactbits/LineWaves";
-import Threads from "@/components/reactbits/Threads";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { HolisticApproach } from "@/components/HolisticApproach";
+import dynamic from "next/dynamic";
+
+const LineWaves = dynamic(() => import("@/components/reactbits/LineWaves"));
+const Threads = dynamic(() => import("@/components/reactbits/Threads"));
+const HolisticApproach = dynamic(() => import("@/components/HolisticApproach").then(m => m.HolisticApproach));
+const TextReveal = dynamic(() => import("@/components/animations/TextReveal").then(m => m.TextReveal));
+const Plasma = dynamic(() => import("@/components/reactbits/Plasma"));
 
 export default function Home() {
   return (
@@ -33,7 +37,7 @@ export default function Home() {
         {/* Animated LineWaves Background */}
         <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
           <LineWaves
-            speed={0.2}
+            speed={0.03}
             innerLineCount={28}
             outerLineCount={32}
             warpIntensity={0.6}

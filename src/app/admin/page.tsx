@@ -6,7 +6,8 @@ import { format, subDays } from "date-fns";
 export default async function AdminDashboard() {
   const totalPageViews = await prisma.analyticsEvent.count({ where: { eventType: "PAGE_VIEW" } });
   const totalWhatsAppClicks = await prisma.analyticsEvent.count({ where: { eventType: "WHATSAPP_CLICK" } });
-  const totalSubscribers = await prisma.subscriber.count();
+  const totalChatStarts = await prisma.analyticsEvent.count({ where: { eventType: "CHAT_START" } });
+  const totalChatMessages = await prisma.analyticsEvent.count({ where: { eventType: "CHAT_MESSAGE" } });
 
   // Get last 7 days trends for PAGE_VIEWS
   const sevenDaysAgoDate = subDays(new Date(), 7);
@@ -41,7 +42,11 @@ export default async function AdminDashboard() {
   // Top Pages
   const pageViews = await prisma.analyticsEvent.groupBy({
     by: ['path'],
-    where: { eventType: "PAGE_VIEW", path: { not: null } },
+    where: { 
+      eventType: "PAGE_VIEW", 
+      path: { not: null },
+      NOT: { path: "/events" }
+    },
     _count: { id: true },
     orderBy: { _count: { id: 'desc' } },
     take: 5
@@ -56,7 +61,7 @@ export default async function AdminDashboard() {
     <div className="space-y-6">
       <h1 className="text-3xl font-bold tracking-tight">Analytics Overview</h1>
       
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-4">
         <AnimatedCard>
           <div className="text-sm font-medium text-muted-foreground">Total Page Views</div>
           <div className="text-3xl font-bold">{totalPageViews}</div>
@@ -66,8 +71,12 @@ export default async function AdminDashboard() {
           <div className="text-3xl font-bold text-[#25D366]">{totalWhatsAppClicks}</div>
         </AnimatedCard>
         <AnimatedCard>
-          <div className="text-sm font-medium text-muted-foreground">Newsletter Subscribers</div>
-          <div className="text-3xl font-bold text-primary">{totalSubscribers}</div>
+          <div className="text-sm font-medium text-muted-foreground">Chat Sessions</div>
+          <div className="text-3xl font-bold text-blue-500">{totalChatStarts}</div>
+        </AnimatedCard>
+        <AnimatedCard>
+          <div className="text-sm font-medium text-muted-foreground">Chat Messages</div>
+          <div className="text-3xl font-bold text-purple-500">{totalChatMessages}</div>
         </AnimatedCard>
       </div>
 

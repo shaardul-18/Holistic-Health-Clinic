@@ -1,9 +1,12 @@
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { GraduationCap, Award, HeartHandshake, Users } from "lucide-react";
 import Image from "next/image";
-import Threads from "@/components/reactbits/Threads";
+import dynamic from "next/dynamic";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TextReveal } from "@/components/animations/TextReveal";
+import { PatientJourneys } from "@/components/PatientJourneys";
 
+const Threads = dynamic(() => import("@/components/reactbits/Threads"));
 export const metadata = {
   title: "About | Holistic Health Clinic",
   description: "Learn about Holistic Health Clinic, our 20+ years of practicing experience, qualifications, and holistic approach in Vikhroli East, Mumbai.",
@@ -11,26 +14,30 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="flex-1 flex flex-col bg-background pt-28 pb-24">
-      <div className="container mx-auto px-6 max-w-5xl space-y-16">
+    <main className="flex-1 flex flex-col bg-background pt-28 pb-24 relative overflow-hidden">
+      {/* Animated Hero Background with smooth fade out */}
+      <div className="absolute top-0 left-0 w-full h-[600px] pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div className="absolute inset-0 opacity-40">
+          <Threads
+            amplitude={1.2}
+            distance={0.5}
+            enableMouseInteraction={false}
+            color={[0.1, 0.6, 0.95]}
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background" />
+      </div>
+      <div className="container mx-auto px-6 max-w-5xl space-y-16 relative z-10">
         
         {/* Header */}
-        <ScrollReveal animation="slide-up">
-          <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
-            <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-              <Threads
-                amplitude={0.8}
-                distance={0.2}
-                enableMouseInteraction={false}
-                color={[0.1, 0.6, 0.95]}
-              />
-            </div>
-            <div className="relative z-10 space-y-4">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">About Holistic Health Clinic</h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Dedicated to empowering patients through integrated physical rehabilitation, proper nutrition, and mental wellness.
-              </p>
-            </div>
+        <ScrollReveal animation="blur-in" duration={2500}>
+          <div className="text-center space-y-6 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-tight">
+              <TextReveal delay={400}>Our Story of</TextReveal> <TextReveal delay={700} direction="down" gradientClass="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Holistic Healing</TextReveal>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed font-light">
+              Dedicated to empowering patients through integrated physical rehabilitation, proper nutrition, and mental wellness.
+            </p>
           </div>
         </ScrollReveal>
 
@@ -56,8 +63,8 @@ export default function AboutPage() {
                    <Users className="h-6 w-6" />
                  </div>
                  <div>
-                   <p className="text-2xl font-bold text-foreground">5000+</p>
-                   <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">Patients Treated</p>
+                   <p className="text-2xl font-bold text-foreground">20,000+</p>
+                   <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">Patients Treated (20 Years)</p>
                  </div>
               </div>
             </ScrollReveal>
@@ -140,6 +147,15 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
         </div>
+
+        {/* Patient Journeys / Success Stories */}
+        <ScrollReveal animation="fade-up" duration={2000}>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Clinical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Success Stories</span></h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Real journeys from chronic pain to complete recovery through our holistic, integrated approach.</p>
+          </div>
+          <PatientJourneys />
+        </ScrollReveal>
 
         {/* Philosophy Section */}
         <ScrollReveal animation="scale-up">

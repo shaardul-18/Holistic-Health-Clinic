@@ -16,6 +16,7 @@ export function Navbar() {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Gallery", href: "/gallery" },
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Location", href: "/location" }
   ];
@@ -63,7 +64,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           {/* Fallback Nav for medium screens (between md and xl) where we have less space */}
           <nav className="hidden md:flex xl:hidden items-center gap-1 mr-2">
-            {navItems.slice(0, 4).map((item) => {
+            {navItems.slice(0, 5).map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link

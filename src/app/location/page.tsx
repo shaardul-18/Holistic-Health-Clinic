@@ -1,9 +1,11 @@
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
 import Image from "next/image";
-import Plasma from "@/components/reactbits/Plasma";
+import dynamic from "next/dynamic";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TextReveal } from "@/components/animations/TextReveal";
 
+const LineWaves = dynamic(() => import("@/components/reactbits/LineWaves"));
 export const metadata = {
   title: "Location | Holistic Health Clinic",
   description: "Visit Holistic Health Clinic in Vikhroli East, Mumbai.",
@@ -11,29 +13,38 @@ export const metadata = {
 
 export default function LocationPage() {
   return (
-    <main className="flex-1 flex flex-col bg-background pt-28 pb-24">
-      <div className="container mx-auto px-6 max-w-6xl space-y-16">
+    <main className="flex-1 flex flex-col bg-background pt-28 pb-24 relative overflow-hidden">
+      {/* Animated Hero Background with smooth fade out */}
+      <div className="absolute top-0 left-0 w-full h-[600px] pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div className="absolute inset-0 opacity-40">
+          <LineWaves
+            speed={0.15}
+            innerLineCount={20}
+            outerLineCount={24}
+            warpIntensity={0.5}
+            rotation={15}
+            edgeFadeWidth={0.1}
+            colorCycleSpeed={0.5}
+            brightness={0.25}
+            color1="#1886C6"
+            color2="#22c55e"
+            color3="#1886C6"
+            enableMouseInteraction={false}
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background" />
+      </div>
+      <div className="container mx-auto px-6 max-w-6xl space-y-16 relative z-10">
         
         {/* Header */}
-        <ScrollReveal animation="slide-up">
-          <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
-            <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-              <Plasma 
-                color="#1FA44B"
-                speed={0.5}
-                direction="forward"
-                scale={1}
-                opacity={0.15}
-                mouseInteractive={false}
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 pointer-events-none" style={{ zIndex: 2 }}></div>
-            <div className="relative z-10 space-y-4 max-w-2xl mx-auto drop-shadow-xl">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Visit Our Clinic</h1>
-              <p className="text-xl text-foreground/90 font-medium leading-relaxed">
-                Conveniently located in Vikhroli East, Mumbai. We look forward to welcoming you to our modern, state-of-the-art healing space.
-              </p>
-            </div>
+        <ScrollReveal animation="blur-in" duration={2500}>
+          <div className="text-center space-y-6 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-tight">
+              <TextReveal delay={100}>Visit</TextReveal> <TextReveal delay={400} direction="down" gradientClass="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Our Clinic</TextReveal>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed font-light">
+              Conveniently located in Vikhroli East, Mumbai. We look forward to welcoming you to our modern, state-of-the-art healing space.
+            </p>
           </div>
         </ScrollReveal>
 

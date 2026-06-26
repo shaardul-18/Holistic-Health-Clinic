@@ -1,8 +1,11 @@
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Activity, Brain, Apple, Zap, CheckCircle2 } from "lucide-react";
-import Threads from "@/components/reactbits/Threads";
+import dynamic from "next/dynamic";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TextReveal } from "@/components/animations/TextReveal";
+import { InteractiveBodyMap } from "@/components/InteractiveBodyMap";
 
+const Threads = dynamic(() => import("@/components/reactbits/Threads"));
 export const metadata = {
   title: "Services | Holistic Health Clinic",
   description: "Comprehensive Physiotherapy, Nutrition, and Counselling services in Vikhroli East, Mumbai.",
@@ -10,33 +13,41 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="flex-1 flex flex-col bg-background pt-28 pb-24">
-      <div className="container mx-auto px-6 max-w-6xl space-y-16">
+    <main className="flex-1 flex flex-col bg-background pt-28 pb-24 relative overflow-hidden">
+      {/* Animated Hero Background with smooth fade out */}
+      <div className="absolute top-0 left-0 w-full h-[600px] pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div className="absolute inset-0 opacity-40">
+          <Threads
+            amplitude={1.2}
+            distance={0.5}
+            enableMouseInteraction={false}
+            color={[0.1, 0.6, 0.95]}
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background" />
+      </div>
+      <div className="container mx-auto px-6 max-w-6xl space-y-16 relative z-10">
         
         {/* Header */}
-        <ScrollReveal animation="slide-up">
-          <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
-            <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-              <Threads
-                amplitude={0.8}
-                distance={0.2}
-                enableMouseInteraction={false}
-                color={[0.1, 0.6, 0.95]}
-              />
-            </div>
-            <div className="relative z-10 space-y-4">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Our Services</h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                We provide a comprehensive, multi-disciplinary approach to health, focusing on the deep connection between physical well-being, mental health, and proper nutrition.
-              </p>
-              <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold rounded-full mt-4">
-                Online Consultation & Visiting Expert By Appointment Only
-              </div>
+        <ScrollReveal animation="blur-in" duration={2500}>
+          <div className="text-center space-y-6 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-tight">
+              <TextReveal delay={100}>Our</TextReveal> <TextReveal delay={400} direction="down" gradientClass="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Services</TextReveal>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed font-light">
+              We provide a comprehensive, multi-disciplinary approach to health, focusing on the deep connection between physical well-being, mental health, and proper nutrition.
+            </p>
+            <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold rounded-full mt-4 text-sm md:text-base">
+              Online Consultation & Visiting Expert By Appointment Only
             </div>
           </div>
         </ScrollReveal>
 
-        <div className="space-y-24">
+        <ScrollReveal animation="fade-up" duration={1500} className="max-w-4xl mx-auto mt-24 px-6 z-10 relative">
+          <InteractiveBodyMap />
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-up" duration={1500} className="max-w-7xl mx-auto px-6 mt-32 space-y-16">
           {/* Physiotherapy */}
           <section className="flex flex-col md:flex-row gap-12 items-start overflow-hidden">
             <div className="flex-1 w-full">
@@ -218,7 +229,7 @@ export default function ServicesPage() {
               </ScrollReveal>
             </div>
           </section>
-        </div>
+        </ScrollReveal>
 
       </div>
     </main>

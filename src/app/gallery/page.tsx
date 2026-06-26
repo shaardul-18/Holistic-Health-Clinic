@@ -1,7 +1,9 @@
 import Image from "next/image";
-import LineWaves from "@/components/reactbits/LineWaves";
+import dynamic from "next/dynamic";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TextReveal } from "@/components/animations/TextReveal";
 
+const LineWaves = dynamic(() => import("@/components/reactbits/LineWaves"));
 export const metadata = {
   title: "Gallery | Holistic Health Clinic",
   description: "Moments of healing, community wellness camps, and diagnostic checkups at Holistic Health Clinic.",
@@ -19,20 +21,13 @@ export default function GalleryPage() {
       ]
     },
     {
-      title: "Clinic Interiors",
-      description: "Our modern and relaxing clinical environment for physiotherapy and counselling.",
+      title: "Our Clinic Environment",
+      description: "A welcoming, state-of-the-art facility designed for your comfort and recovery.",
       images: [
-        "/clinic-1.png",
-        "/clinic-2.png"
-      ]
-    },
-    {
-      title: "Physiotherapy Equipment",
-      description: "State-of-the-art tools and equipment for physical rehabilitation.",
-      images: [
-        "/equip-1.jpg",
-        "/equip-2.jpg",
-        "/equip-3.jpg"
+        "/gallery/clinic-entrance.png",
+        "/gallery/clinic-bed.png",
+        "/gallery/electrotherapy-bed.png",
+        "/gallery/clinic-room-new-1.png"
       ]
     },
     {
@@ -40,41 +35,47 @@ export default function GalleryPage() {
       description: "Hands-on physiotherapy, ultrasound therapy, and active manipulation.",
       images: [
         "/treat-1.jpg",
-        "/treat-2.jpg"
+        "/treat-2.jpg",
+        "/treat-3.jpg",
+        "/gallery/patient-exercise.jpg"
       ]
     }
   ];
 
   return (
-    <main className="flex-1 flex flex-col bg-background pt-28 pb-24">
-      <div className="container mx-auto px-6 max-w-6xl space-y-24">
+    <main className="flex-1 flex flex-col bg-background pt-28 pb-24 relative overflow-hidden">
+      {/* Animated Hero Background with smooth fade out */}
+      <div className="absolute top-0 left-0 w-full h-[600px] pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
+        <div className="absolute inset-0 opacity-40">
+          <LineWaves
+            speed={0.15}
+            innerLineCount={20}
+            outerLineCount={24}
+            warpIntensity={0.5}
+            rotation={15}
+            edgeFadeWidth={0.1}
+            colorCycleSpeed={0.5}
+            brightness={0.25}
+            color1="#1886C6"
+            color2="#22c55e"
+            color3="#1886C6"
+            enableMouseInteraction={false}
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background" />
+      </div>
+      <div className="container mx-auto px-6 max-w-6xl space-y-24 relative z-10">
+
         
         {/* Header */}
-        <ScrollReveal animation="slide-up">
-          <div className="relative py-16 px-6 text-center max-w-3xl mx-auto space-y-4 rounded-3xl overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
-            <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-              <LineWaves
-                speed={0.15}
-                innerLineCount={20}
-                outerLineCount={24}
-                warpIntensity={0.5}
-                rotation={15}
-                edgeFadeWidth={0.1}
-                colorCycleSpeed={0.5}
-                brightness={0.25}
-                color1="#1886C6"
-                color2="#22c55e"
-                color3="#1886C6"
-                enableMouseInteraction={false}
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 pointer-events-none" style={{ zIndex: 2 }}></div>
-            <div className="relative z-10 space-y-4 max-w-2xl mx-auto drop-shadow-xl">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Clinic Gallery</h1>
-              <p className="text-xl text-foreground/90 font-medium leading-relaxed">
-                A glimpse into our community checkup camps, diagnostic drives, and day-to-day healing environment.
-              </p>
-            </div>
+        <ScrollReveal animation="blur-in" duration={2500}>
+          <div className="text-center space-y-6 max-w-3xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground leading-tight">
+              <TextReveal delay={100}>Clinic</TextReveal> <TextReveal delay={400} direction="down" gradientClass="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Gallery</TextReveal>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed font-light">
+              A glimpse into our community checkup camps, diagnostic drives, and day-to-day healing environment.
+            </p>
           </div>
         </ScrollReveal>
 
