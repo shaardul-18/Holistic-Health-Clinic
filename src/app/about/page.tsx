@@ -4,7 +4,6 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
-import { PatientJourneys } from "@/components/PatientJourneys";
 
 const Threads = dynamic(() => import("@/components/reactbits/Threads"));
 export const metadata = {
@@ -147,15 +146,6 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
         </div>
-
-        {/* Patient Journeys / Success Stories */}
-        <ScrollReveal animation="fade-up" duration={2000}>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Clinical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Success Stories</span></h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Real journeys from chronic pain to complete recovery through our holistic, integrated approach.</p>
-          </div>
-          <PatientJourneys />
-        </ScrollReveal>
 
         {/* Philosophy Section */}
         <ScrollReveal animation="scale-up">
