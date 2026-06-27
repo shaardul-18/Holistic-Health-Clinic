@@ -164,7 +164,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Condition 1 */}
             <ScrollReveal animation="slide-up" delay={100}>
-              <Link href="/services" className="block h-full group">
+              <Link href="/blog/cervical-lumbar-spondylosis" className="block h-full group">
                 <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-primary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
                   <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
                     <Activity className="h-6 w-6" />
@@ -181,7 +181,7 @@ export default function Home() {
 
             {/* Condition 2 */}
             <ScrollReveal animation="slide-up" delay={200}>
-              <Link href="/services" className="block h-full group">
+              <Link href="/blog/frozen-shoulder-rehab" className="block h-full group">
                 <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-secondary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
                   <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
                     <Award className="h-6 w-6" />
@@ -198,7 +198,7 @@ export default function Home() {
 
             {/* Condition 3 */}
             <ScrollReveal animation="slide-up" delay={300}>
-              <Link href="/services" className="block h-full group">
+              <Link href="/blog/knee-osteoarthritis" className="block h-full group">
                 <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-primary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
                   <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
                     <Shield className="h-6 w-6" />
@@ -215,7 +215,7 @@ export default function Home() {
 
             {/* Condition 4 */}
             <ScrollReveal animation="slide-up" delay={400}>
-              <Link href="/services" className="block h-full group">
+              <Link href="/blog/sports-injury-recovery" className="block h-full group">
                 <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-secondary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
                   <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
                     <Activity className="h-6 w-6" />
@@ -232,7 +232,7 @@ export default function Home() {
 
             {/* Condition 5 */}
             <ScrollReveal animation="slide-up" delay={500}>
-              <Link href="/services" className="block h-full group">
+              <Link href="/blog/metabolic-weight-management" className="block h-full group">
                 <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-primary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
                   <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
                     <Apple className="h-6 w-6" />
@@ -249,7 +249,7 @@ export default function Home() {
 
             {/* Condition 6 */}
             <ScrollReveal animation="slide-up" delay={600}>
-              <Link href="/services" className="block h-full group">
+              <Link href="/blog/managing-chronic-stress" className="block h-full group">
                 <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-secondary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
                   <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
                     <Brain className="h-6 w-6" />

@@ -138,14 +138,7 @@ export default function ServicesPage() {
               </div>
             </div>
             
-            <ScrollReveal animation="fade-in">
-              <ConversionCTA 
-                title="Struggling with chronic pain?" 
-                buttonText="Book Physiotherapy Assessment"
-                whatsappMessage="Hello, I would like to book a Physiotherapy assessment at Holistic Health Clinic."
-                theme="primary"
-              />
-            </ScrollReveal>
+
           </section>
  
           {/* Counselling */}
@@ -219,14 +212,7 @@ export default function ServicesPage() {
               </div>
             </div>
             
-            <ScrollReveal animation="fade-in">
-              <ConversionCTA 
-                title="Need emotional support?" 
-                buttonText="Book a Counselling Session"
-                whatsappMessage="Hello, I would like to book a Counselling session at Holistic Health Clinic."
-                theme="secondary"
-              />
-            </ScrollReveal>
+
           </section>
  
           {/* Nutrition */}
@@ -306,14 +292,7 @@ export default function ServicesPage() {
               </div>
             </div>
             
-            <ScrollReveal animation="fade-in">
-              <ConversionCTA 
-                title="Ready to fix your metabolism?" 
-                buttonText="Consult for Diet Plan"
-                whatsappMessage="Hello, I would like to book a Diet & Nutrition consultation at Holistic Health Clinic."
-                theme="amber"
-              />
-            </ScrollReveal>
+
           </section>
         </ScrollReveal>
 
