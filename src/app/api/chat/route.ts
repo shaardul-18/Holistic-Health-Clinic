@@ -80,6 +80,13 @@ IMPORTANT RULES:
 4. If a patient wants to book an appointment or asks a complex question, always encourage them to use the "Chat on WhatsApp" button on the website.
 5. You don't have access to real-time booking schedules.`;
 
+    if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+      return NextResponse.json(
+        { error: "The chatbot is currently offline for maintenance. Please use the WhatsApp button to contact us." },
+        { status: 503 }
+      );
+    }
+
     const { text } = await generateText({
       model: google('gemini-1.5-flash'),
       system: systemPrompt,
@@ -89,6 +96,6 @@ IMPORTANT RULES:
     return NextResponse.json({ text });
   } catch (error: any) {
     console.error("Chat API error:", error);
-    return NextResponse.json({ error: error.message || "Failed to generate text" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to generate a response. Please try again or contact us via WhatsApp." }, { status: 500 });
   }
 }
