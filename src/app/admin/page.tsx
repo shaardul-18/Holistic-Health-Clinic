@@ -3,6 +3,8 @@ import { AnimatedCard } from "@/components/reactbits/AnimatedCard";
 import { DashboardCharts } from "@/components/dashboard-charts";
 import { format, subDays } from "date-fns";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
   const totalPageViews = await prisma.analyticsEvent.count({ where: { eventType: "PAGE_VIEW" } });
   const totalWhatsAppClicks = await prisma.analyticsEvent.count({ where: { eventType: "WHATSAPP_CLICK" } });
