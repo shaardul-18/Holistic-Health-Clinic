@@ -43,20 +43,22 @@ export default function ServicesPage() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal animation="fade-up" duration={1500} className="max-w-4xl mx-auto mt-24 px-6 z-10 relative">
+        <ScrollReveal animation="slide-up" duration={1500} className="max-w-4xl mx-auto mt-24 px-6 z-10 relative">
           <InteractiveBodyMap />
         </ScrollReveal>
 
-        <ScrollReveal animation="fade-up" duration={1500} className="max-w-7xl mx-auto px-6 mt-32 space-y-16">
+        <ScrollReveal animation="slide-up" duration={1500} className="max-w-7xl mx-auto px-6 mt-40 space-y-32 md:space-y-40">
           {/* Physiotherapy */}
-          <section className="flex flex-col md:flex-row gap-12 items-start overflow-hidden">
+          <section className="flex flex-col md:flex-row gap-16 md:gap-20 items-center overflow-hidden">
             <div className="flex-1 w-full">
               <ScrollReveal animation="slide-right">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-primary/10 text-primary mb-2">
-                    <Activity size={48} strokeWidth={1.5} />
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-primary/10 text-primary shrink-0">
+                      <Activity size={32} strokeWidth={1.5} />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">Physiotherapy</h2>
                   </div>
-                  <h2 className="text-3xl font-bold text-foreground">Physiotherapy</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Our advanced physiotherapy treatments focus on restoring movement, relieving pain, and improving your physical strength. We treat a wide range of musculoskeletal and neurological conditions.
                   </p>
@@ -124,14 +126,16 @@ export default function ServicesPage() {
           </section>
  
           {/* Counselling */}
-          <section className="flex flex-col md:flex-row-reverse gap-12 items-start overflow-hidden">
+          <section className="flex flex-col md:flex-row-reverse gap-16 md:gap-20 items-center overflow-hidden">
             <div className="flex-1 w-full">
               <ScrollReveal animation="slide-left">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-secondary/10 text-secondary mb-2">
-                    <Brain size={48} strokeWidth={1.5} />
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-secondary/10 text-secondary shrink-0">
+                      <Brain size={32} strokeWidth={1.5} />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">Counselling & Psychology</h2>
                   </div>
-                  <h2 className="text-3xl font-bold text-foreground">Counselling & Psychology</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     True health encompasses the mind. We provide a safe, confidential, and empathetic environment to help you navigate psychological challenges and major life transitions.
                   </p>
@@ -181,14 +185,16 @@ export default function ServicesPage() {
           </section>
  
           {/* Nutrition */}
-          <section className="flex flex-col md:flex-row gap-12 items-start overflow-hidden">
+          <section className="flex flex-col md:flex-row gap-16 md:gap-20 items-center overflow-hidden">
             <div className="flex-1 w-full">
               <ScrollReveal animation="slide-right">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-amber-500/10 text-amber-600 mb-2">
-                    <Apple size={48} strokeWidth={1.5} />
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-amber-500/10 text-amber-600 shrink-0">
+                      <Apple size={32} strokeWidth={1.5} />
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">Diet & Nutrition</h2>
                   </div>
-                  <h2 className="text-3xl font-bold text-foreground">Diet & Nutrition</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     What you eat directly impacts how your body heals and how your mind functions. Our dietetics services are designed to complement your therapies for complete holistic health.
                   </p>
