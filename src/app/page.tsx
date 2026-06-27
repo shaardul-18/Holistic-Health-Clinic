@@ -164,92 +164,104 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Condition 1 */}
             <ScrollReveal animation="slide-up" delay={100}>
-              <div className="bg-card p-6 rounded-2xl border border-border hover:border-primary/30 transition-all shadow-sm hover:shadow-md flex flex-col gap-4 h-full">
-                <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center">
-                  <Activity className="h-6 w-6" />
+              <Link href="/services" className="block h-full group">
+                <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-primary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
+                  <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Activity className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Neck & Back Pain</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Treatment for Sciatica, Cervical & Lumbar Spondylosis, herniated discs, and posture-induced spinal stiffness.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Neck & Back Pain</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Treatment for Sciatica, Cervical & Lumbar Spondylosis, herniated discs, and posture-induced spinal stiffness.
-                  </p>
-                </div>
-              </div>
+              </Link>
             </ScrollReveal>
 
             {/* Condition 2 */}
             <ScrollReveal animation="slide-up" delay={200}>
-              <div className="bg-card p-6 rounded-2xl border border-border hover:border-secondary/30 transition-all shadow-sm hover:shadow-md flex flex-col gap-4 h-full">
-                <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center">
-                  <Award className="h-6 w-6" />
+              <Link href="/services" className="block h-full group">
+                <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-secondary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
+                  <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Award className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-secondary transition-colors">Shoulder & Upper Body</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Fast recovery for Frozen Shoulder, Periarthritis, rotator cuff injuries, and upper back tightness.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Shoulder & Upper Body</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Fast recovery for Frozen Shoulder, Periarthritis, rotator cuff injuries, and upper back tightness.
-                  </p>
-                </div>
-              </div>
+              </Link>
             </ScrollReveal>
 
             {/* Condition 3 */}
             <ScrollReveal animation="slide-up" delay={300}>
-              <div className="bg-card p-6 rounded-2xl border border-border hover:border-primary/30 transition-all shadow-sm hover:shadow-md flex flex-col gap-4 h-full">
-                <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center">
-                  <Shield className="h-6 w-6" />
+              <Link href="/services" className="block h-full group">
+                <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-primary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
+                  <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Hip, Knee & Joint Arthritis</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Gentle physical therapy to relieve Osteoarthritis, reduce joint inflammation, and restore pain-free walking.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Hip, Knee & Joint Arthritis</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Gentle physical therapy to relieve Osteoarthritis, reduce joint inflammation, and restore pain-free walking.
-                  </p>
-                </div>
-              </div>
+              </Link>
             </ScrollReveal>
 
             {/* Condition 4 */}
             <ScrollReveal animation="slide-up" delay={400}>
-              <div className="bg-card p-6 rounded-2xl border border-border hover:border-secondary/30 transition-all shadow-sm hover:shadow-md flex flex-col gap-4 h-full">
-                <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center">
-                  <Activity className="h-6 w-6" />
+              <Link href="/services" className="block h-full group">
+                <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-secondary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
+                  <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Activity className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-secondary transition-colors">Sports Injuries & Post-Op</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Rehabilitation for ligament tears, muscle strains, and rehabilitation following knee/hip replacements.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Sports Injuries & Post-Op</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Rehabilitation for ligament tears, muscle strains, and rehabilitation following knee/hip replacements.
-                  </p>
-                </div>
-              </div>
+              </Link>
             </ScrollReveal>
 
             {/* Condition 5 */}
             <ScrollReveal animation="slide-up" delay={500}>
-              <div className="bg-card p-6 rounded-2xl border border-border hover:border-primary/30 transition-all shadow-sm hover:shadow-md flex flex-col gap-4 h-full">
-                <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center">
-                  <Apple className="h-6 w-6" />
+              <Link href="/services" className="block h-full group">
+                <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-primary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
+                  <div className="bg-primary/10 text-primary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Apple className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Clinical Diet & Nutrition</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Custom meal plans for sustainable weight loss, diabetic dietary control, muscle building, and recovery fuel.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Clinical Diet & Nutrition</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Custom meal plans for sustainable weight loss, diabetic dietary control, muscle building, and recovery fuel.
-                  </p>
-                </div>
-              </div>
+              </Link>
             </ScrollReveal>
 
             {/* Condition 6 */}
             <ScrollReveal animation="slide-up" delay={600}>
-              <div className="bg-card p-6 rounded-2xl border border-border hover:border-secondary/30 transition-all shadow-sm hover:shadow-md flex flex-col gap-4 h-full">
-                <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center">
-                  <Brain className="h-6 w-6" />
+              <Link href="/services" className="block h-full group">
+                <div className="bg-card p-6 rounded-2xl border border-border group-hover:border-secondary/30 transition-all shadow-sm group-hover:shadow-md flex flex-col gap-4 h-full cursor-pointer">
+                  <div className="bg-secondary/10 text-secondary p-3 rounded-xl w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Brain className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-secondary transition-colors">Stress, Anxiety & Counselling</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Confidential psychological support for stress management, relationship conflicts, depression, and ADHD.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Stress, Anxiety & Counselling</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Confidential psychological support for stress management, relationship conflicts, depression, and ADHD.
-                  </p>
-                </div>
-              </div>
+              </Link>
             </ScrollReveal>
           </div>
         </div>
