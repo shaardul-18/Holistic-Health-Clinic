@@ -52,7 +52,8 @@ export default function ServicesPage() {
 
         <ScrollReveal animation="slide-up" duration={1500} className="max-w-7xl mx-auto px-6 mt-40 space-y-32 md:space-y-40">
           {/* Physiotherapy */}
-          <section className="flex flex-col md:flex-row gap-16 md:gap-20 items-center overflow-hidden">
+          <section className="space-y-12">
+            <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-center overflow-hidden">
             <div className="flex-1 w-full">
               <ScrollReveal animation="slide-right">
                 <div className="space-y-6">
@@ -148,7 +149,8 @@ export default function ServicesPage() {
           </section>
  
           {/* Counselling */}
-          <section className="flex flex-col md:flex-row-reverse gap-16 md:gap-20 items-center overflow-hidden">
+          <section className="space-y-12">
+            <div className="flex flex-col md:flex-row-reverse gap-16 md:gap-20 items-center overflow-hidden">
             <div className="flex-1 w-full">
               <ScrollReveal animation="slide-left">
                 <div className="space-y-6">
@@ -228,7 +230,8 @@ export default function ServicesPage() {
           </section>
  
           {/* Nutrition */}
-          <section className="flex flex-col md:flex-row gap-16 md:gap-20 items-center overflow-hidden">
+          <section className="space-y-12">
+            <div className="flex flex-col md:flex-row gap-16 md:gap-20 items-center overflow-hidden">
             <div className="flex-1 w-full">
               <ScrollReveal animation="slide-right">
                 <div className="space-y-6">
