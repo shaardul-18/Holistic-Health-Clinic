@@ -5,6 +5,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { InteractiveBodyMap } from "@/components/InteractiveBodyMap";
 import { ReviewsMarquee } from "@/components/ReviewsMarquee";
+import { ConversionCTA } from "@/components/ConversionCTA";
+import { ClinicalAuthorityBlock } from "@/components/ClinicalAuthorityBlock";
 
 const Threads = dynamic(() => import("@/components/reactbits/Threads"));
 export const metadata = {
@@ -76,57 +78,73 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   
-                  <div className="pt-6">
-                    <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-border pb-2">Conditions Treated</h4>
-                    <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3">
-                      {[
-                        "Neck & Back Pain", "Cervical & Lumbar Spondylosis", "Shoulder Pain & Frozen Shoulder",
-                        "Periarthritis", "Hip, Knee & Ankle Pain", "Osteoarthritis",
-                        "Joint Pain & Muscle Strain", "Sports Injuries", "Pediatric Physiotherapy",
-                        "Cardio Respiratory Physiotherapy", "Ante natal-Post natal Physiotherapy",
-                        "Muscle Strengthening & Stretching", "Pregnancy Exercises", "On-site Breast Crawl",
-                        "Exercises For Weight Loss", "Guidance & Exercises for Lactation"
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                    <div className="pt-6">
+                      <details className="group border border-border rounded-xl bg-card overflow-hidden cursor-pointer">
+                        <summary className="font-bold text-sm text-foreground p-4 bg-muted/30 flex justify-between items-center list-none">
+                          View All 15+ Conditions Treated
+                          <span className="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                          </span>
+                        </summary>
+                        <div className="p-4 grid sm:grid-cols-2 gap-x-4 gap-y-3 bg-background border-t border-border">
+                          {[
+                            "Neck & Back Pain", "Cervical & Lumbar Spondylosis", "Shoulder Pain & Frozen Shoulder",
+                            "Periarthritis", "Hip, Knee & Ankle Pain", "Osteoarthritis",
+                            "Joint Pain & Muscle Strain", "Sports Injuries", "Pediatric Physiotherapy",
+                            "Cardio Respiratory Physiotherapy", "Ante natal-Post natal Physiotherapy",
+                            "Muscle Strengthening & Stretching", "Pregnancy Exercises", "On-site Breast Crawl",
+                            "Exercises For Weight Loss", "Guidance & Exercises for Lactation"
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                              <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </details>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
+              </div>
+              
+              <div className="flex-1 w-full">
+                <ScrollReveal animation="slide-left" delay={150}>
+                  <div className="bg-gradient-to-br from-primary/5 to-transparent dark:from-primary/10 dark:to-transparent border border-primary/10 p-8 rounded-3xl shadow-sm mb-6">
+                     <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                       <Zap className="h-6 w-6 text-primary" /> Advanced Scientific Modalities
+                     </h3>
+                     <p className="text-sm text-muted-foreground mb-6">We use clinically proven electrotherapy and modalities to accelerate tissue healing at a cellular level before manual mobilization.</p>
+                     <ul className="space-y-3">
+                       <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
+                         <span className="font-medium">Traction</span>
+                         <span className="text-muted-foreground">Spinal Decompression</span>
+                       </li>
+                       <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
+                         <span className="font-medium">SWD (Diathermy)</span>
+                         <span className="text-muted-foreground">Deep Heat Therapy</span>
+                       </li>
+                       <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
+                         <span className="font-medium">TENS & IFT</span>
+                         <span className="text-muted-foreground">Neurological Pain Block</span>
+                       </li>
+                       <li className="flex justify-between items-center pb-2 text-sm">
+                         <span className="font-medium">Ultrasound</span>
+                         <span className="text-muted-foreground">Cellular Tissue Healing</span>
+                       </li>
+                     </ul>
+                  </div>
+                </ScrollReveal>
+              </div>
             </div>
             
-            <div className="flex-1 w-full">
-              <ScrollReveal animation="slide-left" delay={150}>
-                <div className="bg-gradient-to-br from-primary/5 to-transparent dark:from-primary/10 dark:to-transparent border border-primary/10 p-8 rounded-3xl shadow-sm">
-                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                     <Zap className="h-6 w-6 text-primary" /> Advanced Modalities
-                   </h3>
-                   <ul className="space-y-3 mb-8">
-                     <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
-                       <span className="font-medium">Traction</span>
-                       <span className="text-muted-foreground">Thoracic, Cervical, Lumbar</span>
-                     </li>
-                     <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
-                       <span className="font-medium">SWD</span>
-                       <span className="text-muted-foreground">Short Wave Diathermy</span>
-                     </li>
-                     <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
-                       <span className="font-medium">TENS & IFT</span>
-                       <span className="text-muted-foreground">Pain Relief Therapy</span>
-                     </li>
-                     <li className="flex justify-between items-center pb-2 text-sm">
-                       <span className="font-medium">Ultrasound</span>
-                       <span className="text-muted-foreground">Deep Tissue Healing</span>
-                     </li>
-                   </ul>
-
-                   <WhatsAppButton className="w-full text-center justify-center font-bold">Inquire about Physiotherapy</WhatsAppButton>
-                </div>
-              </ScrollReveal>
-            </div>
+            <ScrollReveal animation="fade-in">
+              <ConversionCTA 
+                title="Struggling with chronic pain?" 
+                buttonText="Book Physiotherapy Assessment"
+                whatsappMessage="Hello, I would like to book a Physiotherapy assessment at Holistic Health Clinic."
+                theme="primary"
+              />
+            </ScrollReveal>
           </section>
  
           {/* Counselling */}
@@ -156,41 +174,57 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   
-                  <div className="pt-6">
-                    <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-4 border-b border-border pb-2">Conditions Treated</h4>
-                    <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3">
-                      {[
-                        "Anxiety & Depression", "ADHD Management", "Parental Counselling",
-                        "Couple Counselling", "Personality Testing", "IQ Testing",
-                        "Child Counselling", "Adolescent Counselling"
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                    <div className="pt-6">
+                      <details className="group border border-border rounded-xl bg-card overflow-hidden cursor-pointer">
+                        <summary className="font-bold text-sm text-foreground p-4 bg-muted/30 flex justify-between items-center list-none">
+                          View All Treated Conditions
+                          <span className="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                          </span>
+                        </summary>
+                        <div className="p-4 grid sm:grid-cols-2 gap-x-4 gap-y-3 bg-background border-t border-border">
+                          {[
+                            "Anxiety & Depression", "ADHD Management", "Parental Counselling",
+                            "Couple Counselling", "Personality Testing", "IQ Testing",
+                            "Child Counselling", "Adolescent Counselling"
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                              <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </details>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
+              </div>
+              
+              <div className="flex-1 w-full">
+                <ScrollReveal animation="slide-right" delay={150}>
+                  <div className="bg-gradient-to-br from-secondary/5 to-transparent dark:from-secondary/10 dark:to-transparent border border-secondary/10 p-8 rounded-3xl shadow-sm mb-6">
+                     <h3 className="text-xl font-semibold mb-4">Therapeutic Techniques Used</h3>
+                     <p className="text-sm text-muted-foreground mb-6">Our approach is rooted in proven psychological models, tailored specifically to your cognitive and behavioral needs.</p>
+                     <div className="flex flex-wrap gap-2">
+                       {["R.E.B.T", "C.B.T.", "D.B.T", "T.A.", "IQ Testing", "Personality Testing"].map((tech, i) => (
+                         <span key={i} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-semibold border border-secondary/20">
+                           {tech}
+                         </span>
+                       ))}
+                     </div>
+                  </div>
+                </ScrollReveal>
+              </div>
             </div>
             
-            <div className="flex-1 w-full">
-              <ScrollReveal animation="slide-right" delay={150}>
-                <div className="bg-gradient-to-br from-secondary/5 to-transparent dark:from-secondary/10 dark:to-transparent border border-secondary/10 p-8 rounded-3xl shadow-sm">
-                   <h3 className="text-xl font-semibold mb-4">Therapeutic Techniques Used</h3>
-                   <div className="flex flex-wrap gap-2 mb-8">
-                     {["R.E.B.T", "C.B.T.", "D.B.T", "T.A.", "IQ Testing", "Personality Testing"].map((tech, i) => (
-                       <span key={i} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-semibold border border-secondary/20">
-                         {tech}
-                       </span>
-                     ))}
-                   </div>
-     
-                   <WhatsAppButton className="w-full text-center justify-center font-bold bg-secondary hover:bg-secondary/90 focus:ring-secondary">Book a Counselling Session</WhatsAppButton>
-                </div>
-              </ScrollReveal>
-            </div>
+            <ScrollReveal animation="fade-in">
+              <ConversionCTA 
+                title="Need emotional support?" 
+                buttonText="Book a Counselling Session"
+                whatsappMessage="Hello, I would like to book a Counselling session at Holistic Health Clinic."
+                theme="secondary"
+              />
+            </ScrollReveal>
           </section>
  
           {/* Nutrition */}
@@ -220,46 +254,63 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   
-                  <div className="pt-6">
-                    <h4 className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-4 border-b border-border pb-2">Programs & Focus Areas</h4>
-                    <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3">
-                      {[
-                        "Body Composition", "Weight Loss Programs", "Weight Gain & Muscle Building",
-                        "Diabetic Diet Planning", "Personalized clinical nutrition for other specific conditions"
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                    <div className="pt-6">
+                      <details className="group border border-border rounded-xl bg-card overflow-hidden cursor-pointer">
+                        <summary className="font-bold text-sm text-foreground p-4 bg-muted/30 flex justify-between items-center list-none">
+                          View All Diet Programs
+                          <span className="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                          </span>
+                        </summary>
+                        <div className="p-4 grid sm:grid-cols-2 gap-x-4 gap-y-3 bg-background border-t border-border">
+                          {[
+                            "Body Composition", "Weight Loss Programs", "Weight Gain & Muscle Building",
+                            "Diabetic Diet Planning", "Personalized clinical nutrition for other specific conditions"
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-2">
+                              <CheckCircle2 className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                              <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </details>
                     </div>
                   </div>
-                </div>
-              </ScrollReveal>
+                </ScrollReveal>
+              </div>
+              
+              <div className="flex-1 w-full">
+                <ScrollReveal animation="slide-left" delay={150}>
+                  <div className="bg-gradient-to-br from-amber-500/5 to-transparent dark:from-amber-500/10 dark:to-transparent border border-amber-500/10 p-8 rounded-3xl shadow-sm mb-6">
+                     <h3 className="text-xl font-semibold mb-4">Food as Medicine</h3>
+                     <p className="text-sm text-muted-foreground mb-6">No crash diets. We build sustainable habits based on your metabolic data.</p>
+                     <ul className="space-y-3">
+                       <li className="flex items-start gap-3">
+                         <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                         <span className="text-foreground/90 font-medium text-sm">Body Composition & Weight Loss</span>
+                       </li>
+                       <li className="flex items-start gap-3">
+                         <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                         <span className="text-foreground/90 font-medium text-sm">Weight Gain & Muscle Building</span>
+                       </li>
+                       <li className="flex items-start gap-3">
+                         <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                         <span className="text-foreground/90 font-medium text-sm">Diabetic & PCOS Diet Planning</span>
+                       </li>
+                     </ul>
+                  </div>
+                </ScrollReveal>
+              </div>
             </div>
             
-            <div className="flex-1 w-full">
-              <ScrollReveal animation="slide-left" delay={150}>
-                <div className="bg-gradient-to-br from-amber-500/5 to-transparent dark:from-amber-500/10 dark:to-transparent border border-amber-500/10 p-8 rounded-3xl shadow-sm">
-                   <h3 className="text-xl font-semibold mb-4">Food as Medicine</h3>
-                   <ul className="space-y-3 mb-8">
-                     <li className="flex items-start gap-3">
-                       <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
-                       <span className="text-foreground/90 font-medium text-sm">Body Composition & Weight Loss</span>
-                     </li>
-                     <li className="flex items-start gap-3">
-                       <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
-                       <span className="text-foreground/90 font-medium text-sm">Weight Gain & Muscle Building</span>
-                     </li>
-                     <li className="flex items-start gap-3">
-                       <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
-                       <span className="text-foreground/90 font-medium text-sm">Diabetic & PCOS Diet Planning</span>
-                     </li>
-                   </ul>
-                   <WhatsAppButton className="w-full text-center justify-center font-bold bg-amber-600 hover:bg-amber-700 focus:ring-amber-600">Consult for Diet Plan</WhatsAppButton>
-                </div>
-              </ScrollReveal>
-            </div>
+            <ScrollReveal animation="fade-in">
+              <ConversionCTA 
+                title="Ready to fix your metabolism?" 
+                buttonText="Consult for Diet Plan"
+                whatsappMessage="Hello, I would like to book a Diet & Nutrition consultation at Holistic Health Clinic."
+                theme="amber"
+              />
+            </ScrollReveal>
           </section>
         </ScrollReveal>
 

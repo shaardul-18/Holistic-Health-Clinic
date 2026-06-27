@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/components/auth-provider";
 import { Navbar } from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
-import { AnalyticsTracker } from "@/components/analytics-tracker";
+import { Analytics } from "@vercel/analytics/next";
 import { Chatbot } from "@/components/chatbot";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/Footer";
@@ -131,7 +131,7 @@ export default function RootLayout({
             <Suspense fallback={null}>
               <PageLoader />
             </Suspense>
-            <AnalyticsTracker />
+            <Analytics />
             <Navbar />
             <main className="flex-grow">
               {children}

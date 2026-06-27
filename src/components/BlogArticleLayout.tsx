@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { ParallaxImage } from "@/components/animations/ParallaxImage";
+import { ClinicalAuthorityBlock } from "@/components/ClinicalAuthorityBlock";
+import { ConversionCTA } from "@/components/ConversionCTA";
 
 interface BlogArticleLayoutProps {
   category: string;
@@ -83,6 +85,22 @@ export function BlogArticleLayout({
             ">
               {children}
             </div>
+          </ScrollReveal>
+        </div>
+
+        {/* Funnel & Authority Section */}
+        <div className="mt-16 pt-8 border-t border-border/50">
+          <ScrollReveal animation="slide-up">
+            <ClinicalAuthorityBlock />
+          </ScrollReveal>
+          
+          <ScrollReveal animation="fade-in" delay={200}>
+            <ConversionCTA 
+              title="Want personalized advice?" 
+              buttonText="Talk to a Clinical Expert"
+              whatsappMessage={`Hello, I just read the article "${title}" and would like to book a consultation.`}
+              theme="primary"
+            />
           </ScrollReveal>
         </div>
       </article>
