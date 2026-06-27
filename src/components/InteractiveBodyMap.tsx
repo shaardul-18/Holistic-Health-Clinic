@@ -170,16 +170,20 @@ export function InteractiveBodyMap() {
 
         {/* Interactive Points */}
         {bodyParts.map((part) => (
-          <Link key={part.id} href={part.href}>
+          <Link 
+            key={part.id} 
+            href={part.href}
+            className={`absolute ${activePart === part.id ? 'z-30' : 'z-20'}`}
+            style={{
+              left: `${(part.cx / 400) * 100}%`,
+              top: `${(part.cy / 800) * 100}%`,
+              transform: 'translate(-50%, -50%)',
+              width: '32px',
+              height: '32px'
+            }}
+          >
             <motion.div
-              className={`absolute flex items-center justify-center cursor-pointer transition-all ${activePart === part.id ? 'z-30' : 'z-20'}`}
-              style={{
-                left: `${(part.cx / 400) * 100}%`,
-                top: `${(part.cy / 800) * 100}%`,
-                width: '32px',
-                height: '32px',
-                transform: 'translate(-50%, -50%)'
-              }}
+              className="w-full h-full flex items-center justify-center cursor-pointer relative"
               onMouseEnter={() => setActivePart(part.id)}
               onMouseLeave={() => setActivePart(null)}
               whileHover={{ scale: 1.15 }}
