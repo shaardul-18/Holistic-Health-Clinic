@@ -7,7 +7,7 @@ import { ParallaxImage } from "@/components/animations/ParallaxImage";
 interface BlogArticleLayoutProps {
   category: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   imageSrc?: string;
   heroComponent?: React.ReactNode;
   readTime?: string;
@@ -47,9 +47,11 @@ export function BlogArticleLayout({
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]">
               <TextReveal delay={200}>{title}</TextReveal>
             </h1>
-            <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-2xl animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-500 fill-mode-both">
-              {subtitle}
-            </p>
+            {subtitle && (
+              <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-2xl animate-in slide-in-from-bottom-4 fade-in duration-1000 delay-500 fill-mode-both">
+                {subtitle}
+              </p>
+            )}
           </div>
         </ScrollReveal>
 
