@@ -9,6 +9,7 @@ import { AnalyticsTracker } from "@/components/analytics-tracker";
 import { Chatbot } from "@/components/chatbot";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/Footer";
+import { PageLoader } from "@/components/PageLoader";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -125,6 +126,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <PageLoader />
             <AnalyticsTracker />
             <Navbar />
             <main className="flex-grow">
@@ -140,3 +142,4 @@ export default function RootLayout({
     </html>
   );
 }
+
