@@ -26,7 +26,6 @@ export default function GalleryPage() {
       images: [
         "/gallery/clinic-entrance.png",
         "/gallery/clinic-bed.png",
-        "/gallery/electrotherapy-bed.png",
         "/gallery/clinic-room-new-1.png"
       ]
     },

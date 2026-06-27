@@ -74,7 +74,7 @@
     }
   }
 
-  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite;
+  --animate-heartbeat: heartbeat 2.5s ease-in-out infinite;
   
   @keyframes heartbeat {
     0%, 100% {

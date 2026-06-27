@@ -26,17 +26,17 @@ export function Navbar() {
       <div className="w-full max-w-6xl bg-background/85 dark:bg-zinc-950/85 backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/[0.03] flex h-16 items-center justify-between px-4 sm:px-6 pointer-events-auto transition-all duration-300">
         
         {/* Logo and title */}
-        <Link href="/" className="flex items-center gap-2.5 transition-transform hover:scale-102" onClick={() => setIsOpen(false)}>
+        <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-102" onClick={() => setIsOpen(false)}>
           <Image 
             src="/logo-new.png" 
             alt="Holistic Health Clinic Logo" 
-            width={40} 
-            height={40}
+            width={48} 
+            height={48}
             className="object-contain"
           />
           <div className="hidden sm:flex flex-col">
-            <span className="text-sm font-extrabold tracking-wider text-foreground leading-none">HOLISTIC HEALTH</span>
-            <span className="text-[9px] font-bold text-secondary uppercase tracking-widest mt-0.5">Physiotherapy & Counselling</span>
+            <span className="text-base font-black tracking-widest text-foreground leading-none">HOLISTIC HEALTH</span>
+            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest mt-1">Physiotherapy & Counselling</span>
           </div>
         </Link>
 
