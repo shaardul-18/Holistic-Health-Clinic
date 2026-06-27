@@ -85,10 +85,10 @@ export function Navbar() {
           <ThemeToggle />
           <WhatsAppButton 
             className="bg-[#1886C6] hover:bg-[#1886C6]/90 text-white shadow-md shadow-[#1886C6]/15 text-xs font-bold tracking-wider uppercase px-4 py-2 sm:px-5 sm:py-2.5 rounded-full flex items-center gap-1.5 shrink-0"
-            message="Hello, I would like to request a callback regarding a consultation/appointment at your clinic. Please call me back when free. Thank you!"
+            message="Hello, I would like to book a consultation at your clinic. Please provide more details. Thank you!"
           >
-            <span className="hidden lg:inline">Request a Callback</span>
-            <span className="lg:hidden">Callback</span>
+            <span className="hidden lg:inline">Book Consultation</span>
+            <span className="lg:hidden">Book Now</span>
           </WhatsAppButton>
           
           {/* Mobile Menu Toggle Button */}

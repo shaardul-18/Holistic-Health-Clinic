@@ -11,7 +11,7 @@ export default function ErgonomicsDeskPosture() {
       title="Ergonomics: Combating 'Tech Neck' and Desk Posture"
       category="Physiotherapy"
       readTime="5 min read"
-      author="Dr. Shreya Ghag"
+      author="Holistic Health Clinic"
       date="September 15, 2024"
     >
       <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">

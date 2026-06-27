@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, MapPin, Clock, Shield, Award, Stethoscope } from "lucide-react";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,6 +9,19 @@ export function Footer() {
     <footer className="w-full bg-slate-950 text-slate-300 border-t border-slate-900 pt-16 pb-8">
       <div className="container mx-auto px-6 max-w-6xl">
         
+        {/* Global CTA Banner */}
+        <div className="bg-primary/10 border border-primary/20 rounded-3xl p-10 mb-16 text-center flex flex-col items-center justify-center space-y-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Ready to start your recovery?</h2>
+          <p className="text-slate-300 max-w-xl mx-auto text-lg">Don't let pain or metabolic issues hold you back. Schedule your personalized consultation with Holistic Health Clinic today.</p>
+          <WhatsAppButton 
+            className="px-10 py-6 text-lg font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform" 
+            message="Hello! I would like to book a consultation at Holistic Health Clinic."
+          >
+            Book Your Consultation
+          </WhatsAppButton>
+        </div>
+
         {/* Footer Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-900">
           
@@ -25,7 +39,7 @@ export function Footer() {
             <div className="space-y-1.5 pt-2">
               <p className="text-xs text-slate-400 flex items-center gap-2">
                 <Award className="h-3.5 w-3.5 text-secondary shrink-0" />
-                <span>Dr. Shreya Ghag (P.T.) &bull; B.P.Th, M.I.A.P, P.G.D. Nutrition</span>
+                <span>Holistic Health Clinic Team &bull; B.P.Th, M.I.A.P, P.G.D. Nutrition</span>
               </p>
               <p className="text-xs text-slate-500 flex items-center gap-2">
                 <Shield className="h-3.5 w-3.5 text-slate-500 shrink-0" />

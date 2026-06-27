@@ -123,9 +123,10 @@ export default function RootLayout({
         <AuthProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="light"
+            enableSystem={false}
             disableTransitionOnChange
+            forcedTheme="light"
           >
             <Suspense fallback={null}>
               <PageLoader />

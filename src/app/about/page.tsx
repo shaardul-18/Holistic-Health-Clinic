@@ -69,80 +69,94 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
 
-          {/* Doctor Info */}
-          <div className="md:col-span-3 space-y-8">
+          {/* Doctor Info & Authority Blocks */}
+          <div className="md:col-span-3 space-y-10">
             <ScrollReveal animation="slide-left" delay={150}>
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <div>
-                  <h2 className="text-4xl font-bold text-foreground mb-2">Holistic Health Clinic</h2>
-                  <p className="text-xl text-primary font-medium">Founder & Head Physiotherapist: Dr. Shreya Ghag (P.T.)</p>
+                  <h2 className="text-4xl md:text-5xl font-extrabold text-foreground mb-3 tracking-tight">Holistic Health Clinic</h2>
+                  <p className="text-xl text-primary font-semibold uppercase tracking-wider">Expert Clinical Team</p>
                 </div>
                 
-                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                <div className="text-lg text-muted-foreground leading-relaxed border-l-4 border-primary/40 pl-6 space-y-4">
                   <p>
-                    Holistic Health Clinic is a premier healthcare facility in Vikhroli East, Mumbai, widely recognized for its patient-centric, integrative approach to recovery. Backed by over 20+ years of practicing experience, our team specializes in bridging structural physical therapy, clinical nutrition, and cognitive-behavioral counseling to deliver complete, long-lasting wellness.
+                    With over <strong>2 decades of clinical excellence</strong>, our team has transformed the lives of thousands by bridging structural physical therapy with clinical nutrition and cognitive-behavioral counseling. 
                   </p>
                   <p>
-                    Serving the Vikhroli East community, Holistic Health Clinic has become a trusted sanctuary for pain relief, post-surgical recovery, and emotional support, backed by over 150+ five-star patient reviews on major healthcare platforms. Our clinic provides cutting-edge physical therapy and wellness programs tailored to each individual's needs.
+                    Our integrated "whole-body" methodology ensures that patients don't just find temporary relief—they achieve <strong>complete, long-lasting wellness</strong>.
                   </p>
-                  <p>
-                    Whether helping athletes return to peak performance, guiding elderly patients through joint rehab, or counseling individuals facing chronic pain and lifestyle stress, our methodology prioritizes diagnostic precision, gentle care, and personalized rehabilitation.
-                  </p>
-                </div>
-
-                {/* Qualifications & Experience */}
-                <div className="grid sm:grid-cols-2 gap-6 pt-6 border-t border-border">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <GraduationCap className="h-6 w-6 text-secondary" />
-                      <h3 className="text-xl font-bold">Qualifications</h3>
-                    </div>
-                    <ul className="space-y-3 text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
-                        <span>B.P.Th. (Bachelor of Physiotherapy)</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
-                        <span>M.I.A.P. (Member of Indian Association of Physiotherapists)</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
-                        <span>P.G.D. Nutrition</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
-                        <span>M.A. Clinical Psychology</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Award className="h-6 w-6 text-primary" />
-                      <h3 className="text-xl font-bold">Expertise</h3>
-                    </div>
-                    <ul className="space-y-3 text-muted-foreground">
-                      <li className="flex gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                        <span>Orthopedic & Musculoskeletal Rehab</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                        <span>Cognitive Behavioral Therapy (CBT)</span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                        <span>Holistic Lifestyle Modification</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="pt-8">
-                  <WhatsAppButton className="px-8">Schedule a Consultation</WhatsAppButton>
                 </div>
               </div>
+            </ScrollReveal>
+
+            {/* Authority Grid */}
+            <ScrollReveal animation="slide-up" delay={250}>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {/* Credentials Card */}
+                <div className="bg-card border border-border/60 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="p-2.5 rounded-xl bg-secondary/10 text-secondary">
+                      <GraduationCap className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold">Full Credentials</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
+                      <span className="font-semibold text-foreground/90">B.P.Th. <span className="font-normal text-muted-foreground block text-sm">Bachelor of Physiotherapy</span></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
+                      <span className="font-semibold text-foreground/90">M.I.A.P. <span className="font-normal text-muted-foreground block text-sm">Member of Indian Assoc. of Physiotherapists</span></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
+                      <span className="font-semibold text-foreground/90">P.G.D. Nutrition <span className="font-normal text-muted-foreground block text-sm">Clinical Dietetics</span></span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
+                      <span className="font-semibold text-foreground/90">M.A. Clinical Psychology <span className="font-normal text-muted-foreground block text-sm">Cognitive Therapist</span></span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Specializations Card */}
+                <div className="bg-card border border-border/60 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                      <Award className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold">Specializations</h3>
+                  </div>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <div>
+                        <span className="font-semibold text-foreground/90 block">Orthopedic Rehab</span>
+                        <span className="text-muted-foreground text-sm">Post-surgical & chronic pain</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <div>
+                        <span className="font-semibold text-foreground/90 block">Cognitive Behavioral Therapy</span>
+                        <span className="text-muted-foreground text-sm">Anxiety, stress & pain coping</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                      <div>
+                        <span className="font-semibold text-foreground/90 block">Holistic Nutrition</span>
+                        <span className="text-muted-foreground text-sm">Weight & metabolic management</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal animation="fade-in" delay={350} className="pt-4">
+              <WhatsAppButton className="px-8 py-6 text-lg font-bold w-full sm:w-auto justify-center shadow-xl shadow-primary/20">Book a Consultation with our clinic</WhatsAppButton>
             </ScrollReveal>
           </div>
         </div>
@@ -159,7 +173,7 @@ export default function AboutPage() {
                 <p className="text-lg text-muted-foreground italic leading-relaxed">
                   "We don't just treat conditions; we treat people. A patient's physical recovery is often deeply intertwined with their mental resilience and nutritional health. By addressing all these facets simultaneously, we ensure a faster, more sustainable return to a healthy, pain-free life."
                 </p>
-                <p className="font-semibold text-foreground mt-4">— Dr. Shreya Ghag</p>
+                <p className="font-semibold text-foreground mt-4">— Holistic Health Clinic</p>
               </div>
             </div>
           </div>

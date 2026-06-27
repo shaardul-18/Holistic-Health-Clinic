@@ -11,7 +11,7 @@ export default function TennisElbowCarpalTunnel() {
       title="Overcoming Tennis Elbow and Carpal Tunnel Syndrome"
       category="Physiotherapy"
       readTime="5 min read"
-      author="Dr. Shreya Ghag"
+      author="Holistic Health Clinic"
       date="November 12, 2024"
     >
       <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">

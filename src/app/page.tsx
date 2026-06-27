@@ -20,6 +20,7 @@ import Image from "next/image";
 import { ReviewsMarquee } from "@/components/ReviewsMarquee";
 import { FAQ } from "@/components/FAQ";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { AssessmentQuiz } from "@/components/AssessmentQuiz";
 import dynamic from "next/dynamic";
 
 const LineWaves = dynamic(() => import("@/components/reactbits/LineWaves"));
@@ -56,36 +57,42 @@ export default function Home() {
         {/* Dark overlay gradients for text readability in both light & dark themes */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background pointer-events-none" style={{ zIndex: 2 }}></div>
 
-        <div className="space-y-8 max-w-4xl relative z-10 mx-auto">
+        <div className="space-y-8 max-w-4xl relative z-10 mx-auto mt-12">
+          {/* Trust Badge */}
+          <ScrollReveal animation="slide-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium text-sm mb-4">
+              <Shield className="w-4 h-4" /> Trusted by 20,000+ patients in Mumbai
+            </div>
+          </ScrollReveal>
+
           {/* Problem & Solution Headline */}
           <ScrollReveal animation="slide-up" delay={100}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] max-w-3xl mx-auto">
-              Chronic Pain? Get Expert <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Physiotherapy</span> in Mumbai
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] max-w-3xl mx-auto">
+              End Chronic Pain & Reclaim Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Active Life</span>
             </h1>
           </ScrollReveal>
           
           <ScrollReveal animation="slide-up" delay={250}>
             <p className="text-lg md:text-xl text-muted-foreground font-normal max-w-2xl mx-auto leading-relaxed">
-              Don't let pain dictate your life. Get diagnosed and treated at <strong>Holistic Health Clinic</strong>. Rebuild strength, mobility, and mental peace with specialized physical therapy, nutrition, and clinical counselling.
+              Holistic Health Clinic’s integrated approach combines advanced <strong>physiotherapy</strong>, <strong>clinical nutrition</strong>, and <strong>counselling</strong> to treat the root cause of your pain—not just the symptoms.
             </p>
           </ScrollReveal>
           
           {/* Hero CTAs */}
           <ScrollReveal animation="slide-up" delay={400}>
             <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
-              <WhatsAppButton 
-                className="text-base px-10 py-5 w-full sm:w-auto shadow-xl hover:shadow-2xl transition-all"
-                message="Hello, I'd like to book an appointment for a Physiotherapy consultation at Holistic Health Clinic. Please let me know your availability."
-              >
-                Book Consultation Now
-              </WhatsAppButton>
               <Link 
-                href="/services" 
-                className="group text-sm font-semibold text-foreground hover:text-primary transition-colors py-3.5 px-6 flex items-center justify-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur-sm w-full sm:w-auto hover:bg-card"
+                href="#assessment" 
+                className="text-base px-10 py-5 w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-bold rounded-full shadow-xl hover:shadow-primary/30 transition-all flex items-center justify-center gap-2"
               >
-                Explore Our Services 
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                Take Free Health Assessment <ArrowRight className="w-5 h-5" />
               </Link>
+              <WhatsAppButton 
+                className="text-sm font-semibold w-full sm:w-auto bg-card text-foreground border border-border hover:bg-muted py-4 shadow-sm"
+                message="Hello, I would like to book a direct consultation with your clinic."
+              >
+                Book Direct Consultation
+              </WhatsAppButton>
             </div>
           </ScrollReveal>
           
@@ -94,22 +101,49 @@ export default function Home() {
             <div className="pt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto border-t border-border/80 mt-12">
               <div className="space-y-1">
                 <h4 className="text-3xl md:text-4xl font-extrabold text-primary">20+</h4>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Years of Practicing</p>
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Years Experience</p>
               </div>
               <div className="space-y-1">
-                <h4 className="text-3xl md:text-4xl font-extrabold text-secondary">5,000+</h4>
+                <h4 className="text-3xl md:text-4xl font-extrabold text-secondary">20k+</h4>
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Patients Treated</p>
               </div>
               <div className="space-y-1">
                 <h4 className="text-3xl md:text-4xl font-extrabold text-primary">150+</h4>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Google 5-Star Reviews</p>
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">5-Star Reviews</p>
               </div>
               <div className="space-y-1">
                 <h4 className="text-3xl md:text-4xl font-extrabold text-secondary">100%</h4>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Licensed & Reg.</p>
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Licensed Clinic</p>
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Trust Blocks (Why Choose Us & Our Approach) */}
+      <section className="py-16 px-6 bg-card border-y border-border/50 relative z-10 -mt-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-primary/10 text-primary rounded-xl shrink-0"><Award className="w-6 h-6" /></div>
+            <div>
+              <h3 className="font-bold text-foreground mb-1">Why Choose Us</h3>
+              <p className="text-sm text-muted-foreground">Led by our clinical experts with 20+ years of multi-disciplinary experience.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-secondary/10 text-secondary rounded-xl shrink-0"><Brain className="w-6 h-6" /></div>
+            <div>
+              <h3 className="font-bold text-foreground mb-1">Our Approach</h3>
+              <p className="text-sm text-muted-foreground">We treat the root cause by integrating physical rehab, nutrition, and mental wellness.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-green-500/10 text-green-600 rounded-xl shrink-0"><CheckCircle2 className="w-6 h-6" /></div>
+            <div>
+              <h3 className="font-bold text-foreground mb-1">Results You Can Expect</h3>
+              <p className="text-sm text-muted-foreground">Faster recovery times, long-term pain relief, and sustainable healthy habits.</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -374,7 +408,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="space-y-1.5">
                   <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">Holistic Health Clinic</h2>
-                  <p className="text-lg md:text-xl text-primary font-semibold">Founder & Lead Physiotherapist: Dr. Shreya Ghag (P.T.)</p>
+                  <p className="text-lg md:text-xl text-primary font-semibold">Our Expert Clinical Team</p>
                   <div className="flex flex-wrap gap-2 pt-2">
                     {["B.P.Th (Physiotherapy)", "M.I.A.P Member", "P.G.D. Nutrition", "M.A. Clinical Psychology"].map((deg, i) => (
                       <span key={i} className="text-xs font-semibold px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full">
@@ -403,13 +437,83 @@ export default function Home() {
                     href="/about" 
                     className="text-sm font-bold text-primary hover:underline flex items-center gap-1.5"
                   >
-                    Read Professional Bio & Credentials <ArrowRight className="h-4 w-4" />
+                    Read Clinic Profile & Credentials <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>
             </ScrollReveal>
           </div>
 
+        </div>
+      </section>
+
+      {/* 4.5 REAL PATIENT CASE STUDIES (Social Proof) */}
+      <section className="py-24 px-6 bg-card border-y border-border/50">
+        <div className="max-w-6xl mx-auto space-y-16">
+          <ScrollReveal animation="slide-up">
+            <div className="text-center space-y-4 max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                Clinical Case Studies
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                See how we diagnose, treat, and resolve chronic conditions. Real patients. Real results.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <ScrollReveal animation="slide-right" delay={100}>
+              <div className="bg-background border border-border rounded-3xl overflow-hidden hover:shadow-lg transition-all h-full">
+                <div className="p-8 space-y-6">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full uppercase tracking-wider">Orthopedic Rehab</span>
+                    <span className="text-sm text-muted-foreground">Patient: M. Desai (52)</span>
+                  </div>
+                  <h3 className="text-2xl font-bold">Severe Lumbar Spondylosis</h3>
+                  <div className="space-y-4 pt-2">
+                    <div className="border-l-2 border-red-500/50 pl-4">
+                      <h4 className="text-sm font-bold text-red-500 uppercase">Condition</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed mt-1">Bedridden for 2 weeks due to severe lower back pain shooting down the leg. Unable to walk without support.</p>
+                    </div>
+                    <div className="border-l-2 border-primary/50 pl-4">
+                      <h4 className="text-sm font-bold text-primary uppercase">Treatment (8 Weeks)</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed mt-1">Lumbar traction, IFT for pain management, followed by targeted core strengthening and CBT for pain anxiety.</p>
+                    </div>
+                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
+                      <h4 className="text-sm font-bold text-green-600 uppercase">Result</h4>
+                      <p className="text-foreground font-medium text-sm leading-relaxed mt-1">100% pain reduction. Returned to daily morning walks and independent living without surgical intervention.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal animation="slide-left" delay={200}>
+              <div className="bg-background border border-border rounded-3xl overflow-hidden hover:shadow-lg transition-all h-full">
+                <div className="p-8 space-y-6">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 bg-amber-500/10 text-amber-600 text-xs font-bold rounded-full uppercase tracking-wider">Metabolic Diet</span>
+                    <span className="text-sm text-muted-foreground">Patient: R. Sharma (34)</span>
+                  </div>
+                  <h3 className="text-2xl font-bold">PCOS & Stubborn Weight Gain</h3>
+                  <div className="space-y-4 pt-2">
+                    <div className="border-l-2 border-red-500/50 pl-4">
+                      <h4 className="text-sm font-bold text-red-500 uppercase">Condition</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed mt-1">Struggling with irregular cycles, chronic fatigue, and insulin resistance. Gained 15kg over 2 years despite exercising.</p>
+                    </div>
+                    <div className="border-l-2 border-amber-500/50 pl-4">
+                      <h4 className="text-sm font-bold text-amber-600 uppercase">Treatment (12 Weeks)</h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed mt-1">Customized clinical nutrition plan focusing on low-GI foods, gut health optimization, and hormonal balance.</p>
+                    </div>
+                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
+                      <h4 className="text-sm font-bold text-green-600 uppercase">Result</h4>
+                      <p className="text-foreground font-medium text-sm leading-relaxed mt-1">Lost 8kg of fat, normalized menstrual cycle, and completely reversed afternoon energy crashes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -451,38 +555,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. FINAL BOOKING CTA SECTION */}
-      <section className="py-20 px-6 bg-background relative overflow-hidden">
+      {/* 7. FREE HEALTH ASSESSMENT (QUIZ FUNNEL) */}
+      <section id="assessment" className="py-24 px-6 bg-background relative overflow-hidden">
         {/* Subtle colorful backlights */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
-        <ScrollReveal animation="scale-up" className="max-w-4xl mx-auto">
-          <div className="text-center space-y-8 bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-8 md:p-16 border border-slate-800 shadow-2xl relative z-10">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-                Ready to Recover Your Movement & Ease?
-              </h2>
-              <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
-                Book a comprehensive clinical assessment at Holistic Health Clinic. Get a personalized treatment roadmap built for your body.
+        <div className="max-w-4xl mx-auto space-y-12 relative z-10">
+          <ScrollReveal animation="slide-up">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-foreground tracking-tight">Take the Free Health Assessment</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Not sure where to start? Answer 3 quick questions so we can understand your pain points and prepare a custom recovery plan before you even step into the clinic.
               </p>
             </div>
-
-            <div className="flex flex-col items-center gap-4">
-              <WhatsAppButton 
-                className="text-base px-10 py-5 shadow-2xl"
-                message="Hello, I'd like to book an appointment at Holistic Health Clinic in Vikhroli East. Please share the next available times."
-              >
-                Book Physical Assessment Now
-              </WhatsAppButton>
-              <p className="text-xs text-slate-500 mt-2 flex flex-col md:flex-row items-center justify-center gap-4">
-                <span>&bull; Consultation by Prior Appointment Only</span>
-                <span className="hidden md:inline">|</span>
-                <span>&bull; Clinic Address: Ashok Nagar, Vikhroli East</span>
-              </p>
-            </div>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+          
+          <ScrollReveal animation="scale-up" delay={200}>
+            <AssessmentQuiz />
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* 8. FLOATING WHATSAPP ACTION WIDGET (Bottom Left - balances the bot in bottom-right) */}

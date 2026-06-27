@@ -16,7 +16,7 @@ const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: "What should I expect during my first session?",
-    answer: "Your first session will focus on a comprehensive clinical assessment. Dr. Shreya Ghag will discuss your symptoms, perform specific physical and diagnostic tests, explain the root cause of your condition, and outline a customized treatment plan. If time permits, we will also begin your first therapy/treatment during this visit."
+    answer: "Your first session will focus on a comprehensive clinical assessment. Our clinical team will discuss your symptoms, perform specific physical and diagnostic tests, explain the root cause of your condition, and outline a customized treatment plan. If time permits, we will also begin your first therapy/treatment during this visit."
   },
   {
     question: "How many sessions will I need for recovery?",

@@ -11,7 +11,7 @@ export default function PlantarFasciitis() {
       title="Plantar Fasciitis: Resolving Chronic Heel Pain"
       category="Physiotherapy"
       readTime="4 min read"
-      author="Dr. Shreya Ghag"
+      author="Holistic Health Clinic"
       date="October 02, 2024"
     >
       <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">

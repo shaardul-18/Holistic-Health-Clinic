@@ -11,7 +11,7 @@ export default function PostSurgicalRehab() {
       title="Post-Surgical Rehabilitation: Your Roadmap to Full Recovery"
       category="Physiotherapy"
       readTime="6 min read"
-      author="Dr. Shreya Ghag"
+      author="Holistic Health Clinic"
       date="August 10, 2024"
     >
       <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">

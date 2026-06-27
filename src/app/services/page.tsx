@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { InteractiveBodyMap } from "@/components/InteractiveBodyMap";
+import { ReviewsMarquee } from "@/components/ReviewsMarquee";
 
 const Threads = dynamic(() => import("@/components/reactbits/Threads"));
 export const metadata = {
@@ -59,34 +60,39 @@ export default function ServicesPage() {
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Physiotherapy</h2>
                   </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Our advanced physiotherapy treatments focus on restoring movement, relieving pain, and improving your physical strength. We treat a wide range of musculoskeletal and neurological conditions.
-                  </p>
                   
-                  <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3 pt-4">
-                    {[
-                      "Neck & Back Pain",
-                      "Cervical & Lumbar Spondylosis",
-                      "Shoulder Pain & Frozen Shoulder",
-                      "Periarthritis",
-                      "Hip, Knee & Ankle Pain",
-                      "Osteoarthritis",
-                      "Joint Pain & Muscle Strain",
-                      "Sports Injuries",
-                      "Pediatric Physiotherapy",
-                      "Cardio Respiratory Physiotherapy",
-                      "Ante natal-Post natal Physiotherapy",
-                      "Muscle Strengthening & Stretching",
-                      "Pregnancy Exercises",
-                      "On-site Breast Crawl",
-                      "Exercises For Weight Loss",
-                      "Guidance & Exercises for Lactation"
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                        <span className="text-foreground/80 font-medium text-sm">{item}</span>
-                      </div>
-                    ))}
+                  <div className="space-y-5 pt-2">
+                    <div className="border-l-2 border-red-500/50 pl-4">
+                      <h4 className="text-sm font-bold text-red-500 uppercase tracking-wider mb-1">The Problem</h4>
+                      <p className="text-muted-foreground leading-relaxed">Chronic neck or back pain, stiff frozen shoulders, sports injuries, or post-surgical immobility limiting your daily life.</p>
+                    </div>
+                    <div className="border-l-2 border-primary/50 pl-4">
+                      <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Our Solution</h4>
+                      <p className="text-muted-foreground leading-relaxed">Advanced electrotherapy (SWD, IFT, Ultrasound), targeted joint mobilization, and evidence-based exercise regimens.</p>
+                    </div>
+                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
+                      <h4 className="text-sm font-bold text-green-600 uppercase tracking-wider mb-1">The Result</h4>
+                      <p className="text-foreground font-medium leading-relaxed">Pain-free movement, restored strength, and a confident return to an active, independent lifestyle.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="pt-6">
+                    <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-4 border-b border-border pb-2">Conditions Treated</h4>
+                    <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3">
+                      {[
+                        "Neck & Back Pain", "Cervical & Lumbar Spondylosis", "Shoulder Pain & Frozen Shoulder",
+                        "Periarthritis", "Hip, Knee & Ankle Pain", "Osteoarthritis",
+                        "Joint Pain & Muscle Strain", "Sports Injuries", "Pediatric Physiotherapy",
+                        "Cardio Respiratory Physiotherapy", "Ante natal-Post natal Physiotherapy",
+                        "Muscle Strengthening & Stretching", "Pregnancy Exercises", "On-site Breast Crawl",
+                        "Exercises For Weight Loss", "Guidance & Exercises for Lactation"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -98,8 +104,6 @@ export default function ServicesPage() {
                    <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                      <Zap className="h-6 w-6 text-primary" /> Advanced Modalities
                    </h3>
-                   <p className="text-muted-foreground mb-6 text-sm">We use modern electrotherapy and evidence-based techniques to accelerate your healing process safely.</p>
-                   
                    <ul className="space-y-3 mb-8">
                      <li className="flex justify-between items-center border-b border-border pb-2 text-sm">
                        <span className="font-medium">Traction</span>
@@ -119,7 +123,7 @@ export default function ServicesPage() {
                      </li>
                    </ul>
 
-                   <WhatsAppButton className="w-full text-center justify-center">Inquire about Physiotherapy</WhatsAppButton>
+                   <WhatsAppButton className="w-full text-center justify-center font-bold">Inquire about Physiotherapy</WhatsAppButton>
                 </div>
               </ScrollReveal>
             </div>
@@ -136,26 +140,36 @@ export default function ServicesPage() {
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Counselling & Psychology</h2>
                   </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    True health encompasses the mind. We provide a safe, confidential, and empathetic environment to help you navigate psychological challenges and major life transitions.
-                  </p>
+
+                  <div className="space-y-5 pt-2">
+                    <div className="border-l-2 border-red-500/50 pl-4">
+                      <h4 className="text-sm font-bold text-red-500 uppercase tracking-wider mb-1">The Problem</h4>
+                      <p className="text-muted-foreground leading-relaxed">Overwhelming stress, anxiety, depression, relationship conflicts, or coping with chronic pain and lifestyle changes.</p>
+                    </div>
+                    <div className="border-l-2 border-secondary/50 pl-4">
+                      <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-1">Our Solution</h4>
+                      <p className="text-muted-foreground leading-relaxed">A safe, confidential space using Cognitive Behavioral Therapy (CBT), REBT, and structured emotional guidance.</p>
+                    </div>
+                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
+                      <h4 className="text-sm font-bold text-green-600 uppercase tracking-wider mb-1">The Result</h4>
+                      <p className="text-foreground font-medium leading-relaxed">Mental clarity, emotional resilience, improved relationships, and strategies to confidently handle life's challenges.</p>
+                    </div>
+                  </div>
                   
-                  <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3 pt-4">
-                    {[
-                      "Anxiety & Depression",
-                      "ADHD Management",
-                      "Parental Counselling",
-                      "Couple Counselling",
-                      "Personality Testing",
-                      "IQ Testing",
-                      "Child Counselling",
-                      "Adolescent Counselling"
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
-                        <span className="text-foreground/80 font-medium text-sm">{item}</span>
-                      </div>
-                    ))}
+                  <div className="pt-6">
+                    <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-4 border-b border-border pb-2">Conditions Treated</h4>
+                    <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3">
+                      {[
+                        "Anxiety & Depression", "ADHD Management", "Parental Counselling",
+                        "Couple Counselling", "Personality Testing", "IQ Testing",
+                        "Child Counselling", "Adolescent Counselling"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -165,20 +179,15 @@ export default function ServicesPage() {
               <ScrollReveal animation="slide-right" delay={150}>
                 <div className="bg-gradient-to-br from-secondary/5 to-transparent dark:from-secondary/10 dark:to-transparent border border-secondary/10 p-8 rounded-3xl shadow-sm">
                    <h3 className="text-xl font-semibold mb-4">Therapeutic Techniques Used</h3>
-                   <p className="text-muted-foreground mb-6 text-sm">Our sessions utilize evidence-based psychological frameworks tailored to your specific emotional needs.</p>
-                   
                    <div className="flex flex-wrap gap-2 mb-8">
-                     {["R.E.B.T", "C.B.T.", "D.B.T", "T.A."].map((tech, i) => (
+                     {["R.E.B.T", "C.B.T.", "D.B.T", "T.A.", "IQ Testing", "Personality Testing"].map((tech, i) => (
                        <span key={i} className="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-semibold border border-secondary/20">
                          {tech}
                        </span>
                      ))}
-                     <span className="px-3 py-1 bg-secondary/5 text-secondary/70 rounded-full text-sm font-medium border border-border">
-                       & Many More
-                     </span>
                    </div>
      
-                   <WhatsAppButton className="w-full text-center justify-center bg-secondary hover:bg-secondary/90 focus:ring-secondary">Book a Counselling Session</WhatsAppButton>
+                   <WhatsAppButton className="w-full text-center justify-center font-bold bg-secondary hover:bg-secondary/90 focus:ring-secondary">Book a Counselling Session</WhatsAppButton>
                 </div>
               </ScrollReveal>
             </div>
@@ -195,32 +204,36 @@ export default function ServicesPage() {
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Diet & Nutrition</h2>
                   </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    What you eat directly impacts how your body heals and how your mind functions. Our dietetics services are designed to complement your therapies for complete holistic health.
-                  </p>
+
+                  <div className="space-y-5 pt-2">
+                    <div className="border-l-2 border-red-500/50 pl-4">
+                      <h4 className="text-sm font-bold text-red-500 uppercase tracking-wider mb-1">The Problem</h4>
+                      <p className="text-muted-foreground leading-relaxed">Stubborn weight, fatigue, slow surgical recovery, or managing metabolic conditions like PCOS and Diabetes.</p>
+                    </div>
+                    <div className="border-l-2 border-amber-500/50 pl-4">
+                      <h4 className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-1">Our Solution</h4>
+                      <p className="text-muted-foreground leading-relaxed">Sustainable, personalized clinical nutrition plans focusing on real food instead of restrictive crash diets.</p>
+                    </div>
+                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
+                      <h4 className="text-sm font-bold text-green-600 uppercase tracking-wider mb-1">The Result</h4>
+                      <p className="text-foreground font-medium leading-relaxed">Higher daily energy, optimal body composition, faster healing, and controlled metabolic symptoms.</p>
+                    </div>
+                  </div>
                   
-                  <ul className="space-y-3 pt-4">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-amber-600 shrink-0 mt-0.5" />
-                      <span className="text-foreground/80 font-medium">Body Composition</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-amber-600 shrink-0 mt-0.5" />
-                      <span className="text-foreground/80 font-medium">Weight Loss Programs</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-amber-600 shrink-0 mt-0.5" />
-                      <span className="text-foreground/80 font-medium">Weight Gain & Muscle Building</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-amber-600 shrink-0 mt-0.5" />
-                      <span className="text-foreground/80 font-medium">Diabetic Diet Planning</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-amber-600 shrink-0 mt-0.5" />
-                      <span className="text-foreground/80 font-medium">Personalized clinical nutrition for other specific conditions</span>
-                    </li>
-                  </ul>
+                  <div className="pt-6">
+                    <h4 className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-4 border-b border-border pb-2">Programs & Focus Areas</h4>
+                    <div className="grid sm:grid-cols-2 gap-x-4 gap-y-3">
+                      {[
+                        "Body Composition", "Weight Loss Programs", "Weight Gain & Muscle Building",
+                        "Diabetic Diet Planning", "Personalized clinical nutrition for other specific conditions"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground text-xs leading-tight">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             </div>
@@ -229,12 +242,36 @@ export default function ServicesPage() {
               <ScrollReveal animation="slide-left" delay={150}>
                 <div className="bg-gradient-to-br from-amber-500/5 to-transparent dark:from-amber-500/10 dark:to-transparent border border-amber-500/10 p-8 rounded-3xl shadow-sm">
                    <h3 className="text-xl font-semibold mb-4">Food as Medicine</h3>
-                   <p className="text-muted-foreground mb-6">We don't believe in crash diets. We build sustainable, enjoyable eating habits that fuel your body and mind for the long term.</p>
-                   <WhatsAppButton className="w-full text-center justify-center bg-amber-600 hover:bg-amber-700 focus:ring-amber-600">Consult for Diet Plan</WhatsAppButton>
+                   <ul className="space-y-3 mb-8">
+                     <li className="flex items-start gap-3">
+                       <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                       <span className="text-foreground/90 font-medium text-sm">Body Composition & Weight Loss</span>
+                     </li>
+                     <li className="flex items-start gap-3">
+                       <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                       <span className="text-foreground/90 font-medium text-sm">Weight Gain & Muscle Building</span>
+                     </li>
+                     <li className="flex items-start gap-3">
+                       <CheckCircle2 className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+                       <span className="text-foreground/90 font-medium text-sm">Diabetic & PCOS Diet Planning</span>
+                     </li>
+                   </ul>
+                   <WhatsAppButton className="w-full text-center justify-center font-bold bg-amber-600 hover:bg-amber-700 focus:ring-amber-600">Consult for Diet Plan</WhatsAppButton>
                 </div>
               </ScrollReveal>
             </div>
           </section>
+        </ScrollReveal>
+
+        {/* Global Testimonials injected at bottom of services */}
+        <ScrollReveal animation="fade-in" className="mt-32 pt-16 border-t border-border/50">
+          <div className="text-center space-y-4 mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Success Stories</h2>
+            <p className="text-muted-foreground">Hear from patients who recovered their movement and health with our integrated approach.</p>
+          </div>
+          <div className="bg-primary/5 py-12 rounded-[40px] overflow-hidden">
+            <ReviewsMarquee />
+          </div>
         </ScrollReveal>
 
       </div>
