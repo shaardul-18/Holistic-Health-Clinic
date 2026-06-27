@@ -10,10 +10,23 @@ interface BlogArticleLayoutProps {
   subtitle: string;
   imageSrc?: string;
   heroComponent?: React.ReactNode;
+  readTime?: string;
+  author?: string;
+  date?: string;
   children: React.ReactNode;
 }
 
-export function BlogArticleLayout({ category, title, subtitle, imageSrc, heroComponent, children }: BlogArticleLayoutProps) {
+export function BlogArticleLayout({ 
+  category, 
+  title, 
+  subtitle, 
+  imageSrc, 
+  heroComponent,
+  readTime,
+  author,
+  date,
+  children 
+}: BlogArticleLayoutProps) {
   return (
     <main className="flex-1 bg-background pt-32 pb-24 px-6 min-h-screen">
       <article className="max-w-4xl mx-auto">
@@ -23,8 +36,13 @@ export function BlogArticleLayout({ category, title, subtitle, imageSrc, heroCom
           </Link>
           
           <div className="space-y-6">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest animate-in fade-in zoom-in duration-1000">
-              {category}
+            <div className="flex flex-wrap items-center gap-4 text-xs font-bold tracking-widest uppercase animate-in fade-in zoom-in duration-1000">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary">
+                {category}
+              </span>
+              {readTime && <span className="text-muted-foreground">{readTime}</span>}
+              {date && <span className="text-muted-foreground">• {date}</span>}
+              {author && <span className="text-muted-foreground">• By {author}</span>}
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]">
               <TextReveal delay={200}>{title}</TextReveal>
