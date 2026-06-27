@@ -56,9 +56,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "name": "Holistic Health Clinic",
-    "image": "https://holistichealthclinic.in/clinic-logo.png",
-    "@id": "https://holistichealthclinic.in",
-    "url": "https://holistichealthclinic.in",
+    "image": "https://holistic-health.co.in/clinic-logo.png",
+    "@id": "https://holistic-health.co.in",
+    "url": "https://holistic-health.co.in",
     "telephone": "+91-9987258931", 
     "address": {
       "@type": "PostalAddress",
