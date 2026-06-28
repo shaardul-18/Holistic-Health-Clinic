@@ -22,11 +22,11 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 w-full flex flex-col items-center px-4 pointer-events-none">
-      <div className="w-full max-w-6xl bg-background/85 dark:bg-zinc-950/85 backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/[0.03] flex h-16 items-center justify-between px-3 sm:px-6 pointer-events-auto transition-all duration-300">
+    <header className="fixed top-2 sm:top-4 inset-x-2 sm:inset-x-4 z-50 flex flex-col items-center pointer-events-none">
+      <div className="w-full max-w-6xl bg-background/85 dark:bg-zinc-950/85 backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/[0.03] flex h-14 sm:h-16 items-center justify-between px-3 sm:px-6 pointer-events-auto transition-all duration-300">
         
         {/* Logo and title */}
-        <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-102" onClick={() => setIsOpen(false)}>
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 transition-transform hover:scale-102" onClick={() => setIsOpen(false)}>
           <Image 
             src="/logo-new.png" 
             alt="Holistic Health Clinic Logo" 
