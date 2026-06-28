@@ -23,7 +23,7 @@ export function Navbar() {
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 w-full flex flex-col items-center px-4 pointer-events-none">
-      <div className="w-full max-w-6xl bg-background/85 dark:bg-zinc-950/85 backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/[0.03] flex h-16 items-center justify-between px-4 sm:px-6 pointer-events-auto transition-all duration-300">
+      <div className="w-full max-w-6xl bg-background/85 dark:bg-zinc-950/85 backdrop-blur-md border border-border/50 rounded-full shadow-lg shadow-black/[0.03] flex h-16 items-center justify-between px-3 sm:px-6 pointer-events-auto transition-all duration-300">
         
         {/* Logo and title */}
         <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-102" onClick={() => setIsOpen(false)}>
@@ -61,7 +61,7 @@ export function Navbar() {
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           {/* Fallback Nav for medium screens (between md and xl) where we have less space */}
           <nav className="hidden md:flex xl:hidden items-center gap-1 mr-2">
             {navItems.slice(0, 5).map((item) => {
@@ -84,7 +84,7 @@ export function Navbar() {
 
           <ThemeToggle />
           <WhatsAppButton 
-            className="bg-[#1886C6] hover:bg-[#1886C6]/90 text-white shadow-md shadow-[#1886C6]/15 text-xs font-bold tracking-wider uppercase px-4 py-2 sm:px-5 sm:py-2.5 rounded-full flex items-center gap-1.5 shrink-0"
+            className="bg-[#1886C6] hover:bg-[#1886C6]/90 text-white shadow-md shadow-[#1886C6]/15 text-[10px] sm:text-xs font-bold tracking-wider uppercase px-3 py-2 sm:px-5 sm:py-2.5 rounded-full flex items-center gap-1 sm:gap-1.5 shrink-0"
             message="Hello, I would like to book a consultation at your clinic. Please provide more details. Thank you!"
           >
             <span className="hidden lg:inline">Book Consultation</span>
@@ -94,7 +94,7 @@ export function Navbar() {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 md:hidden text-foreground hover:text-primary transition-colors focus:outline-none pointer-events-auto"
+            className="p-1.5 sm:p-2 md:hidden text-foreground hover:text-primary transition-colors focus:outline-none pointer-events-auto shrink-0"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
