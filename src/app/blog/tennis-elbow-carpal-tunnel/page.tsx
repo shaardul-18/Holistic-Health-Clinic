@@ -1,7 +1,7 @@
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 
 export const metadata = {
-  title: "Tennis Elbow & Carpal Tunnel | Holistic Health Clinic",
+  title: "Tennis Elbow & Carpal Tunnel",
   description: "Treating repetitive strain injuries of the elbow, wrist, and hand.",
 };
 

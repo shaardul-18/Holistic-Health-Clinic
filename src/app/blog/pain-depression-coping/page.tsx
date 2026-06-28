@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Coping with Depression from Chronic Pain",
+  description: "Breaking the vicious cycle of physical suffering and emotional despair through integrated therapeutic support.",
+};
+
 
 export default function PainDepressionArticle() {
   return (

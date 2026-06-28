@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import LineWaves from "@/components/reactbits/LineWaves";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Holistic Health Clinic",
+  title: "Terms of Service",
   description: "Terms of Service for Holistic Health Clinic.",
 };
 

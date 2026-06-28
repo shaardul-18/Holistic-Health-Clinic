@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Postpartum Core Rehabilitation",
+  description: "Safely rebuilding core strength and resolving diastasis recti after childbirth.",
+};
+
 
 export default function PostpartumCoreRehabArticle() {
   return (

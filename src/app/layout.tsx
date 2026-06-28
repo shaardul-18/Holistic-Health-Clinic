@@ -24,7 +24,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Holistic Health Clinic",
+  title: {
+    default: "Holistic Health Clinic",
+    template: "%s | Holistic Health Clinic",
+  },
   description: "Holistic Health Clinic provides expert physiotherapy, clinical nutrition, and counselling in Vikhroli East, Mumbai. Over 20+ years of practicing experience. Recover from back pain, sports injuries, and stress naturally.",
   keywords: [
     "Holistic Health Clinic",

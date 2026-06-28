@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Nutritional Strategies for Muscle Recovery",
+  description: "Fueling your body with the precise macronutrients needed to rebuild tissue post-surgery or after intense athletic exertion.",
+};
+
 
 export default function MuscleRecoveryArticle() {
   return (

@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Managing Chronic Stress",
+  description: "How the mind-body connection turns psychological tension into physical pain, and how professional counselling breaks the cycle.",
+};
+
 
 export default function ChronicStressArticle() {
   return (

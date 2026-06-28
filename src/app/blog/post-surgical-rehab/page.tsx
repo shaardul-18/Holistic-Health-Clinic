@@ -1,7 +1,7 @@
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 
 export const metadata = {
-  title: "Post-Surgical Rehabilitation | Holistic Health Clinic",
+  title: "Post-Surgical Rehabilitation",
   description: "Comprehensive recovery protocols for joint replacements, ligament repairs, and orthopedic surgeries.",
 };
 

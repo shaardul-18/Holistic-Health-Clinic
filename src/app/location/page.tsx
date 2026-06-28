@@ -7,7 +7,7 @@ import { TextReveal } from "@/components/animations/TextReveal";
 
 const LineWaves = dynamic(() => import("@/components/reactbits/LineWaves"));
 export const metadata = {
-  title: "Location | Holistic Health Clinic",
+  title: "Location",
   description: "Visit Holistic Health Clinic in Vikhroli East, Mumbai.",
 };
 

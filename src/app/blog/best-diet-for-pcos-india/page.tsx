@@ -2,7 +2,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export const metadata = {
-  title: "Best Diet for PCOS (India) | Holistic Health Clinic",
+  title: "Best Diet for PCOS (India)",
   description: "Learn the most effective Indian dietary guidelines to manage PCOS, control insulin resistance, and lose weight sustainably.",
 };
 

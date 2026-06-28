@@ -7,7 +7,7 @@ import { TextReveal } from "@/components/animations/TextReveal";
 
 const Threads = dynamic(() => import("@/components/reactbits/Threads"));
 export const metadata = {
-  title: "About | Holistic Health Clinic",
+  title: "About",
   description: "Learn about Holistic Health Clinic, our 20+ years of practicing experience, qualifications, and holistic approach in Vikhroli East, Mumbai.",
 };
 

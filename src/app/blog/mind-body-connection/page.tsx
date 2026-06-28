@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Mind-Body Connection in Healing",
+  description: "How psychological well-being accelerates physical recovery and reduces chronic pain perception.",
+};
+
 
 export default function MindBodyConnectionArticle() {
   return (

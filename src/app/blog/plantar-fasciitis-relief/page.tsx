@@ -1,7 +1,7 @@
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 
 export const metadata = {
-  title: "Plantar Fasciitis Relief | Holistic Health Clinic",
+  title: "Plantar Fasciitis Relief",
   description: "Clinical approaches to resolving chronic heel pain and arch collapse.",
 };
 

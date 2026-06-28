@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Nutrition for Joint Health",
+  description: "Essential nutrients and dietary strategies to support cartilage repair and reduce joint stiffness.",
+};
+
 
 export default function NutritionJointHealthArticle() {
   return (

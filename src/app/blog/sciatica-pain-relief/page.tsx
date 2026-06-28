@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Sciatica Pain Relief",
+  description: "Identifying the root cause of radiating nerve pain and utilizing targeted physical therapy to achieve lasting relief.",
+};
+
 
 export default function SciaticaArticle() {
   return (

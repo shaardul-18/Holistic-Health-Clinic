@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Frozen Shoulder Rehabilitation",
+  description: "Navigating the phases of Adhesive Capsulitis and restoring your pain-free range of motion safely.",
+};
+
 
 export default function FrozenShoulderArticle() {
   return (

@@ -29,9 +29,34 @@ export function BlogArticleLayout({
   date,
   children 
 }: BlogArticleLayoutProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": subtitle,
+    "image": imageSrc ? `https://holistic-health.co.in${imageSrc}` : "https://holistic-health.co.in/clinic-logo.png",
+    "author": {
+      "@type": "Person",
+      "name": author || "Holistic Health Clinic"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Holistic Health Clinic",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://holistic-health.co.in/clinic-logo.png"
+      }
+    },
+    "datePublished": date || new Date().toISOString().split('T')[0],
+  };
+
   return (
     <main className="flex-1 bg-background pt-32 pb-24 px-6 min-h-screen">
       <article className="max-w-4xl mx-auto">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ScrollReveal animation="fade-in" duration={1500}>
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors duration-500 uppercase tracking-widest mb-12">
             <ArrowLeft className="h-4 w-4" /> Back to Insights

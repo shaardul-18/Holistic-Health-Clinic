@@ -10,7 +10,7 @@ import { ClinicalAuthorityBlock } from "@/components/ClinicalAuthorityBlock";
 
 const Threads = dynamic(() => import("@/components/reactbits/Threads"));
 export const metadata = {
-  title: "Services | Holistic Health Clinic",
+  title: "Services",
   description: "Comprehensive Physiotherapy, Nutrition, and Counselling services in Vikhroli East, Mumbai.",
 };
 

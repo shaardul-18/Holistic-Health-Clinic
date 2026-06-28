@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Metabolic Weight Management",
+  description: "Why starvation diets fail and how to use clinical nutrition to achieve sustainable fat loss and joint relief.",
+};
+
 
 export default function MetabolicWeightArticle() {
   return (

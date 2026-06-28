@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import LineWaves from "@/components/reactbits/LineWaves";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Holistic Health Clinic",
+  title: "Privacy Policy",
   description: "Privacy Policy for Holistic Health Clinic.",
 };
 

@@ -2,7 +2,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export const metadata = {
-  title: "Why Your Weight Loss Is Not Working | Holistic Health Clinic",
+  title: "Why Your Weight Loss Is Not Working",
   description: "Discover the hidden metabolic adaptations, hormonal imbalances, and dietary mistakes stalling your weight loss journey.",
 };
 

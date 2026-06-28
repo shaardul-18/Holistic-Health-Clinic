@@ -1,7 +1,7 @@
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 
 export const metadata = {
-  title: "Ergonomics & Tech Neck | Holistic Health Clinic",
+  title: "Ergonomics & Tech Neck",
   description: "Combatting poor desk posture, tech neck, and repetitive strain injuries in the corporate world.",
 };
 

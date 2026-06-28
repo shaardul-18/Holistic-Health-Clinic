@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Managing PCOS through Diet",
+  description: "A clinical approach to restoring hormonal balance, improving insulin sensitivity, and managing the symptoms of Polycystic Ovary Syndrome.",
+};
+
 
 export default function PCOSDietArticle() {
   return (

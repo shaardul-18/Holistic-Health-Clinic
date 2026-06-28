@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Sports Injury Recovery",
+  description: "Advanced rehabilitation protocols to safely return athletes to peak performance after acute or overuse injuries.",
+};
+
 
 export default function SportsInjuryArticle() {
   return (

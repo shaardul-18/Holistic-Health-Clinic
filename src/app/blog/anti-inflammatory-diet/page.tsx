@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Anti-Inflammatory Nutrition",
+  description: "How everyday food choices can naturally extinguish chronic joint pain and accelerate physical healing.",
+};
+
 
 export default function AntiInflammatoryArticle() {
   return (

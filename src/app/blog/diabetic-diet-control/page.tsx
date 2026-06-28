@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Diabetic Diet Control",
+  description: "Mastering blood sugar regulation through clinical nutrition to prevent nerve damage and accelerate tissue healing.",
+};
+
 
 export default function DiabeticDietArticle() {
   return (

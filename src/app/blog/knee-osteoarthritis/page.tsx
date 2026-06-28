@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Osteoarthritis of the Knee",
+  description: "Strategies to manage joint degeneration, reduce pain, and preserve mobility without immediate surgery.",
+};
+
 
 export default function KneeOAArticle() {
   return (

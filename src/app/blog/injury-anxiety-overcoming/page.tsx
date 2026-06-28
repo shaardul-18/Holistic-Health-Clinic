@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Overcoming Anxiety Post-Injury",
+  description: "Conquering kinesiophobia (the fear of movement) and rebuilding confidence in your body after a severe physical trauma.",
+};
+
 
 export default function InjuryAnxietyArticle() {
   return (

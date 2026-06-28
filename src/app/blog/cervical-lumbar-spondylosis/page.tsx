@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { BlogArticleLayout } from "@/components/BlogArticleLayout";
+
+export const metadata: Metadata = {
+  title: "Cervical & Lumbar Spondylosis",
+  description: "Understanding spinal degeneration and how targeted physiotherapy can alleviate nerve compression and restore structural mobility.",
+};
+
 
 export default function SpondylosisArticle() {
   return (
