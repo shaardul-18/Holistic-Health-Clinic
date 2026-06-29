@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Cervical & Lumbar Spondylosis",
   description: "Understanding spinal degeneration and how targeted physiotherapy can alleviate nerve compression and restore structural mobility.",
+  keywords: ["Cervical & Lumbar Spondylosis","cervical lumbar spondylosis","cervical","lumbar","spondylosis","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

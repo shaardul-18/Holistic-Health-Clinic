@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Sports Injury Recovery",
   description: "Advanced rehabilitation protocols to safely return athletes to peak performance after acute or overuse injuries.",
+  keywords: ["Sports Injury Recovery","sports injury recovery","sports","injury","recovery","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

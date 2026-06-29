@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 export const metadata = {
   title: "Gut Health and Fat Loss Connection",
   description: "Learn how your gut microbiome affects your metabolism, cravings, and ability to lose stubborn body fat.",
+  keywords: ["Gut Health and Fat Loss Connection","gut health and fat loss","health","loss","connection","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 export default function GutHealthFatLoss() {

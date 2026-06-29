@@ -3,6 +3,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata = {
   title: "Ergonomics & Tech Neck",
   description: "Combatting poor desk posture, tech neck, and repetitive strain injuries in the corporate world.",
+  keywords: ["Ergonomics & Tech Neck","ergonomics desk posture","ergonomics","tech","neck","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 export default function ErgonomicsDeskPosture() {

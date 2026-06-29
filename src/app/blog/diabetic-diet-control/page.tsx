@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Diabetic Diet Control",
   description: "Mastering blood sugar regulation through clinical nutrition to prevent nerve damage and accelerate tissue healing.",
+  keywords: ["Diabetic Diet Control","diabetic diet control","diabetic","diet","control","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

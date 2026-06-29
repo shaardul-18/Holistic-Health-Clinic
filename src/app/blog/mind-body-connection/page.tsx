@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Mind-Body Connection in Healing",
   description: "How psychological well-being accelerates physical recovery and reduces chronic pain perception.",
+  keywords: ["Mind-Body Connection in Healing","mind body connection","mindbody","connection","healing","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

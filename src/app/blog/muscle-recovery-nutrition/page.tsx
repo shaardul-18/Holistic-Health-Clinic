@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Nutritional Strategies for Muscle Recovery",
   description: "Fueling your body with the precise macronutrients needed to rebuild tissue post-surgery or after intense athletic exertion.",
+  keywords: ["Nutritional Strategies for Muscle Recovery","muscle recovery nutrition","nutritional","strategies","muscle","recovery","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

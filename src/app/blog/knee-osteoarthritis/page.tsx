@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Osteoarthritis of the Knee",
   description: "Strategies to manage joint degeneration, reduce pain, and preserve mobility without immediate surgery.",
+  keywords: ["Osteoarthritis of the Knee","knee osteoarthritis","osteoarthritis","knee","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

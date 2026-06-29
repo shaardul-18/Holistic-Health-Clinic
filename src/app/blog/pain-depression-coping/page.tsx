@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Coping with Depression from Chronic Pain",
   description: "Breaking the vicious cycle of physical suffering and emotional despair through integrated therapeutic support.",
+  keywords: ["Coping with Depression from Chronic Pain","pain depression coping","coping","depression","chronic","pain","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

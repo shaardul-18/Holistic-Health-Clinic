@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Managing PCOS through Diet",
   description: "A clinical approach to restoring hormonal balance, improving insulin sensitivity, and managing the symptoms of Polycystic Ovary Syndrome.",
+  keywords: ["Managing PCOS through Diet","pcos diet management","managing","pcos","through","diet","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

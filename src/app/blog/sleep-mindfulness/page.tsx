@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Mindfulness Strategies for Sleep Disorders",
   description: "Breaking the cycle of insomnia to unlock your body's most powerful state of physical and mental recovery.",
+  keywords: ["Mindfulness Strategies for Sleep Disorders","sleep mindfulness","mindfulness","strategies","sleep","disorders","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

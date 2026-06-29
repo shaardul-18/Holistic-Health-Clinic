@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Nutrition for Joint Health",
   description: "Essential nutrients and dietary strategies to support cartilage repair and reduce joint stiffness.",
+  keywords: ["Nutrition for Joint Health","nutrition joint health","nutrition","joint","health","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Managing Chronic Stress",
   description: "How the mind-body connection turns psychological tension into physical pain, and how professional counselling breaks the cycle.",
+  keywords: ["Managing Chronic Stress","managing chronic stress","managing","chronic","stress","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

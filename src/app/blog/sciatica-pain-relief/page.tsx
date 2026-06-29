@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Sciatica Pain Relief",
   description: "Identifying the root cause of radiating nerve pain and utilizing targeted physical therapy to achieve lasting relief.",
+  keywords: ["Sciatica Pain Relief","sciatica pain relief","sciatica","pain","relief","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

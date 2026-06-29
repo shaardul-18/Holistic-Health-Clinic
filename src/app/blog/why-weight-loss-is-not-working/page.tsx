@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 export const metadata = {
   title: "Why Your Weight Loss Is Not Working",
   description: "Discover the hidden metabolic adaptations, hormonal imbalances, and dietary mistakes stalling your weight loss journey.",
+  keywords: ["Why Your Weight Loss Is Not Working","why weight loss is not working","weight","loss","working","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 export default function WhyWeightLossFails() {

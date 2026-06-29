@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 export const metadata = {
   title: "Best Diet for PCOS (India)",
   description: "Learn the most effective Indian dietary guidelines to manage PCOS, control insulin resistance, and lose weight sustainably.",
+  keywords: ["Best Diet for PCOS (India)","best diet for pcos india","best","diet","pcos","india","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 export default function BestDietForPCOS() {

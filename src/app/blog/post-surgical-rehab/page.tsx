@@ -3,6 +3,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata = {
   title: "Post-Surgical Rehabilitation",
   description: "Comprehensive recovery protocols for joint replacements, ligament repairs, and orthopedic surgeries.",
+  keywords: ["Post-Surgical Rehabilitation","post surgical rehab","postsurgical","rehabilitation","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 export default function PostSurgicalRehab() {

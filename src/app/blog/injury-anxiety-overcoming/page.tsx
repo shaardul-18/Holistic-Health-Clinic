@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Overcoming Anxiety Post-Injury",
   description: "Conquering kinesiophobia (the fear of movement) and rebuilding confidence in your body after a severe physical trauma.",
+  keywords: ["Overcoming Anxiety Post-Injury","injury anxiety overcoming","overcoming","anxiety","postinjury","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

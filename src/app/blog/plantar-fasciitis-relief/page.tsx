@@ -3,6 +3,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata = {
   title: "Plantar Fasciitis Relief",
   description: "Clinical approaches to resolving chronic heel pain and arch collapse.",
+  keywords: ["Plantar Fasciitis Relief","plantar fasciitis relief","plantar","fasciitis","relief","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 export default function PlantarFasciitis() {

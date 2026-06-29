@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Metabolic Weight Management",
   description: "Why starvation diets fail and how to use clinical nutrition to achieve sustainable fat loss and joint relief.",
+  keywords: ["Metabolic Weight Management","metabolic weight management","metabolic","weight","management","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

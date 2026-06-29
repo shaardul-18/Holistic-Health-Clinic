@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Anti-Inflammatory Nutrition",
   description: "How everyday food choices can naturally extinguish chronic joint pain and accelerate physical healing.",
+  keywords: ["Anti-Inflammatory Nutrition","anti inflammatory diet","antiinflammatory","nutrition","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

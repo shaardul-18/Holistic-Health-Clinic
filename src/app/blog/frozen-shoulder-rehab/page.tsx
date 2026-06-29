@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Frozen Shoulder Rehabilitation",
   description: "Navigating the phases of Adhesive Capsulitis and restoring your pain-free range of motion safely.",
+  keywords: ["Frozen Shoulder Rehabilitation","frozen shoulder rehab","frozen","shoulder","rehabilitation","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

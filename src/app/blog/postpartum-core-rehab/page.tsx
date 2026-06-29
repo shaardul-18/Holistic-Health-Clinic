@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "Postpartum Core Rehabilitation",
   description: "Safely rebuilding core strength and resolving diastasis recti after childbirth.",
+  keywords: ["Postpartum Core Rehabilitation","postpartum core rehab","postpartum","core","rehabilitation","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

@@ -4,6 +4,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata: Metadata = {
   title: "CBT for Rehab Motivation",
   description: "Utilizing Cognitive Behavioral Therapy to overcome frustration, maintain discipline, and conquer long-term physical rehabilitation.",
+  keywords: ["CBT for Rehab Motivation","cbt rehab motivation","rehab","motivation","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 

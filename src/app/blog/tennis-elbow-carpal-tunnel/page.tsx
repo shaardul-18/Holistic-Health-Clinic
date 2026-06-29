@@ -3,6 +3,7 @@ import { BlogArticleLayout } from "@/components/BlogArticleLayout";
 export const metadata = {
   title: "Tennis Elbow & Carpal Tunnel",
   description: "Treating repetitive strain injuries of the elbow, wrist, and hand.",
+  keywords: ["Tennis Elbow & Carpal Tunnel","tennis elbow carpal tunnel","tennis","elbow","carpal","tunnel","Holistic Health Clinic","Vikhroli East","Mumbai"],
 };
 
 export default function TennisElbowCarpalTunnel() {
