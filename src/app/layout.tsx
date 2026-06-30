@@ -24,6 +24,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://holistic-health.co.in'),
   title: {
     default: "Holistic Health Clinic",
     template: "%s | Holistic Health Clinic",
@@ -40,11 +41,6 @@ export const metadata: Metadata = {
     "physical therapist near me"
   ],
   authors: [{ name: "Holistic Health Clinic" }],
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
-  },
   openGraph: {
     title: "Holistic Health Clinic",
     description: "Expert physiotherapy, diet planning, and counselling services in Vikhroli East, Mumbai by Holistic Health Clinic. Over 20+ years of practicing experience.",

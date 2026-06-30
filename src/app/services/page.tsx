@@ -64,18 +64,18 @@ export default function ServicesPage() {
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Physiotherapy</h2>
                   </div>
                   
-                  <div className="space-y-5 pt-2">
-                    <div className="border-l-2 border-red-500/50 pl-4">
-                      <h4 className="text-sm font-bold text-red-500 uppercase tracking-wider mb-1">The Problem</h4>
-                      <p className="text-muted-foreground leading-relaxed">Chronic neck or back pain, stiff frozen shoulders, sports injuries, or post-surgical immobility limiting your daily life.</p>
+                  <div className="space-y-6 pt-4">
+                    <div className="border-l-4 border-red-500 pl-5">
+                      <h4 className="text-xs font-bold text-red-500 uppercase tracking-widest mb-2">The Bottleneck</h4>
+                      <p className="text-foreground font-medium text-lg leading-relaxed">Chronic neck/back pain, stiff joints, or post-surgical immobility severely limiting your active life.</p>
                     </div>
-                    <div className="border-l-2 border-primary/50 pl-4">
-                      <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Our Solution</h4>
-                      <p className="text-muted-foreground leading-relaxed">Advanced electrotherapy (SWD, IFT, Ultrasound), targeted joint mobilization, and evidence-based exercise regimens.</p>
+                    <div className="border-l-4 border-primary pl-5">
+                      <h4 className="text-xs font-bold text-primary uppercase tracking-widest mb-2">The Intervention</h4>
+                      <p className="text-foreground font-medium text-lg leading-relaxed">Advanced electrotherapy (SWD, IFT, Ultrasound), targeted joint mobilization, and evidence-based clinical exercise.</p>
                     </div>
-                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
-                      <h4 className="text-sm font-bold text-green-600 uppercase tracking-wider mb-1">The Result</h4>
-                      <p className="text-foreground font-medium leading-relaxed">Pain-free movement, restored strength, and a confident return to an active, independent lifestyle.</p>
+                    <div className="border-l-4 border-green-500 pl-5 bg-green-500/5 py-4 pr-5 rounded-r-2xl transform hover:scale-[1.02] transition-transform">
+                      <h4 className="text-xs font-bold text-green-600 uppercase tracking-widest mb-2">The Outcome</h4>
+                      <p className="text-2xl font-extrabold text-foreground leading-tight">Pain-free movement, structural strength, and 100% independence.</p>
                     </div>
                   </div>
                   
@@ -154,18 +154,18 @@ export default function ServicesPage() {
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Counselling & Psychology</h2>
                   </div>
 
-                  <div className="space-y-5 pt-2">
-                    <div className="border-l-2 border-red-500/50 pl-4">
-                      <h4 className="text-sm font-bold text-red-500 uppercase tracking-wider mb-1">The Problem</h4>
-                      <p className="text-muted-foreground leading-relaxed">Overwhelming stress, anxiety, depression, relationship conflicts, or coping with chronic pain and lifestyle changes.</p>
+                  <div className="space-y-6 pt-4">
+                    <div className="border-l-4 border-red-500 pl-5">
+                      <h4 className="text-xs font-bold text-red-500 uppercase tracking-widest mb-2">The Bottleneck</h4>
+                      <p className="text-foreground font-medium text-lg leading-relaxed">Overwhelming chronic stress, high-functioning anxiety, relationship conflicts, or coping with drastic lifestyle changes.</p>
                     </div>
-                    <div className="border-l-2 border-secondary/50 pl-4">
-                      <h4 className="text-sm font-bold text-secondary uppercase tracking-wider mb-1">Our Solution</h4>
-                      <p className="text-muted-foreground leading-relaxed">A safe, confidential space using Cognitive Behavioral Therapy (CBT), REBT, and structured emotional guidance.</p>
+                    <div className="border-l-4 border-secondary pl-5">
+                      <h4 className="text-xs font-bold text-secondary uppercase tracking-widest mb-2">The Intervention</h4>
+                      <p className="text-foreground font-medium text-lg leading-relaxed">Structured Cognitive Behavioral Therapy (CBT) and REBT to dismantle mental blocks in a completely safe, confidential space.</p>
                     </div>
-                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
-                      <h4 className="text-sm font-bold text-green-600 uppercase tracking-wider mb-1">The Result</h4>
-                      <p className="text-foreground font-medium leading-relaxed">Mental clarity, emotional resilience, improved relationships, and strategies to confidently handle life's challenges.</p>
+                    <div className="border-l-4 border-green-500 pl-5 bg-green-500/5 py-4 pr-5 rounded-r-2xl transform hover:scale-[1.02] transition-transform">
+                      <h4 className="text-xs font-bold text-green-600 uppercase tracking-widest mb-2">The Outcome</h4>
+                      <p className="text-2xl font-extrabold text-foreground leading-tight">Elite mental clarity, unshakeable emotional resilience, and deep focus.</p>
                     </div>
                   </div>
                   
@@ -228,18 +228,18 @@ export default function ServicesPage() {
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Diet & Nutrition</h2>
                   </div>
 
-                  <div className="space-y-5 pt-2">
-                    <div className="border-l-2 border-red-500/50 pl-4">
-                      <h4 className="text-sm font-bold text-red-500 uppercase tracking-wider mb-1">The Problem</h4>
-                      <p className="text-muted-foreground leading-relaxed">Stubborn weight, fatigue, slow surgical recovery, or managing metabolic conditions like PCOS and Diabetes.</p>
+                  <div className="space-y-6 pt-4">
+                    <div className="border-l-4 border-red-500 pl-5">
+                      <h4 className="text-xs font-bold text-red-500 uppercase tracking-widest mb-2">The Bottleneck</h4>
+                      <p className="text-foreground font-medium text-lg leading-relaxed">Stubborn weight gain, chronic metabolic fatigue, or managing severe conditions like PCOS and Diabetes.</p>
                     </div>
-                    <div className="border-l-2 border-amber-500/50 pl-4">
-                      <h4 className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-1">Our Solution</h4>
-                      <p className="text-muted-foreground leading-relaxed">Sustainable, personalized clinical nutrition plans focusing on real food instead of restrictive crash diets.</p>
+                    <div className="border-l-4 border-amber-500 pl-5">
+                      <h4 className="text-xs font-bold text-amber-600 uppercase tracking-widest mb-2">The Intervention</h4>
+                      <p className="text-foreground font-medium text-lg leading-relaxed">Highly personalized clinical nutrition using real food as medicine. No crash diets. We fix your metabolic baseline.</p>
                     </div>
-                    <div className="border-l-2 border-green-500/50 pl-4 bg-green-500/5 py-2 pr-4 rounded-r-lg">
-                      <h4 className="text-sm font-bold text-green-600 uppercase tracking-wider mb-1">The Result</h4>
-                      <p className="text-foreground font-medium leading-relaxed">Higher daily energy, optimal body composition, faster healing, and controlled metabolic symptoms.</p>
+                    <div className="border-l-4 border-green-500 pl-5 bg-green-500/5 py-4 pr-5 rounded-r-2xl transform hover:scale-[1.02] transition-transform">
+                      <h4 className="text-xs font-bold text-green-600 uppercase tracking-widest mb-2">The Outcome</h4>
+                      <p className="text-2xl font-extrabold text-foreground leading-tight">Optimized body composition, boundless daily energy, and reversed metabolic symptoms.</p>
                     </div>
                   </div>
                   

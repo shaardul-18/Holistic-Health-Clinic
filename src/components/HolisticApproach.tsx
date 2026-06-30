@@ -23,10 +23,10 @@ function HolisticRing({
   transformOffset,
   isCenter = false,
 }: RingProps) {
-  const size = 280;
+  const size = 360;
   const count = 90;
   const radius = size / 2;
-  const innerRadius = radius - 35;
+  const innerRadius = radius - 45;
   const ticks = [];
 
   for (let i = 0; i < count; i++) {
@@ -48,7 +48,7 @@ function HolisticRing({
         x2={x2}
         y2={y2}
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="2"
         opacity={opacity}
       />
     );
@@ -59,16 +59,16 @@ function HolisticRing({
 
   return (
     <div 
-      className="relative flex items-center justify-center w-[280px] h-[280px] transition-all duration-[4000ms] cubic-bezier(0.25, 1, 0.5, 1) select-none"
+      className="relative flex items-center justify-center w-[360px] h-[360px] transition-all duration-[4000ms] cubic-bezier(0.25, 1, 0.5, 1) select-none"
       style={{
         transform: currentTransform,
       }}
     >
       {/* Background glow when merged */}
       <div 
-        className={`absolute inset-4 rounded-full bg-current transition-all duration-1000 blur-xl pointer-events-none ${
+        className={`absolute inset-4 rounded-full bg-current transition-all duration-1000 blur-2xl pointer-events-none ${
           isMerged && isCenter 
-            ? "opacity-[0.08] scale-110" 
+            ? "opacity-[0.1] scale-110 animate-[pulse_4s_ease-in-out_infinite]" 
             : "opacity-0"
         }`} 
       />
@@ -100,7 +100,7 @@ function HolisticRing({
           <div className="relative w-full flex items-center justify-center min-h-[60px]">
             {/* Original "Physical Health" Label */}
             <span 
-              className={`font-serif text-lg md:text-xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[3000ms] ${
+              className={`font-serif text-xl md:text-2xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[3000ms] ${
                 isMerged ? "opacity-0 scale-75 blur-xs" : "opacity-100 scale-100"
               }`}
             >
@@ -109,7 +109,7 @@ function HolisticRing({
             
             {/* Merged "Complete Wellness" Label */}
             <span 
-              className={`absolute font-serif text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-amber-500 bg-clip-text text-transparent leading-tight transition-all duration-[4000ms] filter drop-shadow-[0_0_12px_rgba(31,164,75,0.4)] ${
+              className={`absolute font-serif text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-amber-500 bg-clip-text text-transparent leading-tight transition-all duration-[4000ms] filter drop-shadow-[0_0_12px_rgba(31,164,75,0.4)] ${
                 isMerged ? "opacity-100 scale-110 translate-y-0" : "opacity-0 scale-90 translate-y-2 pointer-events-none blur-xs"
               }`}
             >
@@ -190,26 +190,26 @@ export function HolisticApproach() {
   }
 
   // Horizontal translation on desktop, vertical on mobile
-  const leftOffset = isMobile ? "translateY(248px)" : "translateX(232px)";
-  const rightOffset = isMobile ? "translateY(-248px)" : "translateX(-232px)";
+  const leftOffset = isMobile ? "translateY(320px)" : "translateX(280px)";
+  const rightOffset = isMobile ? "translateY(-320px)" : "translateX(-280px)";
 
   return (
     <div 
       ref={containerRef}
-      className="w-full py-10 flex flex-col items-center select-none overflow-hidden"
+      className="w-full py-12 flex flex-col items-center select-none overflow-hidden"
     >
       
       {/* Glow Aura behind the center ring when merged */}
-      <div className="relative flex flex-col items-center justify-center w-full max-w-4xl">
+      <div className="relative flex flex-col items-center justify-center w-full max-w-5xl">
         <div 
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[340px] h-[340px] bg-gradient-to-r from-primary/20 via-secondary/25 to-amber-500/20 blur-3xl pointer-events-none transition-all duration-[4000ms] ease-out ${
-            isMerged ? "opacity-100 scale-110" : "opacity-0 scale-90"
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[440px] h-[440px] bg-gradient-to-r from-primary/20 via-secondary/25 to-amber-500/20 blur-3xl pointer-events-none transition-all duration-[4000ms] ease-out ${
+            isMerged ? "opacity-100 scale-110 animate-[pulse_5s_ease-in-out_infinite]" : "opacity-0 scale-90"
           }`}
         />
 
         {/* Overlapping Rings Container */}
         <div 
-          className="relative flex flex-col md:flex-row items-center justify-center -space-y-8 md:-space-y-0 md:-space-x-12 w-full transition-all duration-500 py-6"
+          className="relative flex flex-col md:flex-row items-center justify-center -space-y-10 md:-space-y-0 md:-space-x-16 w-full transition-all duration-500 py-10"
         >
           {/* Ring 1: Emotional Health */}
           <HolisticRing
@@ -217,7 +217,7 @@ export function HolisticApproach() {
             rotationDirection="normal"
             colorClass="text-primary/70"
             tiltAngle={-12}
-            speed={70}
+            speed={180}
             isMerged={isMerged}
             transformOffset={leftOffset}
           />
@@ -227,7 +227,7 @@ export function HolisticApproach() {
             rotationDirection="reverse"
             colorClass={isMerged ? "text-secondary" : "text-secondary/70"}
             tiltAngle={0}
-            speed={60}
+            speed={150}
             isMerged={isMerged}
             transformOffset="translate(0px, 0px)"
             isCenter={true}
@@ -238,7 +238,7 @@ export function HolisticApproach() {
             rotationDirection="normal"
             colorClass="text-amber-500/70"
             tiltAngle={12}
-            speed={80}
+            speed={190}
             isMerged={isMerged}
             transformOffset={rightOffset}
           />

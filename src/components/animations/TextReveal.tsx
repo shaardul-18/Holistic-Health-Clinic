@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export function TextReveal({ 
   children, 
@@ -15,40 +15,55 @@ export function TextReveal({
   delay?: number,
   direction?: "up" | "down"
 }) {
-  const [isRevealed, setIsRevealed] = useState(false);
-  const elementRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsRevealed(true), delay);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (elementRef.current) observer.observe(elementRef.current);
-    return () => observer.disconnect();
-  }, [delay]);
-
   const words = children.split(" ");
-  const transformStart = direction === "up" ? "translate-y-[120%]" : "-translate-y-[120%]";
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: delay / 1000,
+      }
+    }
+  };
+  
+  const wordVariants = {
+    hidden: { 
+      y: direction === "up" ? "120%" : "-120%",
+      opacity: 0,
+      rotateX: 45,
+    },
+    visible: { 
+      y: "0%",
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      }
+    }
+  };
 
   return (
-    <span ref={elementRef} className={className}>
+    <motion.span 
+      className={`inline-block ${className}`}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-10%" }}
+      variants={containerVariants}
+    >
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden mr-[0.25em] align-bottom pb-1 -mb-1">
-          <span
-            className={`inline-block transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              isRevealed ? "translate-y-0" : transformStart
-            } ${gradientClass}`}
-            style={{ transitionDelay: `${i * 150}ms` }}
+        <span key={i} className="inline-block overflow-hidden mr-[0.25em] align-bottom pb-1 -mb-1" style={{ perspective: '1000px' }}>
+          <motion.span
+            className={`inline-block ${gradientClass}`}
+            variants={wordVariants}
           >
             {word}
-          </span>
+          </motion.span>
         </span>
       ))}
-    </span>
+    </motion.span>
   );
 }
