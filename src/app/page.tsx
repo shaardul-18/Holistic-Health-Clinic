@@ -88,12 +88,12 @@ export default function Home() {
             <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
               <Link 
                 href="#assessment" 
-                className="text-base px-10 py-5 w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-bold rounded-full shadow-xl hover:shadow-primary/30 transition-all flex items-center justify-center gap-2"
+                className="text-base px-10 py-5 w-full sm:w-auto bg-primary text-white font-bold rounded-full shadow-lg transition-all duration-300 ease-out flex items-center justify-center gap-2 hover:bg-primary/90 hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1"
               >
                 Take Free Health Assessment <ArrowRight className="w-5 h-5" />
               </Link>
               <WhatsAppButton 
-                className="text-sm font-semibold w-full sm:w-auto bg-card text-foreground border border-border hover:bg-muted py-4 shadow-sm rounded-full flex items-center justify-center gap-2 px-10 transition-all"
+                className="text-sm font-semibold w-full sm:w-auto bg-white/80 backdrop-blur-sm text-foreground border border-border/80 py-4 shadow-sm rounded-full flex items-center justify-center gap-2 px-10 transition-all duration-300 ease-out hover:bg-white hover:scale-105 hover:shadow-xl hover:-translate-y-1 hover:border-border"
                 message="Hello, I would like to book a direct consultation with your clinic."
               >
                 <Phone className="w-5 h-5 text-primary" /> Book Direct Consultation

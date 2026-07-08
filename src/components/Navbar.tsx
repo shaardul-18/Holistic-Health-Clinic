@@ -21,7 +21,7 @@ export function Navbar() {
 
   return (
     <header className="fixed top-2 sm:top-4 inset-x-2 sm:inset-x-4 z-50 flex flex-col items-center pointer-events-none">
-      <div className="w-full max-w-6xl bg-background/90 backdrop-blur-md border border-border/60 rounded-full shadow-xl shadow-black/[0.06] flex h-16 sm:h-20 items-center justify-between px-4 sm:px-8 pointer-events-auto transition-all duration-300">
+      <div className="w-full max-w-6xl bg-background/60 backdrop-blur-xl border border-white/50 border-b-border/30 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.06)] ring-1 ring-white/50 flex h-16 sm:h-20 items-center justify-between px-4 sm:px-8 pointer-events-auto transition-all duration-300">
         
         {/* Logo and title */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 transition-transform hover:scale-102" onClick={() => setIsOpen(false)}>

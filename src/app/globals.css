@@ -198,4 +198,22 @@
     @apply font-sans;
     scroll-behavior: smooth;
   }
+
+  /* Custom Webkit Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(210, 40%, 96.1%); /* Matches muted background */
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(202, 40%, 75%); /* Very soft, premium blue */
+    border-radius: 8px;
+    border: 2px solid hsl(210, 40%, 96.1%); /* Creates a padded floating effect */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(202, 78%, 44%); /* Primary blue on hover */
+  }
 }
