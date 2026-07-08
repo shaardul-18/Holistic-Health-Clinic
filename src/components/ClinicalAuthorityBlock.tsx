@@ -35,15 +35,6 @@ export function ClinicalAuthorityBlock() {
             </div>
           </div>
 
-          <div className="col-span-2 bg-muted/50 rounded-2xl p-4 flex items-center gap-4 border border-border/50">
-            <div className="bg-background p-2 rounded-xl shadow-sm border border-border">
-              <Stethoscope className="h-5 w-5 text-foreground opacity-70" />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-foreground">Govt. Registered Clinic</p>
-              <p className="text-xs text-muted-foreground">Reg No: OT/PT-2013/05/3752</p>
-            </div>
-          </div>
         </div>
 
       </div>

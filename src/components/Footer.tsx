@@ -41,10 +41,6 @@ export function Footer() {
                 <Award className="h-3.5 w-3.5 text-secondary shrink-0" />
                 <span>Holistic Health Clinic Team &bull; B.P.Th, M.I.A.P, P.G.D. Nutrition</span>
               </p>
-              <p className="text-xs text-slate-500 flex items-center gap-2">
-                <Shield className="h-3.5 w-3.5 text-slate-500 shrink-0" />
-                <span>Lic/Reg No: OT/PT-2013/05/3752 &bull; Clinic Reg: 842104-M</span>
-              </p>
             </div>
           </div>
 

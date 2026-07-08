@@ -9,6 +9,7 @@ interface RingProps {
   tiltAngle: number;
   speed?: number;
   isMerged: boolean;
+  isFullyMerged: boolean;
   transformOffset: string;
   isCenter?: boolean;
 }
@@ -20,6 +21,7 @@ function HolisticRing({
   tiltAngle,
   speed = 30,
   isMerged,
+  isFullyMerged,
   transformOffset,
   isCenter = false,
 }: RingProps) {
@@ -57,50 +59,64 @@ function HolisticRing({
   // Calculate current transform style
   const currentTransform = isMerged ? `${transformOffset} rotate(0deg)` : `translate(0px, 0px) rotate(${tiltAngle}deg)`;
 
+  // When merged, all rings fade out except the center one, or they all change color.
+  // The user wants it to look like it merged into ONE. We'll fade out the outer rings.
+  const ringOpacity = isMerged && !isCenter ? "opacity-0" : "opacity-100";
+
   return (
     <div 
-      className="relative flex items-center justify-center w-[360px] h-[360px] transition-all duration-[4000ms] cubic-bezier(0.25, 1, 0.5, 1) select-none"
+      className={`relative flex items-center justify-center w-[360px] h-[360px] transition-all duration-[7000ms] ease-[cubic-bezier(0.25,1,0.5,1)] select-none ${ringOpacity}`}
       style={{
         transform: currentTransform,
       }}
     >
-      {/* Background glow when merged */}
-      <div 
-        className={`absolute inset-4 rounded-full bg-current transition-all duration-1000 blur-2xl pointer-events-none ${
-          isMerged && isCenter 
-            ? "opacity-[0.1] scale-110 animate-[pulse_4s_ease-in-out_infinite]" 
-            : "opacity-0"
-        }`} 
-      />
-
       {/* Rotating SVG Ticks Ring */}
       <div
-        className={`absolute inset-0 flex items-center justify-center ${colorClass} transition-colors duration-[4000ms]`}
+        className={`absolute inset-0 flex items-center justify-center ${
+          isMerged ? "text-secondary" : colorClass
+        } transition-colors duration-[7000ms]`}
         style={{
           animation: `spin ${speed}s linear infinite ${rotationDirection === "reverse" ? "reverse" : ""}`,
         }}
       >
-        <svg 
-          width={size} 
-          height={size} 
-          viewBox={`0 0 ${size} ${size}`} 
-          className={`w-full h-full transition-opacity duration-[4000ms] ${
-            isMerged ? "opacity-95" : "opacity-60"
-          }`}
-        >
-          {ticks}
-        </svg>
+        <div className={`relative w-full h-full flex items-center justify-center ${isFullyMerged && isCenter ? "animate-ring-breathe" : ""}`}>
+          <svg 
+            width={size} 
+            height={size} 
+            viewBox={`0 0 ${size} ${size}`} 
+            className={`absolute inset-0 w-full h-full transition-opacity duration-[7000ms] ${
+              isMerged ? "opacity-95" : "opacity-60"
+            }`}
+          >
+            {ticks}
+          </svg>
+
+          {/* Radiating Circular Ripples */}
+          {isFullyMerged && isCenter && (
+            <>
+              <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="absolute inset-0 w-full h-full opacity-0 animate-ring-radiate pointer-events-none" style={{ animationDelay: "0s" }}>
+                <circle cx={size/2} cy={size/2} r={radius} fill="none" stroke="currentColor" strokeWidth="2" className="text-primary/70" />
+              </svg>
+              <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="absolute inset-0 w-full h-full opacity-0 animate-ring-radiate pointer-events-none" style={{ animationDelay: "0.8s" }}>
+                <circle cx={size/2} cy={size/2} r={radius} fill="none" stroke="currentColor" strokeWidth="1.5" className="text-secondary/60" />
+              </svg>
+              <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="absolute inset-0 w-full h-full opacity-0 animate-ring-radiate pointer-events-none" style={{ animationDelay: "1.6s" }}>
+                <circle cx={size/2} cy={size/2} r={radius} fill="none" stroke="currentColor" strokeWidth="1" className="text-amber-500/50" />
+              </svg>
+            </>
+          )}
+        </div>
       </div>
 
       {/* Center Label Text */}
       <div 
-        className="absolute flex flex-col items-center justify-center text-center px-6 pointer-events-none transition-all duration-[4000ms]"
+        className="absolute flex flex-col items-center justify-center text-center px-6 pointer-events-none transition-all duration-[7000ms]"
       >
         {isCenter ? (
           <div className="relative w-full flex items-center justify-center min-h-[60px]">
             {/* Original "Physical Health" Label */}
             <span 
-              className={`font-serif text-xl md:text-2xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[3000ms] ${
+              className={`font-serif text-xl md:text-2xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[7000ms] ${
                 isMerged ? "opacity-0 scale-75 blur-xs" : "opacity-100 scale-100"
               }`}
             >
@@ -109,7 +125,7 @@ function HolisticRing({
             
             {/* Merged "Complete Wellness" Label */}
             <span 
-              className={`absolute font-serif text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-amber-500 bg-clip-text text-transparent leading-tight transition-all duration-[4000ms] filter drop-shadow-[0_0_12px_rgba(31,164,75,0.4)] ${
+              className={`absolute font-serif text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-amber-500 bg-clip-text text-transparent leading-tight transition-all duration-[7000ms] filter drop-shadow-[0_0_12px_rgba(31,164,75,0.4)] ${
                 isMerged ? "opacity-100 scale-110 translate-y-0" : "opacity-0 scale-90 translate-y-2 pointer-events-none blur-xs"
               }`}
             >
@@ -118,7 +134,7 @@ function HolisticRing({
           </div>
         ) : (
           <span 
-            className={`font-serif text-lg md:text-xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[3000ms] ${
+            className={`font-serif text-lg md:text-xl font-medium tracking-tight text-foreground/85 leading-snug transition-all duration-[7000ms] ${
               isMerged ? "opacity-0 scale-75 blur-xs" : "opacity-100 scale-100"
             }`}
           >
@@ -137,6 +153,7 @@ function HolisticRing({
 
 export function HolisticApproach() {
   const [isMerged, setIsMerged] = useState(false);
+  const [isFullyMerged, setIsFullyMerged] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -153,18 +170,23 @@ export function HolisticApproach() {
     if (!mounted || !containerRef.current) return;
     
     const currentRef = containerRef.current;
+    let timeoutId: NodeJS.Timeout;
     
     // Setup IntersectionObserver for auto-triggering animation on scroll
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.intersectionRatio >= 0.3) {
+        if (entry.intersectionRatio >= 0.7) {
           setIsMerged(true);
-        } else if (entry.intersectionRatio === 0) {
+          // Wait for the slide-in transition to finish before radiating
+          timeoutId = setTimeout(() => setIsFullyMerged(true), 7000);
+        } else if (!entry.isIntersecting) {
           setIsMerged(false);
+          setIsFullyMerged(false);
+          clearTimeout(timeoutId);
         }
       },
       {
-        threshold: [0, 0.3], // Trigger enter at 30%, exit at 0%
+        threshold: [0, 0.7], // Trigger when 70% visible to merge, trigger at 0 to reset
         rootMargin: "0px"
       }
     );
@@ -173,6 +195,7 @@ export function HolisticApproach() {
 
     return () => {
       if (currentRef) observer.unobserve(currentRef);
+      clearTimeout(timeoutId);
     };
   }, [mounted]);
 
@@ -199,13 +222,24 @@ export function HolisticApproach() {
       className="w-full py-12 flex flex-col items-center select-none overflow-hidden"
     >
       
-      {/* Glow Aura behind the center ring when merged */}
+      <style>{`
+        @keyframes ringBreathe {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.08); }
+        }
+        @keyframes ringRadiate {
+          0% { transform: scale(1); opacity: 0.6; }
+          100% { transform: scale(1.4); opacity: 0; }
+        }
+        .animate-ring-breathe {
+          animation: ringBreathe 3.5s ease-in-out infinite;
+        }
+        .animate-ring-radiate {
+          animation: ringRadiate 2.5s cubic-bezier(0.1, 0.4, 0.2, 1) infinite;
+        }
+      `}</style>
+      
       <div className="relative flex flex-col items-center justify-center w-full max-w-5xl">
-        <div 
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[440px] h-[440px] bg-gradient-to-r from-primary/20 via-secondary/25 to-amber-500/20 blur-3xl pointer-events-none transition-all duration-[4000ms] ease-out ${
-            isMerged ? "opacity-100 scale-110 animate-[pulse_5s_ease-in-out_infinite]" : "opacity-0 scale-90"
-          }`}
-        />
 
         {/* Overlapping Rings Container */}
         <div 
@@ -219,16 +253,18 @@ export function HolisticApproach() {
             tiltAngle={-12}
             speed={180}
             isMerged={isMerged}
+            isFullyMerged={isFullyMerged}
             transformOffset={leftOffset}
           />
           {/* Ring 2: Physical Health */}
           <HolisticRing
             label="Physical Health"
             rotationDirection="reverse"
-            colorClass={isMerged ? "text-secondary" : "text-secondary/70"}
+            colorClass="text-secondary/70"
             tiltAngle={0}
             speed={150}
             isMerged={isMerged}
+            isFullyMerged={isFullyMerged}
             transformOffset="translate(0px, 0px)"
             isCenter={true}
           />
@@ -240,6 +276,7 @@ export function HolisticApproach() {
             tiltAngle={12}
             speed={190}
             isMerged={isMerged}
+            isFullyMerged={isFullyMerged}
             transformOffset={rightOffset}
           />
         </div>

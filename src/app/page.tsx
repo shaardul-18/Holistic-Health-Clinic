@@ -35,8 +35,8 @@ export default function Home() {
   return (
     <main className="flex-1 flex flex-col bg-background relative">
 
-      {/* 1. HERO SECTION (Split Layout) */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between py-24 md:py-32 px-6 lg:px-12 max-w-7xl mx-auto min-h-[90vh] gap-12 overflow-hidden">
+      {/* 1. HERO SECTION */}
+      <section className="relative flex flex-col items-center justify-center py-28 md:py-36 px-6 text-center overflow-hidden min-h-[90vh]">
         {/* Animated LineWaves Background */}
         <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
           <LineWaves
@@ -55,80 +55,68 @@ export default function Home() {
             mouseInfluence={1.2}
           />
         </div>
+        
+        {/* Transparent background overlay for readability without making it dark */}
+        <div className="absolute inset-0 bg-background/80 pointer-events-none" style={{ zIndex: 2 }}></div>
 
-        {/* Dark overlay gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-transparent pointer-events-none md:hidden" style={{ zIndex: 2 }}></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40 pointer-events-none hidden md:block" style={{ zIndex: 2 }}></div>
-
-        {/* Text Content (Left) */}
-        <div className="w-full md:w-1/2 space-y-8 relative z-10 flex flex-col pt-16 md:pt-0">
-          {/* Trust Badges Row */}
+        <div className="space-y-8 max-w-4xl relative z-10 mx-auto mt-12">
+          {/* Trust Badge */}
           <ScrollReveal animation="slide-up">
-            <div className="flex flex-wrap items-center gap-3 mb-2">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-xs uppercase tracking-wider">
-                <Star className="w-3.5 h-3.5 fill-current" /> 5.0 Rated
-              </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-bold text-xs uppercase tracking-wider">
-                <Users className="w-3.5 h-3.5" /> 20,000+ Patients
-              </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 font-bold text-xs uppercase tracking-wider">
-                <Calendar className="w-3.5 h-3.5" /> 20+ Years Exp.
-              </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium text-sm mb-4">
+              <Shield className="w-4 h-4" /> Trusted by 20,000+ patients in Mumbai
             </div>
           </ScrollReveal>
 
-          {/* Hook Headline */}
+          {/* Problem & Solution Headline */}
           <ScrollReveal animation="slide-up" delay={100}>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05]">
-              <TextReveal direction="up" delay={150}>We Solve Chronic Joint & Back Pain So You Can Return to an</TextReveal> <br/>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1] max-w-3xl mx-auto">
+              <TextReveal direction="up" delay={150}>End Chronic Pain & Reclaim Your</TextReveal> <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary inline-block animate-pulse mt-2">
                 Active Life
               </span>
             </h1>
           </ScrollReveal>
-
+          
           <ScrollReveal animation="slide-up" delay={250}>
-            <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed max-w-lg">
-              Mumbai’s leading multi-disciplinary clinic combining advanced <strong>Physiotherapy</strong>, <strong>Clinical Diet</strong>, and <strong>Psychology</strong> with a 95% non-surgical recovery rate.
+            <p className="text-lg md:text-xl text-muted-foreground font-normal max-w-2xl mx-auto leading-relaxed">
+              Holistic Health Clinic’s integrated approach combines advanced <strong>physiotherapy</strong>, <strong>clinical nutrition</strong>, and <strong>counselling</strong> to treat the root cause of your pain—not just the symptoms.
             </p>
           </ScrollReveal>
-
-          {/* CTAs */}
+          
+          {/* Hero CTAs */}
           <ScrollReveal animation="slide-up" delay={400}>
-            <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
-              <Link
-                href="#assessment"
-                className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold text-base rounded-full shadow-lg hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 group hover:-translate-y-1"
+            <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+              <Link 
+                href="#assessment" 
+                className="text-base px-10 py-5 w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-bold rounded-full shadow-xl hover:shadow-primary/30 transition-all flex items-center justify-center gap-2"
               >
-                Start Here — Free Assessment <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Take Free Health Assessment <ArrowRight className="w-5 h-5" />
               </Link>
-              <WhatsAppButton
-                className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-primary/20 text-foreground font-bold text-base rounded-full hover:bg-primary/5 transition-all flex items-center justify-center gap-2 group hover:-translate-y-1"
+              <WhatsAppButton 
+                className="text-sm font-semibold w-full sm:w-auto bg-card text-foreground border border-border hover:bg-muted py-4 shadow-sm rounded-full flex items-center justify-center gap-2 px-10 transition-all"
                 message="Hello, I would like to book a direct consultation with your clinic."
               >
-                <Phone className="w-4 h-4 text-primary" /> Book Direct
+                <Phone className="w-5 h-5 text-primary" /> Book Direct Consultation
               </WhatsAppButton>
             </div>
           </ScrollReveal>
-        </div>
-
-        {/* Image Content (Right) */}
-        <div className="w-full md:w-1/2 relative z-10 flex justify-center md:justify-end mt-12 md:mt-0">
-          <ScrollReveal animation="fade-in" delay={300} className="relative w-full max-w-xl">
-            <div className="relative aspect-[4/3] md:aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-background/50">
-              <Image
-                src="/gallery-1.png"
-                alt="Holistic Health Clinic Facility"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover hover:scale-105 transition-transform duration-700"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
+          
+          {/* Quick Metrics Sub-Header */}
+          <ScrollReveal animation="slide-up" delay={550}>
+            <div className="pt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto border-t border-border/80 mt-12">
+              <div className="space-y-1">
+                <h4 className="text-3xl md:text-4xl font-extrabold text-primary">20+</h4>
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Years Experience</p>
+              </div>
+              <div className="space-y-1">
+                <h4 className="text-3xl md:text-4xl font-extrabold text-secondary">20k+</h4>
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Patients Treated</p>
+              </div>
+              <div className="space-y-1">
+                <h4 className="text-3xl md:text-4xl font-extrabold text-primary">150+</h4>
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">5-Star Reviews</p>
+              </div>
             </div>
-            
-            {/* Decorative background circle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl -z-10" />
           </ScrollReveal>
         </div>
       </section>
@@ -250,13 +238,13 @@ export default function Home() {
             <div className="text-center space-y-4">
               <h2 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">Where Should You Start?</h2>
               <p className="text-muted-foreground text-lg md:text-xl font-medium max-w-2xl mx-auto">
-                Take our 3-question Clinical Assessment. We’ll analyze your pain points and prepare a custom recovery plan before you even step into the clinic.
+                Take our 5-question Clinical Assessment. We’ll analyze your pain points and prepare a custom recovery plan before you even step into the clinic.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal animation="scale-up" delay={200}>
-            <div className="bg-card shadow-2xl rounded-3xl border border-border p-2">
+            <div className="w-full">
               <AssessmentQuiz />
             </div>
           </ScrollReveal>
@@ -509,8 +497,8 @@ export default function Home() {
                   </div>
 
                   <div className="bg-primary/5 rounded-3xl p-6 border border-primary/10 text-center transform group-hover:scale-105 transition-transform duration-500">
-                    <p className="text-6xl font-black text-primary tracking-tighter">100%</p>
-                    <p className="text-lg font-bold text-foreground mt-2 uppercase tracking-wide">Pain Reduction</p>
+                    <p className="text-4xl md:text-5xl font-black text-primary tracking-tighter uppercase">Maximum</p>
+                    <p className="text-lg font-bold text-foreground mt-2 uppercase tracking-wide">Mobility Restored</p>
                   </div>
 
                   <ul className="space-y-3">
@@ -535,7 +523,7 @@ export default function Home() {
               >
                 <div className="p-10 flex-1 space-y-8">
                   <div className="flex items-center justify-between border-b border-border pb-4">
-                    <span className="px-4 py-1.5 bg-amber-500/10 text-amber-600 text-sm font-extrabold rounded-full uppercase tracking-widest flex items-center gap-2">
+                    <span className="px-4 py-1.5 bg-secondary/10 text-secondary text-sm font-extrabold rounded-full uppercase tracking-widest flex items-center gap-2">
                       <Apple className="w-4 h-4" /> Metabolic Diet
                     </span>
                     <span className="text-sm text-muted-foreground font-bold">Timeline: 12 Weeks</span>
@@ -546,8 +534,8 @@ export default function Home() {
                     <p className="text-muted-foreground font-medium">Struggling with irregular cycles, chronic fatigue, and rapid stubborn weight gain.</p>
                   </div>
 
-                  <div className="bg-amber-500/5 rounded-3xl p-6 border border-amber-500/10 text-center transform group-hover:scale-105 transition-transform duration-500">
-                    <p className="text-6xl font-black text-amber-600 tracking-tighter">-8 KG</p>
+                  <div className="bg-secondary/5 rounded-3xl p-6 border border-secondary/10 text-center transform group-hover:scale-105 transition-transform duration-500">
+                    <p className="text-6xl font-black text-secondary tracking-tighter">-8 KG</p>
                     <p className="text-lg font-bold text-foreground mt-2 uppercase tracking-wide">Fat Loss Achieved</p>
                   </div>
 
@@ -590,7 +578,7 @@ export default function Home() {
       </section>
 
       {/* 6. FREQUENTLY ASKED QUESTIONS (Friction Reducer) */}
-      <section className="py-24 px-6 bg-gradient-to-tr from-secondary/5 to-primary/5 dark:from-slate-900/30 dark:to-slate-950 border-y border-border/50">
+      <section className="py-24 px-6 bg-gradient-to-tr from-secondary/5 to-primary/5 border-y border-border/50">
         <div className="max-w-4xl mx-auto space-y-12">
           <ScrollReveal animation="slide-up">
             <div className="text-center space-y-4">
