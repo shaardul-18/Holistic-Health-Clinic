@@ -21,7 +21,7 @@ import { ReviewsMarquee } from "@/components/ReviewsMarquee";
 import { FAQ } from "@/components/FAQ";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { AssessmentQuiz } from "@/components/AssessmentQuiz";
-import { GalleryMasonry } from "@/components/GalleryMasonry";
+
 import { HoverCard } from "@/components/animations/HoverCard";
 import dynamic from "next/dynamic";
 

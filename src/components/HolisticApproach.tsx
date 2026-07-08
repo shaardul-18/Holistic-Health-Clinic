@@ -157,15 +157,15 @@ export function HolisticApproach() {
     // Setup IntersectionObserver for auto-triggering animation on scroll
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.intersectionRatio >= 0.3) {
           setIsMerged(true);
-        } else {
+        } else if (entry.intersectionRatio === 0) {
           setIsMerged(false);
         }
       },
       {
-        threshold: 0.1, // Trigger when just 10% is visible
-        rootMargin: "0px 0px -50px 0px"
+        threshold: [0, 0.3], // Trigger enter at 30%, exit at 0%
+        rootMargin: "0px"
       }
     );
 

@@ -82,7 +82,7 @@ export function Chatbot() {
           {/* Button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="relative p-4 bg-primary text-primary-foreground rounded-full shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="relative p-4 bg-background text-primary border border-primary/20 rounded-full shadow-xl hover:bg-primary/10 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             aria-label="Open chat"
           >
             {/* Pulsing indicator */}

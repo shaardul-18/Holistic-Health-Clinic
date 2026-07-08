@@ -23,6 +23,7 @@ export default function BlogIndex() {
     { title: "Plantar Fasciitis Relief", desc: "Clinical approaches to resolving chronic heel pain and arch collapse.", href: "/blog/plantar-fasciitis-relief", category: "Physiotherapy", icon: Activity, colorClass: "text-primary bg-primary/10", borderHover: "hover:border-primary/50", img: "/blog/sciatica_real_1782462118918.png" },
     { title: "Tennis Elbow & Carpal Tunnel", desc: "Treating repetitive strain injuries of the elbow, wrist, and hand.", href: "/blog/tennis-elbow-carpal-tunnel", category: "Physiotherapy", icon: Activity, colorClass: "text-primary bg-primary/10", borderHover: "hover:border-primary/50", img: "/blog/frozen_shoulder_real_1782462095092.png" },
     { title: "Postpartum Core Rehabilitation", desc: "Safely rebuilding core strength and resolving diastasis recti after childbirth.", href: "/blog/postpartum-core-rehab", category: "Physiotherapy", icon: Activity, colorClass: "text-primary bg-primary/10", borderHover: "hover:border-primary/50", img: "/blog/sciatica_real_1782462118918.png" },
+    { title: "Post-Pregnancy Physiotherapy", desc: "Comprehensive guide on recovering safely after childbirth through targeted pelvic floor rehabilitation.", href: "/blog/post-pregnancy-physiotherapy", category: "Physiotherapy", icon: Activity, colorClass: "text-primary bg-primary/10", borderHover: "hover:border-primary/50", img: "/blog/spondylosis_real_1782462044125.png" },
 
     // Diet
     { title: "Intermittent Fasting for Insulin Resistance", desc: "A clinical approach to meal timing to reverse metabolic dysfunction and promote sustainable fat loss.", href: "/blog/intermittent-fasting-insulin", category: "Clinical Diet", icon: Apple, colorClass: "text-amber-600 bg-amber-500/10", borderHover: "hover:border-amber-500/50", img: "/blog/blog_metabolic_weight.png" },
@@ -35,6 +36,7 @@ export default function BlogIndex() {
     { title: "Gut Health and Fat Loss", desc: "Understanding the microbiome's role in metabolism and sustainable fat loss.", href: "/blog/gut-health-and-fat-loss", category: "Clinical Diet", icon: Apple, colorClass: "text-amber-600 bg-amber-500/10", borderHover: "hover:border-amber-500/50", img: "/blog/blog_metabolic_weight.png" },
     { title: "Why Weight Loss Is Not Working", desc: "Identifying metabolic roadblocks and overcoming plateaus with evidence-based nutrition.", href: "/blog/why-weight-loss-is-not-working", category: "Clinical Diet", icon: Apple, colorClass: "text-amber-600 bg-amber-500/10", borderHover: "hover:border-amber-500/50", img: "/blog/blog_anti_inflammatory.png" },
     { title: "Nutrition for Joint Health", desc: "Essential nutrients and dietary strategies to support cartilage repair and reduce joint stiffness.", href: "/blog/nutrition-joint-health", category: "Clinical Diet", icon: Apple, colorClass: "text-amber-600 bg-amber-500/10", borderHover: "hover:border-amber-500/50", img: "/blog/blog_muscle_recovery.png" },
+    { title: "Understanding the Gut-Brain Axis", desc: "How optimizing your gut microbiome through clinical nutrition can dramatically improve your mental health.", href: "/blog/gut-brain-axis-diet", category: "Clinical Diet", icon: Apple, colorClass: "text-amber-600 bg-amber-500/10", borderHover: "hover:border-amber-500/50", img: "/blog/blog_metabolic_weight.png" },
 
     // Psychology
     { title: "Digital Detox & Mental Health", desc: "Overcoming screen addiction to reduce anxiety, improve sleep, and reclaim cognitive focus.", href: "/blog/digital-detox-mental-health", category: "Psychology", icon: Brain, colorClass: "text-secondary bg-secondary/10", borderHover: "hover:border-secondary/50", img: "/blog/stress_real_1782462066306.png" },
@@ -43,7 +45,8 @@ export default function BlogIndex() {
     { title: "Overcoming Injury Anxiety", desc: "Conquering kinesiophobia and rebuilding confidence in your body after a severe physical trauma.", href: "/blog/injury-anxiety-overcoming", category: "Psychology", icon: Brain, colorClass: "text-secondary bg-secondary/10", borderHover: "hover:border-secondary/50", img: "/blog/injury_anxiety_overcoming_1782461575824.png" },
     { title: "Mindfulness for Sleep Disorders", desc: "Breaking the cycle of insomnia to unlock your body's most powerful state of physical and mental recovery.", href: "/blog/sleep-mindfulness", category: "Psychology", icon: Brain, colorClass: "text-secondary bg-secondary/10", borderHover: "hover:border-secondary/50", img: "/blog/sleep_mindfulness_1782461587342.png" },
     { title: "CBT for Rehab Motivation", desc: "Utilizing Cognitive Behavioral Therapy to overcome frustration and conquer long-term physical rehabilitation.", href: "/blog/cbt-rehab-motivation", category: "Psychology", icon: Brain, colorClass: "text-secondary bg-secondary/10", borderHover: "hover:border-secondary/50", img: "/blog/cbt_rehab_motivation_1782461598043.png" },
-    { title: "Mind-Body Connection in Healing", desc: "How psychological well-being accelerates physical recovery and reduces chronic pain perception.", href: "/blog/mind-body-connection", category: "Psychology", icon: Brain, colorClass: "text-secondary bg-secondary/10", borderHover: "hover:border-secondary/50", img: "/blog/sleep_mindfulness_1782461587342.png" }
+    { title: "Mind-Body Connection in Healing", desc: "How psychological well-being accelerates physical recovery and reduces chronic pain perception.", href: "/blog/mind-body-connection", category: "Psychology", icon: Brain, colorClass: "text-secondary bg-secondary/10", borderHover: "hover:border-secondary/50", img: "/blog/sleep_mindfulness_1782461587342.png" },
+    { title: "Managing Remote Work Burnout", desc: "Identify and combat the physical and psychological signs of remote work burnout with professional strategies.", href: "/blog/remote-work-burnout", category: "Psychology", icon: Brain, colorClass: "text-secondary bg-secondary/10", borderHover: "hover:border-secondary/50", img: "/blog/stress_real_1782462066306.png" }
   ];
 
   const containerVariants = {
@@ -80,7 +83,7 @@ export default function BlogIndex() {
             <TextReveal delay={100}>Holistic</TextReveal> <TextReveal delay={400} direction="down" gradientClass="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Insights</TextReveal>
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed font-light">
-            Explore our comprehensive library of 25 deep-dive articles covering advanced physiotherapy, clinical nutrition, and mental health strategies.
+            Explore our comprehensive library of {articles.length} deep-dive articles covering advanced physiotherapy, clinical nutrition, and mental health strategies.
           </p>
         </motion.div>
 

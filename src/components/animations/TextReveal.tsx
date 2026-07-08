@@ -39,7 +39,7 @@ export function TextReveal({
       opacity: 1,
       rotateX: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       }
